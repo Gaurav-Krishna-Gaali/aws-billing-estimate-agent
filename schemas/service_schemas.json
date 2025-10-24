@@ -1,0 +1,218 @@
+{
+  "version": "1.0",
+  "description": "Standardized schemas for AWS services to enable LLM mapping from SOW JSON to configurator inputs",
+  "services": {
+    "s3": {
+      "description": "Amazon S3 storage service configuration",
+      "fields": {
+        "description": "string - Description of the S3 bucket purpose",
+        "region": "string - AWS region (default: us-east-1)",
+        "storage_gb": "number - Storage size in GB",
+        "storage_class": "string - Storage class (Standard/IA/Glacier/Deep Archive)",
+        "put_requests": "integer - PUT requests per month",
+        "get_requests": "integer - GET requests per month",
+        "s3_select_returned_gb": "number - S3 Select data returned in GB (optional)",
+        "s3_select_scanned_gb": "number - S3 Select data scanned in GB (optional)",
+        "data_transfer_out_gb": "number - Data transfer out in GB per month (optional)",
+        "data_returned_gb": "number - Data returned in GB per month (optional)"
+      }
+    },
+    "ecs_fargate": {
+      "description": "Amazon ECS Fargate container service configuration",
+      "fields": {
+        "description": "string - Description of the Fargate service",
+        "region": "string - AWS region (default: us-east-1)",
+        "number_of_tasks": "integer - Number of concurrent tasks",
+        "average_duration_minutes": "integer - Average task duration in minutes",
+        "memory_gb": "number - Memory per task in GB",
+        "ephemeral_storage_gb": "number - Ephemeral storage per task in GB (optional)",
+        "vcpu_per_task": "number - vCPU per task (optional)",
+        "task_hours_per_month": "number - Total task hours per month (optional)"
+      }
+    },
+    "alb": {
+      "description": "Application Load Balancer configuration",
+      "fields": {
+        "description": "string - Description of the load balancer",
+        "region": "string - AWS region (default: us-east-1)",
+        "alb_count": "integer - Number of Application Load Balancers",
+        "alb_lambda_processed_bytes": "number - ALB Lambda processed bytes",
+        "alb_ec2_processed_bytes": "number - ALB EC2 processed bytes",
+        "alb_new_connections": "integer - ALB new connections",
+        "alb_connection_duration": "integer - ALB connection duration in seconds",
+        "alb_requests_per_second": "integer - ALB requests per second",
+        "alb_rule_evaluations": "integer - ALB rule evaluations",
+        "nlb_count": "integer - Number of Network Load Balancers",
+        "nlb_tcp_processed_bytes": "number - NLB TCP processed bytes",
+        "nlb_tcp_connections": "integer - NLB TCP connections",
+        "nlb_tcp_connection_duration": "integer - NLB TCP connection duration",
+        "nlb_udp_processed_bytes": "number - NLB UDP processed bytes",
+        "nlb_udp_flows": "integer - NLB UDP flows",
+        "nlb_udp_flow_duration": "integer - NLB UDP flow duration",
+        "nlb_tls_processed_bytes": "number - NLB TLS processed bytes",
+        "nlb_tls_connections": "integer - NLB TLS connections",
+        "nlb_tls_connection_duration": "integer - NLB TLS connection duration",
+        "glb_availability_zones": "integer - Gateway LB availability zones",
+        "glb_processed_bytes": "number - Gateway LB processed bytes",
+        "glb_connections_flows": "integer - Gateway LB connections/flows",
+        "glb_connection_flow_duration": "integer - Gateway LB connection/flow duration",
+        "glb_endpoints": "integer - Gateway LB endpoints",
+        "clb_count": "integer - Number of Classic Load Balancers",
+        "clb_processed_bytes": "number - CLB processed bytes"
+      }
+    },
+    "api_gateway": {
+      "description": "Amazon API Gateway configuration",
+      "fields": {
+        "description": "string - Description of the API Gateway",
+        "region": "string - AWS region (default: us-east-1)",
+        "api_type": "string - API type (REST/HTTP/WebSocket)",
+        "requests_per_month": "integer - API requests per month",
+        "data_transfer_out_gb": "number - Data transfer out in GB per month",
+        "cache_size_gb": "number - Cache size in GB",
+        "throttle_requests_per_second": "integer - Throttle requests per second",
+        "throttle_burst_limit": "integer - Throttle burst limit"
+      }
+    },
+    "lambda": {
+      "description": "AWS Lambda function configuration",
+      "fields": {
+        "description": "string - Description of the Lambda function",
+        "region": "string - AWS region (default: us-east-1)",
+        "function_name": "string - Lambda function name",
+        "memory_mb": "integer - Memory allocation in MB",
+        "execution_time_seconds": "number - Average execution time in seconds",
+        "invocations_per_month": "integer - Number of invocations per month",
+        "data_transfer_out_gb": "number - Data transfer out in GB per month"
+      }
+    },
+    "cloudwatch": {
+      "description": "Amazon CloudWatch monitoring configuration",
+      "fields": {
+        "description": "string - Description of CloudWatch usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "custom_metrics": "integer - Number of custom metrics",
+        "alarms": "integer - Number of alarms",
+        "logs_storage_gb": "number - Logs storage in GB per month",
+        "logs_ingestion_gb": "number - Logs ingestion in GB per month",
+        "dashboards": "integer - Number of dashboards"
+      }
+    },
+    "iam": {
+      "description": "AWS Identity and Access Management configuration",
+      "fields": {
+        "description": "string - Description of IAM usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "users_roles": "integer - Number of users/roles",
+        "managed_policies": "integer - Number of managed policies",
+        "custom_policies": "integer - Number of custom policies",
+        "groups": "integer - Number of groups"
+      }
+    },
+    "kms": {
+      "description": "AWS Key Management Service configuration",
+      "fields": {
+        "description": "string - Description of KMS usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "customer_managed_keys": "integer - Number of customer managed keys",
+        "key_usage": "string - Key usage description",
+        "key_monthly_price": "number - Monthly price per key"
+      }
+    },
+    "shield": {
+      "description": "AWS Shield DDoS protection configuration",
+      "fields": {
+        "description": "string - Description of Shield protection",
+        "region": "string - AWS region (default: Global)",
+        "protection_scope": "string - Protection scope description",
+        "shield_type": "string - Shield type (Standard/Advanced)",
+        "estimated_cost": "string - Estimated cost"
+      }
+    },
+    "waf": {
+      "description": "AWS Web Application Firewall configuration",
+      "fields": {
+        "description": "string - Description of WAF usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "requests_per_month": "integer - Requests per month",
+        "web_acls": "integer - Number of Web ACLs",
+        "rules": "string - Number and type of rules",
+        "estimated_monthly_rate": "string - Estimated monthly rate"
+      }
+    },
+    "vpc": {
+      "description": "Amazon Virtual Private Cloud configuration",
+      "fields": {
+        "description": "string - Description of VPC setup",
+        "region": "string - AWS region (default: us-east-1)",
+        "nat_gateways": "integer - Number of NAT Gateways",
+        "subnets": "string - Subnet configuration",
+        "availability_zones": "integer - Number of availability zones",
+        "estimated_cost": "string - Estimated cost"
+      }
+    },
+    "sqs": {
+      "description": "Amazon Simple Queue Service configuration",
+      "fields": {
+        "description": "string - Description of SQS usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "standard_queue": "boolean - Use standard queue",
+        "long_poll": "boolean - Enable long polling",
+        "messages_per_month": "integer - Messages per month",
+        "estimated_monthly_cost": "string - Estimated monthly cost"
+      }
+    },
+    "ec2": {
+      "description": "Amazon Elastic Compute Cloud configuration",
+      "fields": {
+        "description": "string - Description of EC2 instances",
+        "region": "string - AWS region (default: us-east-1)",
+        "number_of_instances": "integer - Number of instances",
+        "instance_type": "string - Instance type",
+        "operating_system": "string - Operating system",
+        "purchase_option": "string - Purchase option (On-Demand/Reserved/Savings Plan)",
+        "tenancy": "string - Tenancy (Default/Dedicated/Host)",
+        "enable_monitoring": "boolean - Enable detailed monitoring",
+        "storage_type": "string - Storage type",
+        "storage_amount_gb": "integer - Storage amount in GB",
+        "iops_per_volume": "integer - IOPS per volume",
+        "throughput_mbps": "integer - Throughput in MB/s",
+        "ebs_optimized": "boolean - EBS optimized",
+        "instance_hours_per_month": "integer - Instance hours per month",
+        "spot_instance": "boolean - Use Spot Instances",
+        "inbound_data_transfer_tb": "number - Inbound data transfer in TB",
+        "outbound_data_transfer_tb": "number - Outbound data transfer in TB",
+        "elastic_ip_count": "integer - Number of Elastic IPs",
+        "load_balancer_enabled": "boolean - Include ELB",
+        "autoscaling_enabled": "boolean - Enable Auto Scaling",
+        "licensing_cost": "number - Extra licensing cost",
+        "support_plan": "string - Support plan",
+        "os_software_cost": "number - OS software cost"
+      }
+    },
+    "opensearch": {
+      "description": "Amazon OpenSearch Service configuration",
+      "fields": {
+        "description": "string - Description of OpenSearch usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "instance_type": "string - Instance type",
+        "instance_count": "integer - Number of instances",
+        "storage_gb": "number - Storage in GB",
+        "data_transfer_out_gb": "number - Data transfer out in GB per month",
+        "search_requests_per_month": "integer - Search requests per month",
+        "indexing_requests_per_month": "integer - Indexing requests per month"
+      }
+    },
+    "bedrock": {
+      "description": "Amazon Bedrock foundation models configuration",
+      "fields": {
+        "description": "string - Description of Bedrock usage",
+        "region": "string - AWS region (default: us-east-1)",
+        "model_calls_per_month": "integer - Model calls per month",
+        "avg_call_duration": "string - Average call duration",
+        "usage_tier": "string - Usage tier (on-demand/reserved)",
+        "estimated_monthly_spend": "string - Estimated monthly spend"
+      }
+    }
+  }
+}

@@ -11,9 +11,9 @@ import json
 class BaseAWSConfigurator:
     """Base class for AWS service configuration with common helper methods"""
     
-    def __init__(self, page: Page, service_name: str):
+    def __init__(self, page: Page, service_name: str = None):
         self.page = page
-        self.service_name = service_name
+        self.service_name = service_name or "aws_service"
         self.configuration_data = {}
     
     def navigate_to_calculator(self) -> bool:
@@ -326,4 +326,136 @@ class BaseAWSConfigurator:
         except Exception as e:
             print(f"[ERROR] Failed to save configuration: {e}")
             return ""
+    
+    def navigate_to_service_config(self) -> bool:
+        """
+        Navigate to service configuration page (for multi-service estimates)
+        This method should be overridden by each service configurator
+        """
+        try:
+            print(f"[INFO] Navigating to {self.service_name} configuration...")
+            
+            # Search for the service
+            search_terms = self._get_service_search_terms()
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print(f"[ERROR] Could not find {self.service_name} service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to {self.service_name} configuration: {e}")
+            return False
+    
+    def apply_configuration(self, config: Dict[str, Any], add_to_estimate: bool = False) -> bool:
+        """
+        Apply service configuration
+        
+        Args:
+            config: Service configuration dictionary
+            add_to_estimate: If True, add to existing estimate instead of creating new one
+            
+        Returns:
+            bool: True if configuration was applied successfully
+        """
+        try:
+            print(f"[INFO] Applying {self.service_name} configuration...")
+            
+            # Apply the specific service configuration
+            if not self._apply_service_specific_config(config):
+                print(f"[ERROR] Failed to apply {self.service_name} specific configuration")
+                return False
+            
+            if add_to_estimate:
+                # Add to existing estimate
+                return self._add_to_estimate()
+            else:
+                # Original behavior: save and exit
+                return self.save_and_exit() is not None
+                
+        except Exception as e:
+            print(f"[ERROR] Failed to apply {self.service_name} configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """
+        Get search terms for finding this service in AWS Calculator
+        Should be overridden by each service configurator
+        """
+        return [self.service_name]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """
+        Apply service-specific configuration logic
+        Should be overridden by each service configurator
+        
+        Args:
+            config: Service configuration dictionary
+            
+        Returns:
+            bool: True if configuration was applied successfully
+        """
+        # Default implementation - should be overridden
+        print(f"[WARNING] {self.service_name} configurator does not implement _apply_service_specific_config")
+        return True
+    
+    def _add_to_estimate(self) -> bool:
+        """
+        Add current service configuration to existing estimate
+        
+        Returns:
+            bool: True if service was added successfully
+        """
+        try:
+            print(f"[INFO] Adding {self.service_name} to estimate...")
+            
+            # Look for "Add to my estimate" button
+            add_button_selectors = [
+                "button:has-text('Add to my estimate')",
+                "button:has-text('Add to estimate')",
+                "button:has-text('Add service')",
+                "[data-testid='add-to-estimate']",
+                "button[aria-label*='Add to']"
+            ]
+            
+            for selector in add_button_selectors:
+                try:
+                    if self.page.locator(selector).is_visible(timeout=2000):
+                        self.page.click(selector)
+                        print(f"[SUCCESS] Clicked {selector}")
+                        break
+                except:
+                    continue
+            else:
+                print(f"[WARNING] Could not find 'Add to estimate' button for {self.service_name}")
+                return False
+            
+            # Wait for service to be added
+            self.page.wait_for_timeout(3000)
+            
+            # Verify service was added (look for success message or estimate update)
+            try:
+                # Look for success indicators
+                success_indicators = [
+                    "text='Service added'",
+                    "text='Added to estimate'",
+                    "text='Successfully added'",
+                    "[data-testid='success-message']"
+                ]
+                
+                for indicator in success_indicators:
+                    if self.page.locator(indicator).is_visible(timeout=2000):
+                        print(f"[SUCCESS] {self.service_name} added to estimate")
+                        return True
+            except:
+                pass
+            
+            # If no explicit success message, assume success if no error
+            print(f"[INFO] {self.service_name} added to estimate (no explicit confirmation)")
+            return True
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to add {self.service_name} to estimate: {e}")
+            return False
 

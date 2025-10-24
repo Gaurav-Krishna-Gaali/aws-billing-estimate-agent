@@ -541,6 +541,76 @@ def main():
         
         browser.close()
 
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to S3 service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to S3 service configuration...")
+            
+            # Search for S3 using the correct service name
+            search_terms = ["Amazon Simple Storage Service (S3)", "S3", "Simple Storage Service"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find S3 service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to S3 configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding S3 service in AWS Calculator"""
+        return ["Amazon Simple Storage Service (S3)", "S3", "Simple Storage Service"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply S3-specific configuration logic"""
+        try:
+            print("[INFO] Applying S3-specific configuration...")
+            
+            # Extract configuration values
+            storage_gb = config.get('storage_gb', 0)
+            storage_class = config.get('storage_class', 'Standard')
+            put_requests = config.get('put_requests', 0)
+            get_requests = config.get('get_requests', 0)
+            data_transfer_out_gb = config.get('data_transfer_out_gb', 0)
+            data_returned_gb = config.get('data_returned_gb', 0)
+            
+            # Apply storage class configuration
+            if not self.enable_storage_class(storage_class.lower()):
+                print("[WARNING] Failed to set storage class, using default")
+            
+            # Set storage amount
+            if storage_gb > 0:
+                if not self.set_storage_amount(storage_gb):
+                    print("[WARNING] Failed to set storage amount")
+            
+            # Set request counts
+            if put_requests > 0:
+                if not self.set_put_requests(put_requests):
+                    print("[WARNING] Failed to set PUT requests")
+            
+            if get_requests > 0:
+                if not self.set_get_requests(get_requests):
+                    print("[WARNING] Failed to set GET requests")
+            
+            # Set data transfer
+            if data_transfer_out_gb > 0:
+                if not self.set_data_transfer_out(data_transfer_out_gb):
+                    print("[WARNING] Failed to set data transfer out")
+            
+            if data_returned_gb > 0:
+                if not self.set_data_returned(data_returned_gb):
+                    print("[WARNING] Failed to set data returned")
+            
+            print("[SUCCESS] S3 configuration applied")
+            return True
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to apply S3 configuration: {e}")
+            return False
+
+
 if __name__ == "__main__":
     main()
 

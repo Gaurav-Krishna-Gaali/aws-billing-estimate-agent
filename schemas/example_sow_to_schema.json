@@ -1,0 +1,87 @@
+{
+  "input_example": {
+    "result": {
+      "estimate": [
+        {
+          "estimated_yearly_price": 300,
+          "service_name": "Input S3 Bucket",
+          "configurations": {
+            "AverageStorage": "500 GB",
+            "DataTransferOut": "100 GB/month",
+            "StorageClass": "Standard",
+            "Region": "us-east-1",
+            "PUT/GETRequestsPerMonth": "100k/200k",
+            "EstimatedMonthlyStorageCost": "~$25"
+          },
+          "description": "S3 bucket for batch ingest and input artifacts."
+        },
+        {
+          "estimated_yearly_price": 300,
+          "service_name": "Output S3 Bucket",
+          "configurations": {
+            "AverageStorage": "500 GB",
+            "DataTransferOut": "200 GB/month",
+            "EventTriggers": "S3->SQS",
+            "StorageClass": "Standard",
+            "Region": "us-east-1",
+            "PUT/GETRequestsPerMonth": "50k/150k",
+            "EstimatedMonthlyStorageCost": "~$25"
+          },
+          "description": "S3 bucket for NDJSON outputs and artifacts produced by verdict generation."
+        },
+        {
+          "estimated_yearly_price": 2000,
+          "service_name": "Ingestion Service (Fargate task)",
+          "configurations": {
+            "AvgConcurrentTasks": "3",
+            "vCPU": "1 vCPU per task",
+            "Memory": "2 GB per task",
+            "TaskHoursPerMonth": "3 tasks * 730 hours",
+            "Region": "us-east-1",
+            "EstimatedvCPUHours": "2190 vCPU-hours/month",
+            "EstimatedMonthlyCost": "~$166.67"
+          },
+          "description": "Ingest pipeline component (container on Fargate) handling API and S3 batch ingest."
+        }
+      ]
+    }
+  },
+  "expected_output": {
+    "services": {
+      "s3": [
+        {
+          "description": "S3 bucket for batch ingest and input artifacts.",
+          "region": "us-east-1",
+          "storage_gb": 500,
+          "storage_class": "Standard",
+          "put_requests": 100000,
+          "get_requests": 200000,
+          "data_transfer_out_gb": 100,
+          "data_returned_gb": 0
+        },
+        {
+          "description": "S3 bucket for NDJSON outputs and artifacts produced by verdict generation.",
+          "region": "us-east-1",
+          "storage_gb": 500,
+          "storage_class": "Standard",
+          "put_requests": 50000,
+          "get_requests": 150000,
+          "data_transfer_out_gb": 200,
+          "data_returned_gb": 0
+        }
+      ],
+      "ecs_fargate": [
+        {
+          "description": "Ingest pipeline component (container on Fargate) handling API and S3 batch ingest.",
+          "region": "us-east-1",
+          "number_of_tasks": 3,
+          "average_duration_minutes": 43800,
+          "memory_gb": 2,
+          "ephemeral_storage_gb": 0,
+          "vcpu_per_task": 1,
+          "task_hours_per_month": 2190
+        }
+      ]
+    }
+  }
+}
