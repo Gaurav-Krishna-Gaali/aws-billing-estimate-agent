@@ -13,7 +13,6 @@ from typing import Dict, Any, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from security_groups.comprehensive_security_groups_configurator import ComprehensiveSecurityGroupsConfigurator
 
-
 def load_security_groups_configs() -> Dict[str, Any]:
     """Load Security Groups configurations from JSON file"""
     try:
@@ -23,7 +22,6 @@ def load_security_groups_configs() -> Dict[str, Any]:
     except Exception as e:
         print(f"[ERROR] Failed to load Security Groups configurations: {e}")
         return {}
-
 
 def run_security_groups_config(config_name: str, headless: bool = True) -> Optional[str]:
     """Run Security Groups configuration with specified preset"""
@@ -78,7 +76,6 @@ def run_security_groups_config(config_name: str, headless: bool = True) -> Optio
         browser.close()
         return None
 
-
 def run_all_security_groups_configs(headless: bool = True) -> Dict[str, str]:
     """Run all Security Groups configurations and return URLs"""
     print(f"[INFO] Running all Security Groups configurations...")
@@ -102,7 +99,6 @@ def run_all_security_groups_configs(headless: bool = True) -> Dict[str, str]:
             print(f"[FAILED] {config_name} failed")
     
     return results
-
 
 def list_security_groups_configs():
     """List all available Security Groups configurations"""
@@ -129,7 +125,6 @@ def list_security_groups_configs():
         for setting in key_settings:
             if setting in settings:
                 print(f"    {setting}: {settings[setting]}")
-
 
 def main():
     """Main function with command line interface"""
@@ -170,7 +165,6 @@ def main():
         
         # Show available configurations
         list_security_groups_configs()
-
 
 if __name__ == "__main__":
     main()

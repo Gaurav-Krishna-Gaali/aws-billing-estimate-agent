@@ -13,7 +13,6 @@ from typing import Dict, Any, List, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class ComprehensiveAWSShieldConfigurator(BaseAWSConfigurator):
     """Comprehensive AWS Shield configuration class handling all 36 elements"""
     
@@ -101,7 +100,6 @@ class ComprehensiveAWSShieldConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to apply AWS Shield configuration: {e}")
             return False
 
-
 def main():
     """Test the comprehensive AWS Shield configurator"""
     from playwright.sync_api import sync_playwright
@@ -141,7 +139,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

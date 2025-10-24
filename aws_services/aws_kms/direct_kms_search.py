@@ -4,7 +4,6 @@ Direct search for AWS Key Management Service
 
 from playwright.sync_api import sync_playwright
 
-
 def direct_kms_search():
     """Direct search for AWS Key Management Service"""
     print("[INFO] Direct search for AWS Key Management Service...")
@@ -108,7 +107,6 @@ def direct_kms_search():
         
         browser.close()
 
-
 def main():
     """Main function"""
     print("[INFO] Direct AWS Key Management Service Search")
@@ -121,7 +119,6 @@ def main():
     else:
         print("\n[INFO] AWS Key Management Service not found")
         print("[INFO] KMS might not be available as a standalone service in AWS Calculator")
-
 
 if __name__ == "__main__":
     main()

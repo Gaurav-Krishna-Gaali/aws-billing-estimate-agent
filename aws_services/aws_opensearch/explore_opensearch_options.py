@@ -13,7 +13,6 @@ from typing import Dict, Any, List, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class OpenSearchExplorer(BaseAWSConfigurator):
     """Explorer for AWS OpenSearch dynamic options"""
     
@@ -230,7 +229,6 @@ class OpenSearchExplorer(BaseAWSConfigurator):
         except Exception as e:
             print(f"[ERROR] Could not save results: {e}")
 
-
 def main():
     """Main exploration function"""
     print("[INFO] AWS OpenSearch Options Explorer")
@@ -269,7 +267,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

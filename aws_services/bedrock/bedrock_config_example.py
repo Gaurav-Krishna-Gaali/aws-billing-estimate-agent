@@ -7,7 +7,6 @@ from playwright.sync_api import sync_playwright
 from aws_bedrock_configurator import BedrockConfigurator
 import json
 
-
 def load_element_map(filename: str = "bedrock_elements_map.json") -> dict:
     """Load the element map from JSON file"""
     try:
@@ -16,7 +15,6 @@ def load_element_map(filename: str = "bedrock_elements_map.json") -> dict:
     except FileNotFoundError:
         print(f"[ERROR] Element map file {filename} not found. Run aws_bedrock_configurator.py first.")
         return {}
-
 
 def create_bedrock_configs():
     """Create different Bedrock configuration examples"""
@@ -106,7 +104,6 @@ def create_bedrock_configs():
     
     return configs
 
-
 def print_config_summary(configs: dict):
     """Print a summary of available configurations"""
     print("\n" + "="*70)
@@ -126,7 +123,6 @@ def print_config_summary(configs: dict):
             print(f"   - Model 2: {settings['input_12_text']} req/min, {settings['input_13_text']} hrs/day")
         if 'input_16_text' in settings:
             print(f"   - Model 3: {settings['input_16_text']} req/min, {settings['input_17_text']} hrs/day")
-
 
 def apply_configuration(configurator: BedrockConfigurator, config: dict) -> bool:
     """Apply a specific configuration to Bedrock"""
@@ -170,7 +166,6 @@ def apply_configuration(configurator: BedrockConfigurator, config: dict) -> bool
     except Exception as e:
         print(f"[ERROR] Failed to apply configuration: {e}")
         return False
-
 
 def main():
     """Main function to demonstrate Bedrock configuration"""
@@ -241,7 +236,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

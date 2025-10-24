@@ -155,7 +155,6 @@ custom_config = {
 ### Generated Files
 - **`bedrock_light_usage_url.txt`** - Contains the estimate URL
 - **`bedrock_elements_map.json`** - Complete element mapping
-- **Screenshots** - Debug screenshots saved during execution
 
 ### Success Metrics
 - ✅ **100% success rate** for navigation and configuration

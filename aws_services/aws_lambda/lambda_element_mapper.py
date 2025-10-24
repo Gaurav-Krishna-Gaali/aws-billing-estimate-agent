@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class AWSLambdaConfigurator(BaseAWSConfigurator):
     """AWS Lambda configuration class"""
     
@@ -53,7 +52,6 @@ class AWSLambdaConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to AWS Lambda config: {e}")
             return False
 
-
 def map_aws_lambda_elements():
     """Map all AWS Lambda configuration elements"""
     print("[INFO] Starting AWS Lambda Element Mapping...")
@@ -76,14 +74,10 @@ def map_aws_lambda_elements():
             
             # Save element map
             configurator.save_element_map("lambda_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("aws_lambda_config_page.png")
-            
+
             print("\n[SUCCESS] AWS Lambda element mapping completed!")
             print("[INFO] Files created:")
             print("  - lambda_elements_map.json (complete element mapping)")
-            print("  - aws_lambda_config_page.png (screenshot for reference)")
             
         else:
             print("[ERROR] Failed to navigate to AWS Lambda configuration page")
@@ -94,7 +88,6 @@ def map_aws_lambda_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -135,7 +128,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_aws_lambda_capabilities(elements):
     """Analyze what AWS Lambda configuration capabilities we have"""
@@ -212,7 +204,6 @@ def analyze_aws_lambda_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] AWS Lambda Element Mapper - Discovering ALL AWS Lambda Configuration Options")
@@ -233,7 +224,6 @@ def main():
             
             # Save files
             configurator.save_element_map("lambda_elements_map.json")
-            configurator.take_screenshot("aws_lambda_config_page.png")
             
             print(f"\n[SUCCESS] AWS Lambda element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
@@ -247,7 +237,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

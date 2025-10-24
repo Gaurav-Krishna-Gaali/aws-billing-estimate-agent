@@ -4,7 +4,6 @@ Simple KMS service check
 
 from playwright.sync_api import sync_playwright
 
-
 def check_kms_availability():
     """Check if KMS is available in AWS Calculator"""
     print("[INFO] Checking KMS availability in AWS Calculator...")
@@ -84,7 +83,6 @@ def check_kms_availability():
         
         browser.close()
 
-
 def main():
     """Main function"""
     print("[INFO] AWS KMS Availability Check")
@@ -102,7 +100,6 @@ def main():
         print("  - Key storage (customer managed keys)")
         print("  - Key usage (requests per month)")
         print("  - Data transfer (if applicable)")
-
 
 if __name__ == "__main__":
     main()

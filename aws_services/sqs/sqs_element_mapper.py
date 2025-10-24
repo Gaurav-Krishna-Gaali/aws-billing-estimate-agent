@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class SQSConfigurator(BaseAWSConfigurator):
     """SQS configuration class"""
     
@@ -45,7 +44,6 @@ class SQSConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to SQS config: {e}")
             return False
 
-
 def map_sqs_elements():
     """Map all SQS configuration elements"""
     print("[INFO] Starting SQS Element Mapping...")
@@ -68,16 +66,9 @@ def map_sqs_elements():
             
             # Save element map
             configurator.save_element_map("sqs_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("sqs_config_page.png")
-            
             print("\n[SUCCESS] SQS element mapping completed!")
             print("[INFO] Files created:")
-            print("  - sqs_elements_map.json (complete element mapping)")
-            print("  - sqs_config_page.png (screenshot for reference)")
-            
-        else:
+            print("  - sqs_elements_map.json (complete element mapping)")        else:
             print("[ERROR] Failed to navigate to SQS configuration page")
         
         try:
@@ -86,7 +77,6 @@ def map_sqs_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -127,7 +117,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_sqs_capabilities(elements):
     """Analyze what SQS configuration capabilities we have"""
@@ -204,7 +193,6 @@ def analyze_sqs_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] SQS Element Mapper - Discovering ALL SQS Configuration Options")
@@ -224,10 +212,7 @@ def main():
             analyze_sqs_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("sqs_elements_map.json")
-            configurator.take_screenshot("sqs_config_page.png")
-            
-            print(f"\n[SUCCESS] SQS element mapping completed!")
+            configurator.save_element_map("sqs_elements_map.json")            print(f"\n[SUCCESS] SQS element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
@@ -239,7 +224,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

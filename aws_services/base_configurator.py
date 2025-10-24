@@ -8,7 +8,6 @@ from typing import Dict, Any, List, Optional
 import time
 import json
 
-
 class BaseAWSConfigurator:
     """Base class for AWS service configuration with common helper methods"""
     
@@ -327,17 +326,4 @@ class BaseAWSConfigurator:
         except Exception as e:
             print(f"[ERROR] Failed to save configuration: {e}")
             return ""
-    
-    def take_screenshot(self, filename: str = None) -> bool:
-        """Take a screenshot of the current page"""
-        if filename is None:
-            filename = f"{self.service_name.lower()}_config_screenshot.png"
-        
-        try:
-            self.page.screenshot(path=filename, full_page=True)
-            print(f"[SCREENSHOT] Screenshot saved as {filename}")
-            return True
-        except Exception as e:
-            print(f"[ERROR] Failed to take screenshot: {e}")
-            return False
 

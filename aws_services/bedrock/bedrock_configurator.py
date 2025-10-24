@@ -7,7 +7,6 @@ from playwright.sync_api import Page, TimeoutError as PWTimeout
 from typing import Dict, Any, List, Optional
 import time
 
-
 class BedrockConfigurator:
     """Comprehensive Bedrock configuration class with all page elements mapped"""
     
@@ -368,7 +367,6 @@ class BedrockConfigurator:
             print(f"[ERROR] Failed to save configuration: {e}")
             return ""
 
-
 def main():
     """Test the BedrockConfigurator class"""
     from playwright.sync_api import sync_playwright
@@ -405,7 +403,6 @@ def main():
         
         input("Press Enter to close browser...")
         browser.close()
-
 
 if __name__ == "__main__":
     main()

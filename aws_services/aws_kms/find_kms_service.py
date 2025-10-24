@@ -10,7 +10,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 def find_kms_service():
     """Find KMS service in AWS Calculator"""
     print("[INFO] Finding KMS service in AWS Calculator...")
@@ -84,7 +83,6 @@ def find_kms_service():
         
         browser.close()
 
-
 def main():
     """Main function"""
     print("[INFO] AWS KMS Service Finder")
@@ -98,7 +96,6 @@ def main():
         print("\n[INFO] No dedicated KMS service found")
         print("[INFO] KMS costs are typically included in other AWS services")
         print("[INFO] KMS pricing is usually based on API calls and key usage")
-
 
 if __name__ == "__main__":
     main()

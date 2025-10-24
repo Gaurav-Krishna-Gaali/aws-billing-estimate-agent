@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class APIGatewayConfigurator(BaseAWSConfigurator):
     """API Gateway configuration class"""
     
@@ -45,7 +44,6 @@ class APIGatewayConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to API Gateway config: {e}")
             return False
 
-
 def map_api_gateway_elements():
     """Map all API Gateway configuration elements"""
     print("[INFO] Starting API Gateway Element Mapping...")
@@ -68,14 +66,10 @@ def map_api_gateway_elements():
             
             # Save element map
             configurator.save_element_map("api_gateway_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("api_gateway_config_page.png")
-            
+
             print("\n[SUCCESS] API Gateway element mapping completed!")
             print("[INFO] Files created:")
             print("  - api_gateway_elements_map.json (complete element mapping)")
-            print("  - api_gateway_config_page.png (screenshot for reference)")
             
         else:
             print("[ERROR] Failed to navigate to API Gateway configuration page")
@@ -86,7 +80,6 @@ def map_api_gateway_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -127,7 +120,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_api_gateway_capabilities(elements):
     """Analyze what API Gateway configuration capabilities we have"""
@@ -204,7 +196,6 @@ def analyze_api_gateway_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] API Gateway Element Mapper - Discovering ALL API Gateway Configuration Options")
@@ -225,7 +216,6 @@ def main():
             
             # Save files
             configurator.save_element_map("api_gateway_elements_map.json")
-            configurator.take_screenshot("api_gateway_config_page.png")
             
             print(f"\n[SUCCESS] API Gateway element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
@@ -239,7 +229,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

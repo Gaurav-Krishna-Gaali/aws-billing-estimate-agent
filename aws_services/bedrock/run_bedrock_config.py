@@ -7,7 +7,6 @@ import json
 from playwright.sync_api import sync_playwright
 from aws_bedrock_configurator import BedrockConfigurator
 
-
 def load_configs(filename: str = "bedrock_configs.json") -> dict:
     """Load configurations from JSON file"""
     try:
@@ -16,7 +15,6 @@ def load_configs(filename: str = "bedrock_configs.json") -> dict:
     except FileNotFoundError:
         print(f"[ERROR] Configuration file {filename} not found.")
         return {}
-
 
 def print_config_menu(configs: dict):
     """Print configuration menu"""
@@ -30,7 +28,6 @@ def print_config_menu(configs: dict):
         print(f"\n{i}. {config['name']}")
         print(f"   Description: {config['description']}")
         print(f"   Estimated Cost: {config.get('estimated_monthly_cost', 'TBD')}")
-
 
 def apply_config(configurator: BedrockConfigurator, config: dict) -> bool:
     """Apply configuration to Bedrock"""
@@ -67,7 +64,6 @@ def apply_config(configurator: BedrockConfigurator, config: dict) -> bool:
     except Exception as e:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
-
 
 def main():
     """Main function"""
@@ -130,7 +126,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

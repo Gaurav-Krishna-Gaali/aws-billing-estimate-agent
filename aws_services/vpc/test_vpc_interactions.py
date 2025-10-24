@@ -13,7 +13,6 @@ from typing import Dict, Any, List
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from vpc.enhanced_vpc_configurator import EnhancedVPCConfigurator
 
-
 def test_vpc_element_discovery():
     """Test discovering all VPC configuration elements"""
     print(f"\n{'='*80}")
@@ -51,7 +50,6 @@ def test_vpc_element_discovery():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def test_radio_button_interactions():
     """Test radio button interaction capabilities"""
@@ -101,7 +99,6 @@ def test_radio_button_interactions():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def test_dropdown_interactions():
     """Test dropdown interaction capabilities"""
@@ -159,7 +156,6 @@ def test_dropdown_interactions():
         
         browser.close()
 
-
 def test_input_field_interactions():
     """Test input field interaction capabilities"""
     print(f"\n{'='*80}")
@@ -210,7 +206,6 @@ def test_input_field_interactions():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def test_checkbox_interactions():
     """Test checkbox interaction capabilities"""
@@ -265,7 +260,6 @@ def test_checkbox_interactions():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def test_comprehensive_configuration():
     """Test comprehensive VPC configuration with all element types"""
@@ -352,7 +346,6 @@ def test_comprehensive_configuration():
         
         browser.close()
 
-
 def print_detailed_summary(options: Dict[str, Any]):
     """Print detailed summary of discovered elements"""
     print(f"\n{'='*80}")
@@ -385,7 +378,6 @@ def print_detailed_summary(options: Dict[str, Any]):
     
     print(f"\nTOTAL INTERACTIVE ELEMENTS: {options.get('total_elements', 0)}")
 
-
 def main():
     """Main test function"""
     print("[INFO] VPC Interaction Capabilities Test Suite")
@@ -409,7 +401,6 @@ def main():
     print("  ✅ Checkboxes - Toggle by identifier")
     print("  ✅ Dynamic Elements - Discover and interact with all available options")
     print("  ✅ Comprehensive Configuration - Apply complex multi-element configurations")
-
 
 if __name__ == "__main__":
     main()

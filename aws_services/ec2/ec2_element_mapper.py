@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class EC2Configurator(BaseAWSConfigurator):
     """EC2 configuration class"""
     
@@ -53,7 +52,6 @@ class EC2Configurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to EC2 config: {e}")
             return False
 
-
 def map_ec2_elements():
     """Map all EC2 configuration elements"""
     print("[INFO] Starting EC2 Element Mapping...")
@@ -76,16 +74,9 @@ def map_ec2_elements():
             
             # Save element map
             configurator.save_element_map("ec2_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("ec2_config_page.png")
-            
             print("\n[SUCCESS] EC2 element mapping completed!")
             print("[INFO] Files created:")
-            print("  - ec2_elements_map.json (complete element mapping)")
-            print("  - ec2_config_page.png (screenshot for reference)")
-            
-        else:
+            print("  - ec2_elements_map.json (complete element mapping)")        else:
             print("[ERROR] Failed to navigate to EC2 configuration page")
         
         try:
@@ -94,7 +85,6 @@ def map_ec2_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -135,7 +125,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_ec2_capabilities(elements):
     """Analyze what EC2 configuration capabilities we have"""
@@ -212,7 +201,6 @@ def analyze_ec2_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] EC2 Element Mapper - Discovering ALL EC2 Configuration Options")
@@ -232,10 +220,7 @@ def main():
             analyze_ec2_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("ec2_elements_map.json")
-            configurator.take_screenshot("ec2_config_page.png")
-            
-            print(f"\n[SUCCESS] EC2 element mapping completed!")
+            configurator.save_element_map("ec2_elements_map.json")            print(f"\n[SUCCESS] EC2 element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
@@ -247,7 +232,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

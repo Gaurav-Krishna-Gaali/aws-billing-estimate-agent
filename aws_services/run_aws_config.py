@@ -27,7 +27,6 @@ from aws_lambda.comprehensive_aws_lambda_configurator import ComprehensiveAWSLam
 from vpc.comprehensive_vpc_configurator import ComprehensiveVPCConfigurator
 from security_groups.comprehensive_security_groups_configurator import ComprehensiveSecurityGroupsConfigurator
 
-
 def load_service_configs(service: str) -> dict:
     """Load configurations for a specific service"""
     config_file = f"{service}/{service}_configs.json"
@@ -37,7 +36,6 @@ def load_service_configs(service: str) -> dict:
     except FileNotFoundError:
         print(f"[ERROR] Configuration file {config_file} not found.")
         return {}
-
 
 def print_service_menu(service: str, configs: dict):
     """Print configuration menu for a service"""
@@ -51,7 +49,6 @@ def print_service_menu(service: str, configs: dict):
         print(f"\n{i}. {config['name']}")
         print(f"   Description: {config['description']}")
         print(f"   Estimated Cost: {config.get('estimated_monthly_cost', 'TBD')}")
-
 
 def run_bedrock_config(config_name: str = "light_usage", headless: bool = False):
     """Run Bedrock configuration"""
@@ -91,7 +88,6 @@ def run_bedrock_config(config_name: str = "light_usage", headless: bool = False)
         browser.close()
         return None
 
-
 def run_s3_config(config_name: str = "small_bucket", headless: bool = False):
     """Run S3 configuration"""
     print(f"[INFO] Running S3 configuration: {config_name}")
@@ -130,7 +126,6 @@ def run_s3_config(config_name: str = "small_bucket", headless: bool = False):
         browser.close()
         return None
 
-
 def run_iam_config(config_name: str = "development_testing", headless: bool = False):
     """Run IAM configuration"""
     print(f"[INFO] Running IAM configuration: {config_name}")
@@ -168,7 +163,6 @@ def run_iam_config(config_name: str = "development_testing", headless: bool = Fa
         
         browser.close()
         return None
-
 
 def apply_bedrock_config_robust(configurator, config: dict) -> bool:
     """Apply Bedrock configuration using robust selectors"""
@@ -235,7 +229,6 @@ def apply_bedrock_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def apply_s3_config_robust(configurator, config: dict) -> bool:
     """Apply S3 configuration using robust selectors"""
     try:
@@ -275,7 +268,6 @@ def apply_s3_config_robust(configurator, config: dict) -> bool:
     except Exception as e:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
-
 
 def apply_iam_config_robust(configurator, config: dict) -> bool:
     """Apply IAM configuration using robust selectors"""
@@ -319,7 +311,6 @@ def apply_iam_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_cloudwatch_config(config_name: str = "development_testing", headless: bool = False):
     """Run CloudWatch configuration"""
     print(f"[INFO] Running CloudWatch configuration: {config_name}")
@@ -357,7 +348,6 @@ def run_cloudwatch_config(config_name: str = "development_testing", headless: bo
         
         browser.close()
         return None
-
 
 def apply_cloudwatch_config_robust(configurator, config: dict) -> bool:
     """Apply CloudWatch configuration using robust selectors"""
@@ -428,7 +418,6 @@ def apply_cloudwatch_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_waf_config(config_name: str = "development_testing", headless: bool = False):
     """Run WAF configuration"""
     print(f"[INFO] Running WAF configuration: {config_name}")
@@ -466,7 +455,6 @@ def run_waf_config(config_name: str = "development_testing", headless: bool = Fa
         
         browser.close()
         return None
-
 
 def apply_waf_config_robust(configurator, config: dict) -> bool:
     """Apply WAF configuration using robust selectors"""
@@ -509,7 +497,6 @@ def apply_waf_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_api_gateway_config(config_name: str = "development_testing", headless: bool = False):
     """Run API Gateway configuration"""
     print(f"[INFO] Running API Gateway configuration: {config_name}")
@@ -547,7 +534,6 @@ def run_api_gateway_config(config_name: str = "development_testing", headless: b
         
         browser.close()
         return None
-
 
 def apply_api_gateway_config_robust(configurator, config: dict) -> bool:
     """Apply API Gateway configuration using robust selectors"""
@@ -591,7 +577,6 @@ def apply_api_gateway_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_alb_config(config_name: str = "development_testing", headless: bool = False):
     """Run ALB configuration"""
     print(f"[INFO] Running ALB configuration: {config_name}")
@@ -629,7 +614,6 @@ def run_alb_config(config_name: str = "development_testing", headless: bool = Fa
         
         browser.close()
         return None
-
 
 def apply_alb_config_robust(configurator, config: dict) -> bool:
     """Apply ALB configuration using robust selectors"""
@@ -690,7 +674,6 @@ def apply_alb_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_ecs_fargate_config(config_name: str = "development_testing", headless: bool = False):
     """Run ECS Fargate configuration"""
     print(f"[INFO] Running ECS Fargate configuration: {config_name}")
@@ -728,7 +711,6 @@ def run_ecs_fargate_config(config_name: str = "development_testing", headless: b
         
         browser.close()
         return None
-
 
 def apply_ecs_fargate_config_robust(configurator, config: dict) -> bool:
     """Apply ECS Fargate configuration using robust selectors"""
@@ -769,7 +751,6 @@ def apply_ecs_fargate_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_sqs_config(config_name: str = "development_testing", headless: bool = False):
     """Run SQS configuration"""
     print(f"[INFO] Running SQS configuration: {config_name}")
@@ -807,7 +788,6 @@ def run_sqs_config(config_name: str = "development_testing", headless: bool = Fa
         
         browser.close()
         return None
-
 
 def apply_sqs_config_robust(configurator, config: dict) -> bool:
     """Apply SQS configuration using robust selectors"""
@@ -868,7 +848,6 @@ def apply_sqs_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_aws_shield_config(config_name: str = "development_testing", headless: bool = False):
     """Run AWS Shield configuration"""
     print(f"[INFO] Running AWS Shield configuration: {config_name}")
@@ -906,7 +885,6 @@ def run_aws_shield_config(config_name: str = "development_testing", headless: bo
         
         browser.close()
         return None
-
 
 def apply_aws_shield_config_robust(configurator, config: dict) -> bool:
     """Apply AWS Shield configuration using robust selectors"""
@@ -947,7 +925,6 @@ def apply_aws_shield_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_ec2_config(config_name: str = "development_environment", headless: bool = False):
     """Run EC2 configuration"""
     print(f"[INFO] Running EC2 configuration: {config_name}")
@@ -985,7 +962,6 @@ def run_ec2_config(config_name: str = "development_environment", headless: bool 
         
         browser.close()
         return None
-
 
 def apply_ec2_config_robust(configurator, config: dict) -> bool:
     """Apply EC2 configuration using robust selectors"""
@@ -1059,7 +1035,6 @@ def apply_ec2_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_vpc_config(config_name: str = "basic_vpc", headless: bool = False):
     """Run VPC configuration"""
     print(f"[INFO] Running VPC configuration: {config_name}")
@@ -1097,7 +1072,6 @@ def run_vpc_config(config_name: str = "basic_vpc", headless: bool = False):
         
         browser.close()
         return None
-
 
 def apply_vpc_config_robust(configurator, config: dict) -> bool:
     """Apply VPC configuration using robust selectors"""
@@ -1186,7 +1160,6 @@ def apply_vpc_config_robust(configurator, config: dict) -> bool:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_security_groups_config(config_name: str = "basic_security_groups", headless: bool = False):
     """Run Security Groups configuration"""
     print(f"[INFO] Running Security Groups configuration: {config_name}")
@@ -1224,7 +1197,6 @@ def run_security_groups_config(config_name: str = "basic_security_groups", headl
         
         browser.close()
         return None
-
 
 def apply_security_groups_config_robust(configurator, config: dict) -> bool:
     """Apply Security Groups configuration using robust selectors"""
@@ -1323,7 +1295,6 @@ def apply_security_groups_config_robust(configurator, config: dict) -> bool:
     except Exception as e:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
-
 
 def main():
     """Main function"""
@@ -1457,7 +1428,6 @@ def main():
         print(f"[SUCCESS] Security Groups: {security_groups_url}")
     else:
         print(f"[FAILED] Security Groups configuration failed")
-
 
 if __name__ == "__main__":
     main()

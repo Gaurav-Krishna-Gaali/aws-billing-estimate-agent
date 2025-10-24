@@ -4,7 +4,6 @@ Search for Amazon Virtual Private Cloud (VPC) in AWS Calculator
 
 from playwright.sync_api import sync_playwright
 
-
 def search_amazon_vpc():
     """Search for Amazon VPC service"""
     print("[INFO] Searching for 'Amazon Virtual Private Cloud (VPC)'...")
@@ -136,7 +135,6 @@ def search_amazon_vpc():
         
         browser.close()
 
-
 def main():
     """Main function"""
     print("[INFO] Amazon VPC Service Searcher")
@@ -150,7 +148,6 @@ def main():
     else:
         print("\n[INFO] Amazon VPC not found")
         print("[INFO] VPC might be included in other services or not available as standalone")
-
 
 if __name__ == "__main__":
     main()

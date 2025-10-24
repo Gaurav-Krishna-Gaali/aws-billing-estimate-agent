@@ -13,7 +13,6 @@ from typing import Dict, Any, List, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class ComprehensiveOpenSearchDiscovery(BaseAWSConfigurator):
     """Comprehensive discovery for AWS OpenSearch elements"""
     
@@ -268,7 +267,6 @@ class ComprehensiveOpenSearchDiscovery(BaseAWSConfigurator):
         except Exception as e:
             print(f"[ERROR] Could not save results: {e}")
 
-
 def main():
     """Main discovery function"""
     print("[INFO] Comprehensive AWS OpenSearch Discovery")
@@ -316,7 +314,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

@@ -7,7 +7,6 @@ import json
 from playwright.sync_api import sync_playwright
 from aws_bedrock_configurator import BedrockConfigurator
 
-
 def load_configs(filename: str = "bedrock_configs.json") -> dict:
     """Load configurations from JSON file"""
     try:
@@ -16,7 +15,6 @@ def load_configs(filename: str = "bedrock_configs.json") -> dict:
     except FileNotFoundError:
         print(f"[ERROR] Configuration file {filename} not found.")
         return {}
-
 
 def apply_config_robust(configurator: BedrockConfigurator, config: dict) -> bool:
     """Apply configuration using robust selectors"""
@@ -84,7 +82,6 @@ def apply_config_robust(configurator: BedrockConfigurator, config: dict) -> bool
         print(f"[ERROR] Failed to apply config: {e}")
         return False
 
-
 def run_configuration(config_name: str = "light_usage", headless: bool = False):
     """Run a specific Bedrock configuration"""
     print(f"[INFO] Running Bedrock configuration: {config_name}")
@@ -134,7 +131,6 @@ def run_configuration(config_name: str = "light_usage", headless: bool = False):
         browser.close()
         return None
 
-
 def main():
     """Main function - runs light_usage configuration by default"""
     print("[INFO] Robust Bedrock Configuration")
@@ -147,7 +143,6 @@ def main():
         print(f"[URL] Your Bedrock estimate URL: {url}")
     else:
         print("\n[ERROR] Configuration failed")
-
 
 if __name__ == "__main__":
     main()

@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class AWSShieldConfigurator(BaseAWSConfigurator):
     """AWS Shield configuration class"""
     
@@ -45,7 +44,6 @@ class AWSShieldConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to AWS Shield config: {e}")
             return False
 
-
 def map_aws_shield_elements():
     """Map all AWS Shield configuration elements"""
     print("[INFO] Starting AWS Shield Element Mapping...")
@@ -68,16 +66,9 @@ def map_aws_shield_elements():
             
             # Save element map
             configurator.save_element_map("shield_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("aws_shield_config_page.png")
-            
             print("\n[SUCCESS] AWS Shield element mapping completed!")
             print("[INFO] Files created:")
-            print("  - shield_elements_map.json (complete element mapping)")
-            print("  - aws_shield_config_page.png (screenshot for reference)")
-            
-        else:
+            print("  - shield_elements_map.json (complete element mapping)")        else:
             print("[ERROR] Failed to navigate to AWS Shield configuration page")
         
         try:
@@ -86,7 +77,6 @@ def map_aws_shield_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -127,7 +117,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_aws_shield_capabilities(elements):
     """Analyze what AWS Shield configuration capabilities we have"""
@@ -204,7 +193,6 @@ def analyze_aws_shield_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] AWS Shield Element Mapper - Discovering ALL AWS Shield Configuration Options")
@@ -224,10 +212,7 @@ def main():
             analyze_aws_shield_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("shield_elements_map.json")
-            configurator.take_screenshot("aws_shield_config_page.png")
-            
-            print(f"\n[SUCCESS] AWS Shield element mapping completed!")
+            configurator.save_element_map("shield_elements_map.json")            print(f"\n[SUCCESS] AWS Shield element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
@@ -239,7 +224,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

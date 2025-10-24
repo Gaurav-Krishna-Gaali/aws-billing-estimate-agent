@@ -12,7 +12,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from comprehensive_ecs_fargate_configurator import ComprehensiveECSFargateConfigurator
 
-
 def test_fargate_configuration():
     """Test ECS Fargate configuration with the provided data"""
     
@@ -126,7 +125,6 @@ def test_fargate_configuration():
         browser.close()
         return None
 
-
 def analyze_fargate_configuration(config):
     """Analyze the Fargate configuration and show what will be configured"""
     print(f"\n[ANALYSIS] Fargate Configuration Analysis")
@@ -167,7 +165,6 @@ def analyze_fargate_configuration(config):
     print(f"  - Data Transfer Cost per TB: ${data_transfer_cost_per_tb}")
     print(f"  - Monthly Data Transfer Cost: ${data_transfer_cost}")
     print(f"  - Yearly Data Transfer Cost: ${data_transfer_cost * 12}")
-
 
 def main():
     """Main function"""
@@ -227,7 +224,6 @@ def main():
         print(f"[INFO] Estimated yearly cost: $60,000")
     else:
         print(f"\n[ERROR] ECS Fargate configuration test failed")
-
 
 if __name__ == "__main__":
     main()

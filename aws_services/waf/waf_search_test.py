@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class WAFSearchTest(BaseAWSConfigurator):
     """WAF search test class"""
     
@@ -52,9 +51,6 @@ class WAFSearchTest(BaseAWSConfigurator):
                 if self.search_and_select_service(term):
                     print(f"[SUCCESS] Found service with term: '{term}'")
                     
-                    # Take screenshot
-                    self.take_screenshot(f"waf_search_{term.replace(' ', '_').lower()}.png")
-                    
                     # Get current URL
                     current_url = self.page.url
                     print(f"[INFO] Current URL: {current_url}")
@@ -73,7 +69,6 @@ class WAFSearchTest(BaseAWSConfigurator):
                 continue
         
         return False
-
 
 def main():
     """Main function"""
@@ -97,7 +92,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

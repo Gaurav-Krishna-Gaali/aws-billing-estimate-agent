@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 def check_security_services():
     """Check what security services are available"""
     with sync_playwright() as p:
@@ -50,7 +49,6 @@ def check_security_services():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     check_security_services()

@@ -17,7 +17,6 @@ from s3.s3_configurator import S3Configurator
 from iam.comprehensive_iam_configurator import ComprehensiveIAMConfigurator
 from cloudwatch.comprehensive_cloudwatch_configurator import ComprehensiveCloudWatchConfigurator
 
-
 def load_json_data(file_path: str = "../sow-analysis-Ody.json") -> dict:
     """Load the JSON data from sow-analysis-Ody.json"""
     try:
@@ -26,7 +25,6 @@ def load_json_data(file_path: str = "../sow-analysis-Ody.json") -> dict:
     except FileNotFoundError:
         print(f"[ERROR] JSON file {file_path} not found.")
         return {}
-
 
 def map_json_to_bedrock_config(json_data: dict) -> dict:
     """Map JSON data to Bedrock configuration"""
@@ -57,7 +55,6 @@ def map_json_to_bedrock_config(json_data: dict) -> dict:
     
     print(f"[INFO] Mapped Bedrock: {config.get('ModelCallsPerMonth', 'N/A')} calls/month")
     return bedrock_config
-
 
 def map_json_to_s3_config(json_data: dict) -> dict:
     """Map JSON data to S3 configuration"""
@@ -105,7 +102,6 @@ def map_json_to_s3_config(json_data: dict) -> dict:
     print(f"[INFO] Mapped S3: {total_storage} GB storage, {total_put_requests:,} PUT, {total_get_requests:,} GET requests")
     return s3_config
 
-
 def map_json_to_iam_config(json_data: dict) -> dict:
     """Map JSON data to IAM configuration"""
     iam_service = None
@@ -139,7 +135,6 @@ def map_json_to_iam_config(json_data: dict) -> dict:
     
     print(f"[INFO] Mapped IAM: {users_roles} users/roles, {managed_policies} policies")
     return iam_config
-
 
 def map_json_to_cloudwatch_config(json_data: dict) -> dict:
     """Map JSON data to CloudWatch configuration"""
@@ -192,7 +187,6 @@ def map_json_to_cloudwatch_config(json_data: dict) -> dict:
     print(f"[INFO] Mapped CloudWatch: {metrics}, {alarms} alarms, {logs_storage} GB logs")
     return cloudwatch_config
 
-
 def test_bedrock_with_json():
     """Test Bedrock configuration with JSON data"""
     print("\n" + "="*60)
@@ -230,7 +224,6 @@ def test_bedrock_with_json():
         
         browser.close()
         return None
-
 
 def test_s3_with_json():
     """Test S3 configuration with JSON data"""
@@ -270,7 +263,6 @@ def test_s3_with_json():
         browser.close()
         return None
 
-
 def test_iam_with_json():
     """Test IAM configuration with JSON data"""
     print("\n" + "="*60)
@@ -309,7 +301,6 @@ def test_iam_with_json():
         browser.close()
         return None
 
-
 def test_cloudwatch_with_json():
     """Test CloudWatch configuration with JSON data"""
     print("\n" + "="*60)
@@ -347,7 +338,6 @@ def test_cloudwatch_with_json():
         
         browser.close()
         return None
-
 
 def main():
     """Main function to test all services with JSON data"""
@@ -405,7 +395,6 @@ def main():
             print(f"[FAILED] {service.upper()}: Configuration failed")
     
     print(f"\n[INFO] JSON data testing completed!")
-
 
 if __name__ == "__main__":
     main()

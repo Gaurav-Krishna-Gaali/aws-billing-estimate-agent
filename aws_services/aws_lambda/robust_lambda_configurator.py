@@ -13,7 +13,6 @@ from typing import Dict, Any, List, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class RobustAWSLambdaConfigurator(BaseAWSConfigurator):
     """Robust AWS Lambda configuration class with enhanced validation"""
     
@@ -310,7 +309,6 @@ class RobustAWSLambdaConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to verify configuration: {e}")
             return False
 
-
 def main():
     """Test the robust AWS Lambda configurator"""
     from playwright.sync_api import sync_playwright
@@ -365,7 +363,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

@@ -12,7 +12,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from s3_configurator import S3Configurator
 
-
 def load_configs(filename: str = "s3_configs.json") -> dict:
     """Load configurations from JSON file"""
     try:
@@ -21,7 +20,6 @@ def load_configs(filename: str = "s3_configs.json") -> dict:
     except FileNotFoundError:
         print(f"[ERROR] Configuration file {filename} not found.")
         return {}
-
 
 def apply_config_robust(configurator: S3Configurator, config: dict) -> bool:
     """Apply configuration using robust selectors"""
@@ -67,7 +65,6 @@ def apply_config_robust(configurator: S3Configurator, config: dict) -> bool:
     except Exception as e:
         print(f"[ERROR] Failed to apply config: {e}")
         return False
-
 
 def run_configuration(config_name: str = "small_bucket", headless: bool = False):
     """Run a specific S3 configuration"""
@@ -118,7 +115,6 @@ def run_configuration(config_name: str = "small_bucket", headless: bool = False)
         browser.close()
         return None
 
-
 def print_config_menu(configs: dict):
     """Print configuration menu"""
     print("\n" + "="*60)
@@ -131,7 +127,6 @@ def print_config_menu(configs: dict):
         print(f"\n{i}. {config['name']}")
         print(f"   Description: {config['description']}")
         print(f"   Estimated Cost: {config.get('estimated_monthly_cost', 'TBD')}")
-
 
 def main():
     """Main function - runs small_bucket configuration by default"""
@@ -150,7 +145,6 @@ def main():
         print(f"[URL] Your S3 estimate URL: {url}")
     else:
         print("\n[ERROR] Configuration failed")
-
 
 if __name__ == "__main__":
     main()

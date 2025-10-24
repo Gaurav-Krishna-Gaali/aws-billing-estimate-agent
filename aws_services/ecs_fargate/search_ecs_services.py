@@ -10,7 +10,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 def search_ecs_services():
     """Search for ECS-related services"""
     with sync_playwright() as p:
@@ -49,7 +48,6 @@ def search_ecs_services():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     search_ecs_services()

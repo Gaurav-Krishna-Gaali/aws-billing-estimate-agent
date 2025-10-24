@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class AmazonVPCConfigurator(BaseAWSConfigurator):
     """Amazon VPC configuration class"""
     
@@ -53,7 +52,6 @@ class AmazonVPCConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to Amazon VPC config: {e}")
             return False
 
-
 def map_amazon_vpc_elements():
     """Map all Amazon VPC configuration elements"""
     print("[INFO] Starting Amazon VPC Element Mapping...")
@@ -76,16 +74,9 @@ def map_amazon_vpc_elements():
             
             # Save element map
             configurator.save_element_map("amazon_vpc_complete_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("amazon_vpc_config_page.png")
-            
             print("\n[SUCCESS] Amazon VPC element mapping completed!")
             print("[INFO] Files created:")
-            print("  - amazon_vpc_complete_elements_map.json (complete element mapping)")
-            print("  - amazon_vpc_config_page.png (screenshot for reference)")
-            
-        else:
+            print("  - amazon_vpc_complete_elements_map.json (complete element mapping)")        else:
             print("[ERROR] Failed to navigate to Amazon VPC configuration page")
         
         try:
@@ -94,7 +85,6 @@ def map_amazon_vpc_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -135,7 +125,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_amazon_vpc_capabilities(elements):
     """Analyze what Amazon VPC configuration capabilities we have"""
@@ -212,7 +201,6 @@ def analyze_amazon_vpc_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] Amazon VPC Element Mapper - Discovering ALL Amazon VPC Configuration Options")
@@ -232,10 +220,7 @@ def main():
             analyze_amazon_vpc_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("amazon_vpc_complete_elements_map.json")
-            configurator.take_screenshot("amazon_vpc_config_page.png")
-            
-            print(f"\n[SUCCESS] Amazon VPC element mapping completed!")
+            configurator.save_element_map("amazon_vpc_complete_elements_map.json")            print(f"\n[SUCCESS] Amazon VPC element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
@@ -247,7 +232,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

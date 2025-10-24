@@ -13,7 +13,6 @@ from typing import Dict, Any, List, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class ComprehensiveWAFConfigurator(BaseAWSConfigurator):
     """Comprehensive WAF configuration class handling all 40 elements"""
     
@@ -119,7 +118,6 @@ class ComprehensiveWAFConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to apply WAF configuration: {e}")
             return False
 
-
 def main():
     """Test the comprehensive WAF configurator"""
     from playwright.sync_api import sync_playwright
@@ -161,7 +159,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

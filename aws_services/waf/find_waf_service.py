@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 def find_waf_service():
     """Find the exact WAF service name"""
     with sync_playwright() as p:
@@ -61,7 +60,6 @@ def find_waf_service():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     find_waf_service()

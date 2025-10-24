@@ -11,7 +11,6 @@ from playwright.sync_api import sync_playwright
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class ALBConfigurator(BaseAWSConfigurator):
     """Application Load Balancer configuration class"""
     
@@ -45,7 +44,6 @@ class ALBConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to ALB config: {e}")
             return False
 
-
 def map_alb_elements():
     """Map all ALB configuration elements"""
     print("[INFO] Starting Application Load Balancer Element Mapping...")
@@ -68,14 +66,10 @@ def map_alb_elements():
             
             # Save element map
             configurator.save_element_map("alb_elements_map.json")
-            
-            # Take screenshot for reference
-            configurator.take_screenshot("alb_config_page.png")
-            
+
             print("\n[SUCCESS] Application Load Balancer element mapping completed!")
             print("[INFO] Files created:")
             print("  - alb_elements_map.json (complete element mapping)")
-            print("  - alb_config_page.png (screenshot for reference)")
             
         else:
             print("[ERROR] Failed to navigate to Application Load Balancer configuration page")
@@ -86,7 +80,6 @@ def map_alb_elements():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
@@ -127,7 +120,6 @@ def print_detailed_summary(elements):
                 print(f"    Checked: {details['checked']}")
             if 'value' in details and details['value']:
                 print(f"    Value: {details['value']}")
-
 
 def analyze_alb_capabilities(elements):
     """Analyze what ALB configuration capabilities we have"""
@@ -204,7 +196,6 @@ def analyze_alb_capabilities(elements):
     if len(action_buttons) > 10:
         print(f"  ... and {len(action_buttons) - 10} more action buttons")
 
-
 def main():
     """Main function"""
     print("[INFO] Application Load Balancer Element Mapper - Discovering ALL ALB Configuration Options")
@@ -225,7 +216,6 @@ def main():
             
             # Save files
             configurator.save_element_map("alb_elements_map.json")
-            configurator.take_screenshot("alb_config_page.png")
             
             print(f"\n[SUCCESS] Application Load Balancer element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
@@ -239,7 +229,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

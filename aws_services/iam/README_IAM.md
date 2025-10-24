@@ -13,7 +13,6 @@ A comprehensive system for automatically configuring AWS IAM Access Analyzer in 
 
 ### Generated Files
 - **`iam_elements_map.json`** - Complete element mapping (created when you run the mapper)
-- **`iam_config_page.png`** - Screenshot for reference
 
 ## 🚀 Quick Start
 
@@ -175,7 +174,6 @@ custom_config = {
 ### Generated Files
 - **`comprehensive_iam_*_url.txt`** - Contains the estimate URL
 - **`iam_elements_map.json`** - Complete element mapping
-- **Screenshots** - Debug screenshots saved during execution
 
 ### Success Metrics
 - ✅ **100% success rate** for navigation and configuration

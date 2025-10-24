@@ -4,7 +4,6 @@ Search for AWS Key Management Service specifically
 
 from playwright.sync_api import sync_playwright
 
-
 def search_aws_key_management_service():
     """Search for AWS Key Management Service"""
     print("[INFO] Searching for 'AWS Key Management Service'...")
@@ -110,7 +109,6 @@ def search_aws_key_management_service():
         
         browser.close()
 
-
 def main():
     """Main function"""
     print("[INFO] AWS Key Management Service Searcher")
@@ -124,7 +122,6 @@ def main():
     else:
         print("\n[INFO] AWS Key Management Service not found")
         print("[INFO] It might be named differently or not available")
-
 
 if __name__ == "__main__":
     main()

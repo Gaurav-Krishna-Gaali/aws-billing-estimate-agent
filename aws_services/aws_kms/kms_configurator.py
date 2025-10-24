@@ -13,7 +13,6 @@ from typing import Dict, Any, List, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
-
 class ComprehensiveAWSKMSConfigurator(BaseAWSConfigurator):
     """Comprehensive AWS KMS configuration class handling all 34 elements"""
     
@@ -136,7 +135,6 @@ class ComprehensiveAWSKMSConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to apply AWS KMS configuration: {e}")
             return False
 
-
 def main():
     """Test the comprehensive AWS KMS configurator"""
     from playwright.sync_api import sync_playwright
@@ -178,7 +176,6 @@ def main():
             print("[INFO] Closing browser...")
         
         browser.close()
-
 
 if __name__ == "__main__":
     main()

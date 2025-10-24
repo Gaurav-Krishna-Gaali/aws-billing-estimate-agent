@@ -13,7 +13,6 @@ from typing import Dict, Any, Optional
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from vpc.comprehensive_vpc_configurator import ComprehensiveVPCConfigurator
 
-
 def load_vpc_configs() -> Dict[str, Any]:
     """Load VPC configurations from JSON file"""
     try:
@@ -23,7 +22,6 @@ def load_vpc_configs() -> Dict[str, Any]:
     except Exception as e:
         print(f"[ERROR] Failed to load VPC configurations: {e}")
         return {}
-
 
 def run_vpc_config(config_name: str, headless: bool = True) -> Optional[str]:
     """Run VPC configuration with specified preset"""
@@ -78,7 +76,6 @@ def run_vpc_config(config_name: str, headless: bool = True) -> Optional[str]:
         browser.close()
         return None
 
-
 def run_all_vpc_configs(headless: bool = True) -> Dict[str, str]:
     """Run all VPC configurations and return URLs"""
     print(f"[INFO] Running all VPC configurations...")
@@ -102,7 +99,6 @@ def run_all_vpc_configs(headless: bool = True) -> Dict[str, str]:
             print(f"[FAILED] {config_name} failed")
     
     return results
-
 
 def list_vpc_configs():
     """List all available VPC configurations"""
@@ -129,7 +125,6 @@ def list_vpc_configs():
         for setting in key_settings:
             if setting in settings:
                 print(f"    {setting}: {settings[setting]}")
-
 
 def main():
     """Main function with command line interface"""
@@ -170,7 +165,6 @@ def main():
         
         # Show available configurations
         list_vpc_configs()
-
 
 if __name__ == "__main__":
     main()
