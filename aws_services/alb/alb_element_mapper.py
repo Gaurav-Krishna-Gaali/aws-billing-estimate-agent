@@ -67,14 +67,14 @@ def map_alb_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("alb_complete_elements_map.json")
+            configurator.save_element_map("alb_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("alb_config_page.png")
             
             print("\n[SUCCESS] Application Load Balancer element mapping completed!")
             print("[INFO] Files created:")
-            print("  - alb_complete_elements_map.json (complete element mapping)")
+            print("  - alb_elements_map.json (complete element mapping)")
             print("  - alb_config_page.png (screenshot for reference)")
             
         else:
@@ -224,7 +224,7 @@ def main():
             analyze_alb_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("alb_complete_elements_map.json")
+            configurator.save_element_map("alb_elements_map.json")
             configurator.take_screenshot("alb_config_page.png")
             
             print(f"\n[SUCCESS] Application Load Balancer element mapping completed!")

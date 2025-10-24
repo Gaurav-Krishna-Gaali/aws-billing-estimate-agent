@@ -59,14 +59,14 @@ def map_waf_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("waf_complete_elements_map.json")
+            configurator.save_element_map("waf_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("waf_config_page.png")
             
             print("\n[SUCCESS] WAF element mapping completed!")
             print("[INFO] Files created:")
-            print("  - waf_complete_elements_map.json (complete element mapping)")
+            print("  - waf_elements_map.json (complete element mapping)")
             print("  - waf_config_page.png (screenshot for reference)")
             
         else:
@@ -216,7 +216,7 @@ def main():
             analyze_waf_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("waf_complete_elements_map.json")
+            configurator.save_element_map("waf_elements_map.json")
             configurator.take_screenshot("waf_config_page.png")
             
             print(f"\n[SUCCESS] WAF element mapping completed!")

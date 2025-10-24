@@ -1,6 +1,6 @@
 """
-IAM Element Mapper
-Discovers and maps ALL interactive elements on the IAM configuration page
+AWS KMS Element Mapper
+Discovers and maps ALL interactive elements on the AWS Key Management Service configuration page
 """
 
 import sys
@@ -12,44 +12,61 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
 
-class IAMConfigurator(BaseAWSConfigurator):
-    """IAM configuration class"""
+class AWSKMSConfigurator(BaseAWSConfigurator):
+    """AWS KMS configuration class"""
     
     def __init__(self, page):
-        super().__init__(page, "IAM")
+        super().__init__(page, "AWS KMS")
     
-    def navigate_to_iam_config(self) -> bool:
-        """Navigate to IAM configuration page"""
+    def navigate_to_aws_kms_config(self) -> bool:
+        """Navigate to AWS KMS configuration page"""
         try:
             # Navigate to calculator
             if not self.navigate_to_calculator():
                 return False
             
-            # Search for AWS IAM Access Analyzer
-            if not self.search_and_select_service("AWS IAM Access Analyzer"):
+            # Click "Add service" button
+            try:
+                self.page.click("text='Add service'")
+                self.page.wait_for_timeout(2000)
+                print("[OK] Clicked 'Add service' button")
+            except Exception as e:
+                print(f"[WARNING] Could not click 'Add service' button: {e}")
+            
+            # Look for "Configure AWS Key Management Service" button directly
+            try:
+                kms_button = self.page.locator("button[aria-label='Configure AWS Key Management Service']")
+                if kms_button.count() > 0:
+                    kms_button.first.click()
+                    self.page.wait_for_timeout(3000)
+                    print("[OK] Clicked 'Configure AWS Key Management Service' button")
+                    print(f"[OK] Successfully navigated to AWS Key Management Service configuration page")
+                    return True
+                else:
+                    print("[ERROR] Could not find 'Configure AWS Key Management Service' button")
+                    return False
+            except Exception as e:
+                print(f"[ERROR] Failed to click KMS button: {e}")
                 return False
             
-            print(f"[OK] Successfully navigated to IAM configuration page")
-            return True
-            
         except Exception as e:
-            print(f"[ERROR] Failed to navigate to IAM config: {e}")
+            print(f"[ERROR] Failed to navigate to AWS KMS config: {e}")
             return False
 
 
-def map_iam_elements():
-    """Map all IAM configuration elements"""
-    print("[INFO] Starting IAM Element Mapping...")
+def map_aws_kms_elements():
+    """Map all AWS KMS configuration elements"""
+    print("[INFO] Starting AWS KMS Element Mapping...")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = IAMConfigurator(page)
+        configurator = AWSKMSConfigurator(page)
         
-        # Navigate to IAM config
-        if configurator.navigate_to_iam_config():
-            print("[INFO] Successfully navigated to IAM configuration page")
+        # Navigate to AWS KMS config
+        if configurator.navigate_to_aws_kms_config():
+            print("[INFO] Successfully navigated to AWS Key Management Service configuration page")
             
             # Map all elements
             elements = configurator.map_all_elements()
@@ -58,18 +75,18 @@ def map_iam_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("iam_elements_map.json")
+            configurator.save_element_map("kms_elements_map.json")
             
             # Take screenshot for reference
-            configurator.take_screenshot("iam_config_page.png")
+            configurator.take_screenshot("aws_kms_config_page.png")
             
-            print("\n[SUCCESS] IAM element mapping completed!")
+            print("\n[SUCCESS] AWS KMS element mapping completed!")
             print("[INFO] Files created:")
-            print("  - iam_elements_map.json (complete element mapping)")
-            print("  - iam_config_page.png (screenshot for reference)")
+            print("  - kms_elements_map.json (complete element mapping)")
+            print("  - aws_kms_config_page.png (screenshot for reference)")
             
         else:
-            print("[ERROR] Failed to navigate to IAM configuration page")
+            print("[ERROR] Failed to navigate to AWS Key Management Service configuration page")
         
         try:
             input("Press Enter to close browser...")
@@ -82,7 +99,7 @@ def map_iam_elements():
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
     print(f"\n{'='*80}")
-    print("COMPLETE IAM CONFIGURATION PAGE ELEMENT MAP")
+    print("COMPLETE AWS KMS CONFIGURATION PAGE ELEMENT MAP")
     print(f"{'='*80}")
     
     total_elements = sum(len(v) for v in elements.values())
@@ -120,10 +137,10 @@ def print_detailed_summary(elements):
                 print(f"    Value: {details['value']}")
 
 
-def analyze_iam_capabilities(elements):
-    """Analyze what IAM configuration capabilities we have"""
+def analyze_aws_kms_capabilities(elements):
+    """Analyze what AWS KMS configuration capabilities we have"""
     print(f"\n{'='*80}")
-    print("IAM CONFIGURATION CAPABILITY ANALYSIS")
+    print("AWS KMS CONFIGURATION CAPABILITY ANALYSIS")
     print(f"{'='*80}")
     
     # Analyze inputs
@@ -186,7 +203,7 @@ def analyze_iam_capabilities(elements):
         text = details.get('text', '')
         aria_label = details.get('aria_label', '')
         
-        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete']):
+        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete', 'kms', 'key', 'encryption', 'decrypt', 'encrypt']):
             action_buttons.append(f"  - {text} ({aria_label})")
     
     print("  Action buttons:")
@@ -198,31 +215,31 @@ def analyze_iam_capabilities(elements):
 
 def main():
     """Main function"""
-    print("[INFO] IAM Element Mapper - Discovering ALL IAM Configuration Options")
+    print("[INFO] AWS KMS Element Mapper - Discovering ALL AWS Key Management Service Configuration Options")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = IAMConfigurator(page)
+        configurator = AWSKMSConfigurator(page)
         
-        if configurator.navigate_to_iam_config():
+        if configurator.navigate_to_aws_kms_config():
             # Map all elements
             elements = configurator.map_all_elements()
             
             # Print detailed analysis
             print_detailed_summary(elements)
-            analyze_iam_capabilities(elements)
+            analyze_aws_kms_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("iam_elements_map.json")
-            configurator.take_screenshot("iam_config_page.png")
+            configurator.save_element_map("kms_elements_map.json")
+            configurator.take_screenshot("aws_kms_config_page.png")
             
-            print(f"\n[SUCCESS] IAM element mapping completed!")
+            print(f"\n[SUCCESS] AWS KMS element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
-            print("[ERROR] Failed to navigate to IAM configuration page")
+            print("[ERROR] Failed to navigate to AWS Key Management Service configuration page")
         
         try:
             input("Press Enter to close browser...")

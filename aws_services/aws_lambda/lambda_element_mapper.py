@@ -1,6 +1,6 @@
 """
-IAM Element Mapper
-Discovers and maps ALL interactive elements on the IAM configuration page
+AWS Lambda Element Mapper
+Discovers and maps ALL interactive elements on the AWS Lambda configuration page
 """
 
 import sys
@@ -12,44 +12,61 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
 
-class IAMConfigurator(BaseAWSConfigurator):
-    """IAM configuration class"""
+class AWSLambdaConfigurator(BaseAWSConfigurator):
+    """AWS Lambda configuration class"""
     
     def __init__(self, page):
-        super().__init__(page, "IAM")
+        super().__init__(page, "AWS Lambda")
     
-    def navigate_to_iam_config(self) -> bool:
-        """Navigate to IAM configuration page"""
+    def navigate_to_aws_lambda_config(self) -> bool:
+        """Navigate to AWS Lambda configuration page"""
         try:
             # Navigate to calculator
             if not self.navigate_to_calculator():
                 return False
             
-            # Search for AWS IAM Access Analyzer
-            if not self.search_and_select_service("AWS IAM Access Analyzer"):
+            # Click "Add service" button
+            try:
+                self.page.click("text='Add service'")
+                self.page.wait_for_timeout(2000)
+                print("[OK] Clicked 'Add service' button")
+            except Exception as e:
+                print(f"[WARNING] Could not click 'Add service' button: {e}")
+            
+            # Look for "Configure AWS Lambda" button directly
+            try:
+                lambda_button = self.page.locator("button[aria-label='Configure AWS Lambda']")
+                if lambda_button.count() > 0:
+                    lambda_button.first.click()
+                    self.page.wait_for_timeout(3000)
+                    print("[OK] Clicked 'Configure AWS Lambda' button")
+                    print(f"[OK] Successfully navigated to AWS Lambda configuration page")
+                    return True
+                else:
+                    print("[ERROR] Could not find 'Configure AWS Lambda' button")
+                    return False
+            except Exception as e:
+                print(f"[ERROR] Failed to click Lambda button: {e}")
                 return False
             
-            print(f"[OK] Successfully navigated to IAM configuration page")
-            return True
-            
         except Exception as e:
-            print(f"[ERROR] Failed to navigate to IAM config: {e}")
+            print(f"[ERROR] Failed to navigate to AWS Lambda config: {e}")
             return False
 
 
-def map_iam_elements():
-    """Map all IAM configuration elements"""
-    print("[INFO] Starting IAM Element Mapping...")
+def map_aws_lambda_elements():
+    """Map all AWS Lambda configuration elements"""
+    print("[INFO] Starting AWS Lambda Element Mapping...")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = IAMConfigurator(page)
+        configurator = AWSLambdaConfigurator(page)
         
-        # Navigate to IAM config
-        if configurator.navigate_to_iam_config():
-            print("[INFO] Successfully navigated to IAM configuration page")
+        # Navigate to AWS Lambda config
+        if configurator.navigate_to_aws_lambda_config():
+            print("[INFO] Successfully navigated to AWS Lambda configuration page")
             
             # Map all elements
             elements = configurator.map_all_elements()
@@ -58,18 +75,18 @@ def map_iam_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("iam_elements_map.json")
+            configurator.save_element_map("lambda_elements_map.json")
             
             # Take screenshot for reference
-            configurator.take_screenshot("iam_config_page.png")
+            configurator.take_screenshot("aws_lambda_config_page.png")
             
-            print("\n[SUCCESS] IAM element mapping completed!")
+            print("\n[SUCCESS] AWS Lambda element mapping completed!")
             print("[INFO] Files created:")
-            print("  - iam_elements_map.json (complete element mapping)")
-            print("  - iam_config_page.png (screenshot for reference)")
+            print("  - lambda_elements_map.json (complete element mapping)")
+            print("  - aws_lambda_config_page.png (screenshot for reference)")
             
         else:
-            print("[ERROR] Failed to navigate to IAM configuration page")
+            print("[ERROR] Failed to navigate to AWS Lambda configuration page")
         
         try:
             input("Press Enter to close browser...")
@@ -82,7 +99,7 @@ def map_iam_elements():
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
     print(f"\n{'='*80}")
-    print("COMPLETE IAM CONFIGURATION PAGE ELEMENT MAP")
+    print("COMPLETE AWS LAMBDA CONFIGURATION PAGE ELEMENT MAP")
     print(f"{'='*80}")
     
     total_elements = sum(len(v) for v in elements.values())
@@ -120,10 +137,10 @@ def print_detailed_summary(elements):
                 print(f"    Value: {details['value']}")
 
 
-def analyze_iam_capabilities(elements):
-    """Analyze what IAM configuration capabilities we have"""
+def analyze_aws_lambda_capabilities(elements):
+    """Analyze what AWS Lambda configuration capabilities we have"""
     print(f"\n{'='*80}")
-    print("IAM CONFIGURATION CAPABILITY ANALYSIS")
+    print("AWS LAMBDA CONFIGURATION CAPABILITY ANALYSIS")
     print(f"{'='*80}")
     
     # Analyze inputs
@@ -186,7 +203,7 @@ def analyze_iam_capabilities(elements):
         text = details.get('text', '')
         aria_label = details.get('aria_label', '')
         
-        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete']):
+        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete', 'lambda', 'function', 'serverless', 'compute', 'memory', 'duration']):
             action_buttons.append(f"  - {text} ({aria_label})")
     
     print("  Action buttons:")
@@ -198,31 +215,31 @@ def analyze_iam_capabilities(elements):
 
 def main():
     """Main function"""
-    print("[INFO] IAM Element Mapper - Discovering ALL IAM Configuration Options")
+    print("[INFO] AWS Lambda Element Mapper - Discovering ALL AWS Lambda Configuration Options")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = IAMConfigurator(page)
+        configurator = AWSLambdaConfigurator(page)
         
-        if configurator.navigate_to_iam_config():
+        if configurator.navigate_to_aws_lambda_config():
             # Map all elements
             elements = configurator.map_all_elements()
             
             # Print detailed analysis
             print_detailed_summary(elements)
-            analyze_iam_capabilities(elements)
+            analyze_aws_lambda_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("iam_elements_map.json")
-            configurator.take_screenshot("iam_config_page.png")
+            configurator.save_element_map("lambda_elements_map.json")
+            configurator.take_screenshot("aws_lambda_config_page.png")
             
-            print(f"\n[SUCCESS] IAM element mapping completed!")
+            print(f"\n[SUCCESS] AWS Lambda element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
-            print("[ERROR] Failed to navigate to IAM configuration page")
+            print("[ERROR] Failed to navigate to AWS Lambda configuration page")
         
         try:
             input("Press Enter to close browser...")

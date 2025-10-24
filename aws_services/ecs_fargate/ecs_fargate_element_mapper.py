@@ -67,14 +67,14 @@ def map_ecs_fargate_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("ecs_fargate_complete_elements_map.json")
+            configurator.save_element_map("ecs_fargate_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("ecs_fargate_config_page.png")
             
             print("\n[SUCCESS] ECS Fargate element mapping completed!")
             print("[INFO] Files created:")
-            print("  - ecs_fargate_complete_elements_map.json (complete element mapping)")
+            print("  - ecs_fargate_elements_map.json (complete element mapping)")
             print("  - ecs_fargate_config_page.png (screenshot for reference)")
             
         else:
@@ -224,7 +224,7 @@ def main():
             analyze_ecs_fargate_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("ecs_fargate_complete_elements_map.json")
+            configurator.save_element_map("ecs_fargate_elements_map.json")
             configurator.take_screenshot("ecs_fargate_config_page.png")
             
             print(f"\n[SUCCESS] ECS Fargate element mapping completed!")

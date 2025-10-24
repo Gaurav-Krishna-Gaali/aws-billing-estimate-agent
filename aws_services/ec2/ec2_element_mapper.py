@@ -75,14 +75,14 @@ def map_ec2_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("ec2_complete_elements_map.json")
+            configurator.save_element_map("ec2_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("ec2_config_page.png")
             
             print("\n[SUCCESS] EC2 element mapping completed!")
             print("[INFO] Files created:")
-            print("  - ec2_complete_elements_map.json (complete element mapping)")
+            print("  - ec2_elements_map.json (complete element mapping)")
             print("  - ec2_config_page.png (screenshot for reference)")
             
         else:
@@ -232,7 +232,7 @@ def main():
             analyze_ec2_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("ec2_complete_elements_map.json")
+            configurator.save_element_map("ec2_elements_map.json")
             configurator.take_screenshot("ec2_config_page.png")
             
             print(f"\n[SUCCESS] EC2 element mapping completed!")

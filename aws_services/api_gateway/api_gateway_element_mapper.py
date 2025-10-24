@@ -67,14 +67,14 @@ def map_api_gateway_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("api_gateway_complete_elements_map.json")
+            configurator.save_element_map("api_gateway_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("api_gateway_config_page.png")
             
             print("\n[SUCCESS] API Gateway element mapping completed!")
             print("[INFO] Files created:")
-            print("  - api_gateway_complete_elements_map.json (complete element mapping)")
+            print("  - api_gateway_elements_map.json (complete element mapping)")
             print("  - api_gateway_config_page.png (screenshot for reference)")
             
         else:
@@ -224,7 +224,7 @@ def main():
             analyze_api_gateway_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("api_gateway_complete_elements_map.json")
+            configurator.save_element_map("api_gateway_elements_map.json")
             configurator.take_screenshot("api_gateway_config_page.png")
             
             print(f"\n[SUCCESS] API Gateway element mapping completed!")

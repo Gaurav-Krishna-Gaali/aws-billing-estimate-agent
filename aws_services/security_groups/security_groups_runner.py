@@ -11,7 +11,7 @@ from typing import Dict, Any, Optional
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from security_groups.security_groups_configurator import ComprehensiveSecurityGroupsConfigurator
+from security_groups.comprehensive_security_groups_configurator import ComprehensiveSecurityGroupsConfigurator
 
 
 def load_security_groups_configs() -> Dict[str, Any]:

@@ -1,6 +1,6 @@
 """
-AWS KMS Element Mapper
-Discovers and maps ALL interactive elements on the AWS Key Management Service configuration page
+AWS OpenSearch Element Mapper
+Discovers and maps ALL interactive elements on the AWS OpenSearch configuration page
 """
 
 import sys
@@ -12,14 +12,14 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
 
-class AWSKMSConfigurator(BaseAWSConfigurator):
-    """AWS KMS configuration class"""
+class AWSOpenSearchConfigurator(BaseAWSConfigurator):
+    """AWS OpenSearch configuration class"""
     
     def __init__(self, page):
-        super().__init__(page, "AWS KMS")
+        super().__init__(page, "AWS OpenSearch")
     
-    def navigate_to_aws_kms_config(self) -> bool:
-        """Navigate to AWS KMS configuration page"""
+    def navigate_to_aws_opensearch_config(self) -> bool:
+        """Navigate to AWS OpenSearch configuration page"""
         try:
             # Navigate to calculator
             if not self.navigate_to_calculator():
@@ -33,40 +33,40 @@ class AWSKMSConfigurator(BaseAWSConfigurator):
             except Exception as e:
                 print(f"[WARNING] Could not click 'Add service' button: {e}")
             
-            # Look for "Configure AWS Key Management Service" button directly
+            # Look for "Configure Amazon OpenSearch Service" button directly
             try:
-                kms_button = self.page.locator("button[aria-label='Configure AWS Key Management Service']")
-                if kms_button.count() > 0:
-                    kms_button.first.click()
+                opensearch_button = self.page.locator("button[aria-label='Configure Amazon OpenSearch Service']")
+                if opensearch_button.count() > 0:
+                    opensearch_button.first.click()
                     self.page.wait_for_timeout(3000)
-                    print("[OK] Clicked 'Configure AWS Key Management Service' button")
-                    print(f"[OK] Successfully navigated to AWS Key Management Service configuration page")
+                    print("[OK] Clicked 'Configure Amazon OpenSearch Service' button")
+                    print(f"[OK] Successfully navigated to AWS OpenSearch configuration page")
                     return True
                 else:
-                    print("[ERROR] Could not find 'Configure AWS Key Management Service' button")
+                    print("[ERROR] Could not find 'Configure Amazon OpenSearch Service' button")
                     return False
             except Exception as e:
-                print(f"[ERROR] Failed to click KMS button: {e}")
+                print(f"[ERROR] Failed to click OpenSearch button: {e}")
                 return False
             
         except Exception as e:
-            print(f"[ERROR] Failed to navigate to AWS KMS config: {e}")
+            print(f"[ERROR] Failed to navigate to AWS OpenSearch config: {e}")
             return False
 
 
-def map_aws_kms_elements():
-    """Map all AWS KMS configuration elements"""
-    print("[INFO] Starting AWS KMS Element Mapping...")
+def map_aws_opensearch_elements():
+    """Map all AWS OpenSearch configuration elements"""
+    print("[INFO] Starting AWS OpenSearch Element Mapping...")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = AWSKMSConfigurator(page)
+        configurator = AWSOpenSearchConfigurator(page)
         
-        # Navigate to AWS KMS config
-        if configurator.navigate_to_aws_kms_config():
-            print("[INFO] Successfully navigated to AWS Key Management Service configuration page")
+        # Navigate to AWS OpenSearch config
+        if configurator.navigate_to_aws_opensearch_config():
+            print("[INFO] Successfully navigated to AWS OpenSearch configuration page")
             
             # Map all elements
             elements = configurator.map_all_elements()
@@ -75,18 +75,18 @@ def map_aws_kms_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("aws_kms_complete_elements_map.json")
+            configurator.save_element_map("opensearch_elements_map.json")
             
             # Take screenshot for reference
-            configurator.take_screenshot("aws_kms_config_page.png")
+            configurator.take_screenshot("aws_opensearch_config_page.png")
             
-            print("\n[SUCCESS] AWS KMS element mapping completed!")
+            print("\n[SUCCESS] AWS OpenSearch element mapping completed!")
             print("[INFO] Files created:")
-            print("  - aws_kms_complete_elements_map.json (complete element mapping)")
-            print("  - aws_kms_config_page.png (screenshot for reference)")
+            print("  - opensearch_elements_map.json (complete element mapping)")
+            print("  - aws_opensearch_config_page.png (screenshot for reference)")
             
         else:
-            print("[ERROR] Failed to navigate to AWS Key Management Service configuration page")
+            print("[ERROR] Failed to navigate to AWS OpenSearch configuration page")
         
         try:
             input("Press Enter to close browser...")
@@ -99,7 +99,7 @@ def map_aws_kms_elements():
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
     print(f"\n{'='*80}")
-    print("COMPLETE AWS KMS CONFIGURATION PAGE ELEMENT MAP")
+    print("COMPLETE AWS OPENSEARCH CONFIGURATION PAGE ELEMENT MAP")
     print(f"{'='*80}")
     
     total_elements = sum(len(v) for v in elements.values())
@@ -137,10 +137,10 @@ def print_detailed_summary(elements):
                 print(f"    Value: {details['value']}")
 
 
-def analyze_aws_kms_capabilities(elements):
-    """Analyze what AWS KMS configuration capabilities we have"""
+def analyze_aws_opensearch_capabilities(elements):
+    """Analyze what AWS OpenSearch configuration capabilities we have"""
     print(f"\n{'='*80}")
-    print("AWS KMS CONFIGURATION CAPABILITY ANALYSIS")
+    print("AWS OPENSEARCH CONFIGURATION CAPABILITY ANALYSIS")
     print(f"{'='*80}")
     
     # Analyze inputs
@@ -203,7 +203,7 @@ def analyze_aws_kms_capabilities(elements):
         text = details.get('text', '')
         aria_label = details.get('aria_label', '')
         
-        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete', 'kms', 'key', 'encryption', 'decrypt', 'encrypt']):
+        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete', 'opensearch', 'search', 'cluster', 'node', 'storage', 'instance']):
             action_buttons.append(f"  - {text} ({aria_label})")
     
     print("  Action buttons:")
@@ -215,31 +215,31 @@ def analyze_aws_kms_capabilities(elements):
 
 def main():
     """Main function"""
-    print("[INFO] AWS KMS Element Mapper - Discovering ALL AWS Key Management Service Configuration Options")
+    print("[INFO] AWS OpenSearch Element Mapper - Discovering ALL AWS OpenSearch Configuration Options")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = AWSKMSConfigurator(page)
+        configurator = AWSOpenSearchConfigurator(page)
         
-        if configurator.navigate_to_aws_kms_config():
+        if configurator.navigate_to_aws_opensearch_config():
             # Map all elements
             elements = configurator.map_all_elements()
             
             # Print detailed analysis
             print_detailed_summary(elements)
-            analyze_aws_kms_capabilities(elements)
+            analyze_aws_opensearch_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("aws_kms_complete_elements_map.json")
-            configurator.take_screenshot("aws_kms_config_page.png")
+            configurator.save_element_map("opensearch_elements_map.json")
+            configurator.take_screenshot("aws_opensearch_config_page.png")
             
-            print(f"\n[SUCCESS] AWS KMS element mapping completed!")
+            print(f"\n[SUCCESS] AWS OpenSearch element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
-            print("[ERROR] Failed to navigate to AWS Key Management Service configuration page")
+            print("[ERROR] Failed to navigate to AWS OpenSearch configuration page")
         
         try:
             input("Press Enter to close browser...")

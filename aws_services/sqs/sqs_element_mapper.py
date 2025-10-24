@@ -67,14 +67,14 @@ def map_sqs_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("sqs_complete_elements_map.json")
+            configurator.save_element_map("sqs_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("sqs_config_page.png")
             
             print("\n[SUCCESS] SQS element mapping completed!")
             print("[INFO] Files created:")
-            print("  - sqs_complete_elements_map.json (complete element mapping)")
+            print("  - sqs_elements_map.json (complete element mapping)")
             print("  - sqs_config_page.png (screenshot for reference)")
             
         else:
@@ -224,7 +224,7 @@ def main():
             analyze_sqs_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("sqs_complete_elements_map.json")
+            configurator.save_element_map("sqs_elements_map.json")
             configurator.take_screenshot("sqs_config_page.png")
             
             print(f"\n[SUCCESS] SQS element mapping completed!")

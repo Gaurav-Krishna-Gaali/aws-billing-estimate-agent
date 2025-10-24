@@ -1,6 +1,6 @@
 """
-AWS Lambda Element Mapper
-Discovers and maps ALL interactive elements on the AWS Lambda configuration page
+AWS Shield Element Mapper
+Discovers and maps ALL interactive elements on the AWS Shield configuration page
 """
 
 import sys
@@ -12,61 +12,53 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from base_configurator import BaseAWSConfigurator
 
 
-class AWSLambdaConfigurator(BaseAWSConfigurator):
-    """AWS Lambda configuration class"""
+class AWSShieldConfigurator(BaseAWSConfigurator):
+    """AWS Shield configuration class"""
     
     def __init__(self, page):
-        super().__init__(page, "AWS Lambda")
+        super().__init__(page, "AWS Shield")
     
-    def navigate_to_aws_lambda_config(self) -> bool:
-        """Navigate to AWS Lambda configuration page"""
+    def navigate_to_aws_shield_config(self) -> bool:
+        """Navigate to AWS Shield configuration page"""
         try:
             # Navigate to calculator
             if not self.navigate_to_calculator():
                 return False
             
-            # Click "Add service" button
-            try:
-                self.page.click("text='Add service'")
-                self.page.wait_for_timeout(2000)
-                print("[OK] Clicked 'Add service' button")
-            except Exception as e:
-                print(f"[WARNING] Could not click 'Add service' button: {e}")
-            
-            # Look for "Configure AWS Lambda" button directly
-            try:
-                lambda_button = self.page.locator("button[aria-label='Configure AWS Lambda']")
-                if lambda_button.count() > 0:
-                    lambda_button.first.click()
-                    self.page.wait_for_timeout(3000)
-                    print("[OK] Clicked 'Configure AWS Lambda' button")
-                    print(f"[OK] Successfully navigated to AWS Lambda configuration page")
-                    return True
-                else:
-                    print("[ERROR] Could not find 'Configure AWS Lambda' button")
-                    return False
-            except Exception as e:
-                print(f"[ERROR] Failed to click Lambda button: {e}")
+            # Search for AWS Shield (try different search terms)
+            search_terms = ["AWS Shield", "Shield", "Amazon Shield", "DDoS Protection", "AWS Shield Advanced"]
+            for term in search_terms:
+                try:
+                    print(f"[INFO] Trying search term: {term}")
+                    if self.search_and_select_service(term):
+                        break
+                except:
+                    continue
+            else:
+                print("[ERROR] Could not find AWS Shield service with any search term")
                 return False
             
+            print(f"[OK] Successfully navigated to AWS Shield configuration page")
+            return True
+            
         except Exception as e:
-            print(f"[ERROR] Failed to navigate to AWS Lambda config: {e}")
+            print(f"[ERROR] Failed to navigate to AWS Shield config: {e}")
             return False
 
 
-def map_aws_lambda_elements():
-    """Map all AWS Lambda configuration elements"""
-    print("[INFO] Starting AWS Lambda Element Mapping...")
+def map_aws_shield_elements():
+    """Map all AWS Shield configuration elements"""
+    print("[INFO] Starting AWS Shield Element Mapping...")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = AWSLambdaConfigurator(page)
+        configurator = AWSShieldConfigurator(page)
         
-        # Navigate to AWS Lambda config
-        if configurator.navigate_to_aws_lambda_config():
-            print("[INFO] Successfully navigated to AWS Lambda configuration page")
+        # Navigate to AWS Shield config
+        if configurator.navigate_to_aws_shield_config():
+            print("[INFO] Successfully navigated to AWS Shield configuration page")
             
             # Map all elements
             elements = configurator.map_all_elements()
@@ -75,18 +67,18 @@ def map_aws_lambda_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("aws_lambda_complete_elements_map.json")
+            configurator.save_element_map("shield_elements_map.json")
             
             # Take screenshot for reference
-            configurator.take_screenshot("aws_lambda_config_page.png")
+            configurator.take_screenshot("aws_shield_config_page.png")
             
-            print("\n[SUCCESS] AWS Lambda element mapping completed!")
+            print("\n[SUCCESS] AWS Shield element mapping completed!")
             print("[INFO] Files created:")
-            print("  - aws_lambda_complete_elements_map.json (complete element mapping)")
-            print("  - aws_lambda_config_page.png (screenshot for reference)")
+            print("  - shield_elements_map.json (complete element mapping)")
+            print("  - aws_shield_config_page.png (screenshot for reference)")
             
         else:
-            print("[ERROR] Failed to navigate to AWS Lambda configuration page")
+            print("[ERROR] Failed to navigate to AWS Shield configuration page")
         
         try:
             input("Press Enter to close browser...")
@@ -99,7 +91,7 @@ def map_aws_lambda_elements():
 def print_detailed_summary(elements):
     """Print detailed summary of all mapped elements"""
     print(f"\n{'='*80}")
-    print("COMPLETE AWS LAMBDA CONFIGURATION PAGE ELEMENT MAP")
+    print("COMPLETE AWS SHIELD CONFIGURATION PAGE ELEMENT MAP")
     print(f"{'='*80}")
     
     total_elements = sum(len(v) for v in elements.values())
@@ -137,10 +129,10 @@ def print_detailed_summary(elements):
                 print(f"    Value: {details['value']}")
 
 
-def analyze_aws_lambda_capabilities(elements):
-    """Analyze what AWS Lambda configuration capabilities we have"""
+def analyze_aws_shield_capabilities(elements):
+    """Analyze what AWS Shield configuration capabilities we have"""
     print(f"\n{'='*80}")
-    print("AWS LAMBDA CONFIGURATION CAPABILITY ANALYSIS")
+    print("AWS SHIELD CONFIGURATION CAPABILITY ANALYSIS")
     print(f"{'='*80}")
     
     # Analyze inputs
@@ -203,7 +195,7 @@ def analyze_aws_lambda_capabilities(elements):
         text = details.get('text', '')
         aria_label = details.get('aria_label', '')
         
-        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete', 'lambda', 'function', 'serverless', 'compute', 'memory', 'duration']):
+        if any(keyword in text.lower() for keyword in ['save', 'add', 'configure', 'select', 'choose', 'create', 'delete', 'shield', 'ddos', 'protection', 'advanced', 'threat']):
             action_buttons.append(f"  - {text} ({aria_label})")
     
     print("  Action buttons:")
@@ -215,31 +207,31 @@ def analyze_aws_lambda_capabilities(elements):
 
 def main():
     """Main function"""
-    print("[INFO] AWS Lambda Element Mapper - Discovering ALL AWS Lambda Configuration Options")
+    print("[INFO] AWS Shield Element Mapper - Discovering ALL AWS Shield Configuration Options")
     
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         
-        configurator = AWSLambdaConfigurator(page)
+        configurator = AWSShieldConfigurator(page)
         
-        if configurator.navigate_to_aws_lambda_config():
+        if configurator.navigate_to_aws_shield_config():
             # Map all elements
             elements = configurator.map_all_elements()
             
             # Print detailed analysis
             print_detailed_summary(elements)
-            analyze_aws_lambda_capabilities(elements)
+            analyze_aws_shield_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("aws_lambda_complete_elements_map.json")
-            configurator.take_screenshot("aws_lambda_config_page.png")
+            configurator.save_element_map("shield_elements_map.json")
+            configurator.take_screenshot("aws_shield_config_page.png")
             
-            print(f"\n[SUCCESS] AWS Lambda element mapping completed!")
+            print(f"\n[SUCCESS] AWS Shield element mapping completed!")
             print(f"[INFO] Total elements mapped: {sum(len(v) for v in elements.values())}")
             
         else:
-            print("[ERROR] Failed to navigate to AWS Lambda configuration page")
+            print("[ERROR] Failed to navigate to AWS Shield configuration page")
         
         try:
             input("Press Enter to close browser...")

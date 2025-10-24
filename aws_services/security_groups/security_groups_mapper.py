@@ -75,14 +75,14 @@ def map_security_groups_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("security_groups_complete_elements_map.json")
+            configurator.save_element_map("security_groups_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("security_groups_config_page.png")
             
             print("\n[SUCCESS] Security Groups element mapping completed!")
             print("[INFO] Files created:")
-            print("  - security_groups_complete_elements_map.json (complete element mapping)")
+            print("  - security_groups_elements_map.json (complete element mapping)")
             print("  - security_groups_config_page.png (screenshot for reference)")
             
         else:
@@ -232,7 +232,7 @@ def main():
             analyze_security_groups_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("security_groups_complete_elements_map.json")
+            configurator.save_element_map("security_groups_elements_map.json")
             configurator.take_screenshot("security_groups_config_page.png")
             
             print(f"\n[SUCCESS] Security Groups element mapping completed!")

@@ -67,14 +67,14 @@ def map_cloudwatch_elements():
             print_detailed_summary(elements)
             
             # Save element map
-            configurator.save_element_map("cloudwatch_complete_elements_map.json")
+            configurator.save_element_map("cloudwatch_elements_map.json")
             
             # Take screenshot for reference
             configurator.take_screenshot("cloudwatch_config_page.png")
             
             print("\n[SUCCESS] CloudWatch element mapping completed!")
             print("[INFO] Files created:")
-            print("  - cloudwatch_complete_elements_map.json (complete element mapping)")
+            print("  - cloudwatch_elements_map.json (complete element mapping)")
             print("  - cloudwatch_config_page.png (screenshot for reference)")
             
         else:
@@ -224,7 +224,7 @@ def main():
             analyze_cloudwatch_capabilities(elements)
             
             # Save files
-            configurator.save_element_map("cloudwatch_complete_elements_map.json")
+            configurator.save_element_map("cloudwatch_elements_map.json")
             configurator.take_screenshot("cloudwatch_config_page.png")
             
             print(f"\n[SUCCESS] CloudWatch element mapping completed!")
