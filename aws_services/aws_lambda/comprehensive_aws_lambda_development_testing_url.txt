@@ -1,1 +1,0 @@
-https://calculator.aws/#/createCalculator/Lambda
