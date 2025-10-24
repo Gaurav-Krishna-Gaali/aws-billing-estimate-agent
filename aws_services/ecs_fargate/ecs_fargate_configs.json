@@ -1,0 +1,145 @@
+{
+  "basic_web_app": {
+    "name": "Basic Web Application",
+    "description": "Simple ECS Fargate setup for basic web applications with minimal container requirements",
+    "estimated_monthly_cost": "$30-80",
+    "settings": {
+      "number_of_tasks": 2,
+      "average_duration_minutes": 30,
+      "memory_gb": 1,
+      "ephemeral_storage_gb": 10
+    }
+  },
+  "small_business": {
+    "name": "Small Business Application",
+    "description": "ECS Fargate configuration for small business applications with moderate container usage",
+    "estimated_monthly_cost": "$80-200",
+    "settings": {
+      "number_of_tasks": 5,
+      "average_duration_minutes": 60,
+      "memory_gb": 2,
+      "ephemeral_storage_gb": 20
+    }
+  },
+  "medium_enterprise": {
+    "name": "Medium Enterprise Application",
+    "description": "ECS Fargate configuration for medium-sized enterprises with comprehensive container orchestration",
+    "estimated_monthly_cost": "$300-800",
+    "settings": {
+      "number_of_tasks": 20,
+      "average_duration_minutes": 120,
+      "memory_gb": 4,
+      "ephemeral_storage_gb": 50
+    }
+  },
+  "large_enterprise": {
+    "name": "Large Enterprise Application",
+    "description": "Enterprise-grade ECS Fargate configuration with high container volume and advanced features",
+    "estimated_monthly_cost": "$1000-3000",
+    "settings": {
+      "number_of_tasks": 50,
+      "average_duration_minutes": 240,
+      "memory_gb": 8,
+      "ephemeral_storage_gb": 100
+    }
+  },
+  "high_performance": {
+    "name": "High Performance Application",
+    "description": "ECS Fargate configuration optimized for high-performance applications with intensive compute requirements",
+    "estimated_monthly_cost": "$2000-5000",
+    "settings": {
+      "number_of_tasks": 100,
+      "average_duration_minutes": 480,
+      "memory_gb": 16,
+      "ephemeral_storage_gb": 200
+    }
+  },
+  "microservices": {
+    "name": "Microservices Architecture",
+    "description": "ECS Fargate configuration for microservices architecture with multiple containerized services",
+    "estimated_monthly_cost": "$500-1500",
+    "settings": {
+      "number_of_tasks": 30,
+      "average_duration_minutes": 180,
+      "memory_gb": 4,
+      "ephemeral_storage_gb": 80
+    }
+  },
+  "api_backend": {
+    "name": "API Backend Services",
+    "description": "ECS Fargate configuration optimized for API backend services with high request volume",
+    "estimated_monthly_cost": "$400-1200",
+    "settings": {
+      "number_of_tasks": 25,
+      "average_duration_minutes": 300,
+      "memory_gb": 6,
+      "ephemeral_storage_gb": 60
+    }
+  },
+  "data_processing": {
+    "name": "Data Processing Workloads",
+    "description": "ECS Fargate configuration for data processing workloads with high memory and storage requirements",
+    "estimated_monthly_cost": "$800-2500",
+    "settings": {
+      "number_of_tasks": 40,
+      "average_duration_minutes": 360,
+      "memory_gb": 12,
+      "ephemeral_storage_gb": 150
+    }
+  },
+  "machine_learning": {
+    "name": "Machine Learning Workloads",
+    "description": "ECS Fargate configuration for machine learning workloads with intensive compute and memory requirements",
+    "estimated_monthly_cost": "$1500-4000",
+    "settings": {
+      "number_of_tasks": 15,
+      "average_duration_minutes": 720,
+      "memory_gb": 32,
+      "ephemeral_storage_gb": 500
+    }
+  },
+  "batch_processing": {
+    "name": "Batch Processing Jobs",
+    "description": "ECS Fargate configuration for batch processing jobs with variable duration and resource requirements",
+    "estimated_monthly_cost": "$600-1800",
+    "settings": {
+      "number_of_tasks": 35,
+      "average_duration_minutes": 120,
+      "memory_gb": 8,
+      "ephemeral_storage_gb": 100
+    }
+  },
+  "real_time_processing": {
+    "name": "Real-time Processing",
+    "description": "ECS Fargate configuration for real-time processing applications with continuous container execution",
+    "estimated_monthly_cost": "$1200-3500",
+    "settings": {
+      "number_of_tasks": 60,
+      "average_duration_minutes": 1440,
+      "memory_gb": 6,
+      "ephemeral_storage_gb": 120
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "Minimal ECS Fargate setup for development and testing environments",
+    "estimated_monthly_cost": "$10-30",
+    "settings": {
+      "number_of_tasks": 1,
+      "average_duration_minutes": 15,
+      "memory_gb": 0.5,
+      "ephemeral_storage_gb": 5
+    }
+  },
+  "custom": {
+    "name": "Custom ECS Fargate Configuration",
+    "description": "Edit this configuration to match your specific ECS Fargate needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "number_of_tasks": 0,
+      "average_duration_minutes": 0,
+      "memory_gb": 0,
+      "ephemeral_storage_gb": 0
+    }
+  }
+}

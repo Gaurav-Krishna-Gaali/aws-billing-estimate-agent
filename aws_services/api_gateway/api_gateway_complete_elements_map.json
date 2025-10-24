@@ -1,0 +1,345 @@
+{
+  "buttons": {
+    "button_0_accept": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(1)"
+    },
+    "button_1_decline": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(2)"
+    },
+    "button_2_customize": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(3)"
+    },
+    "button_3_cancel": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(4)"
+    },
+    "button_4_save_preferences": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(5)"
+    },
+    "button_5_dismiss": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(6)"
+    },
+    "button_6_i_can_connect_you_with_an_aws_sales_representative_if_you_like_to_learn_more_about_our_products_and_services.": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(7)"
+    },
+    "button_8_1": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(9)"
+    },
+    "button_12_language:_english": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(13)"
+    },
+    "button_13_...": {
+      "text": "...",
+      "aria_label": "Show path",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(14)"
+    },
+    "button_14_region": {
+      "text": "Region",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(15)"
+    },
+    "button_15_us_east_(ohio)": {
+      "text": "US East (Ohio)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(16)"
+    },
+    "button_16_millions": {
+      "text": "millions",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(17)"
+    },
+    "button_17_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(18)"
+    },
+    "button_18_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(19)"
+    },
+    "button_19_millions": {
+      "text": "millions",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(20)"
+    },
+    "button_20_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(21)"
+    },
+    "button_21_none": {
+      "text": "None",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(22)"
+    },
+    "button_22_thousands": {
+      "text": "thousands",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(23)"
+    },
+    "button_23_per_second": {
+      "text": "per second",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(24)"
+    },
+    "button_24_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(25)"
+    },
+    "button_25_seconds": {
+      "text": "seconds",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(26)"
+    },
+    "button_26_per_second": {
+      "text": "per second",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(27)"
+    },
+    "button_27_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(28)"
+    },
+    "button_28_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(29)"
+    },
+    "button_29_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(30)"
+    },
+    "button_30_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(31)"
+    },
+    "button_33_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(34)"
+    },
+    "button_34_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(35)"
+    },
+    "button_35_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(36)"
+    },
+    "button_36_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(37)"
+    }
+  },
+  "inputs": {
+    "input_0_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "selector": "input:nth-of-type(1)"
+    },
+    "input_1_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "selector": "input:nth-of-type(2)"
+    },
+    "input_2_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "selector": "input:nth-of-type(3)"
+    },
+    "input_3_text_enter_a_description_for_your_estimate": {
+      "type": "text",
+      "placeholder": "Enter a description for your estimate",
+      "name": "",
+      "id": "formField2200-1761311033831-8473",
+      "aria_label": "Description - optional",
+      "selector": "input:nth-of-type(4)"
+    },
+    "input_4_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "",
+      "aria_label": "",
+      "selector": "input:nth-of-type(5)"
+    },
+    "input_5_number_enter_number_of_http_api_requests_in_units_selected": {
+      "type": "number",
+      "placeholder": "Enter number of HTTP API requests in units selected",
+      "name": "",
+      "id": "formField2251-1761311034187-209",
+      "aria_label": "Requests Value",
+      "selector": "input:nth-of-type(6)"
+    },
+    "input_6_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2263-1761311034199-6610",
+      "aria_label": "Average size of each request Value",
+      "selector": "input:nth-of-type(7)"
+    },
+    "input_7_number_enter_number_of_rest_api_requests_in_units_selected": {
+      "type": "number",
+      "placeholder": "Enter number of REST API requests in units selected",
+      "name": "",
+      "id": "formField2280-1761311034215-26",
+      "aria_label": "Requests Value",
+      "selector": "input:nth-of-type(8)"
+    },
+    "input_8_number_enter_number_of_websocket_messages_in_units_selected": {
+      "type": "number",
+      "placeholder": "Enter number of WebSocket messages in units selected",
+      "name": "",
+      "id": "formField2297-1761311034222-4051",
+      "aria_label": "Messages Value",
+      "selector": "input:nth-of-type(9)"
+    },
+    "input_9_number_enter_average_message_size": {
+      "type": "number",
+      "placeholder": "Enter average message size",
+      "name": "",
+      "id": "formField2309-1761311034233-3134",
+      "aria_label": "Average message size Value",
+      "selector": "input:nth-of-type(10)"
+    },
+    "input_10_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2321-1761311034246-9111",
+      "aria_label": "Average connection duration Value",
+      "selector": "input:nth-of-type(11)"
+    },
+    "input_11_number_enter_the_average_number_of_connections": {
+      "type": "number",
+      "placeholder": "Enter the average number of connections",
+      "name": "",
+      "id": "formField2333-1761311034254-2705",
+      "aria_label": "Average connection rate Value",
+      "selector": "input:nth-of-type(12)"
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0_awsccc-u-cb-performance": {
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(1)"
+    },
+    "checkbox_1_awsccc-u-cb-functional": {
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(2)"
+    },
+    "checkbox_2_awsccc-u-cb-advertising": {
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(3)"
+    }
+  },
+  "radio_buttons": {},
+  "text_areas": {}
+}

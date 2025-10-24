@@ -1,0 +1,1148 @@
+{
+  "buttons": {
+    "button_0_accept": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(1)"
+    },
+    "button_1_decline": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(2)"
+    },
+    "button_2_customize": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(3)"
+    },
+    "button_3_cancel": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(4)"
+    },
+    "button_4_save_preferences": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(5)"
+    },
+    "button_5_dismiss": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(6)"
+    },
+    "button_6_i_can_connect_you_with_an_aws_sales_representative_if_you_like_to_learn_more_about_our_products_and_services.": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(7)"
+    },
+    "button_8_1": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(9)"
+    },
+    "button_12_language:_english": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(13)"
+    },
+    "button_13_...": {
+      "text": "...",
+      "aria_label": "Show path",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(14)"
+    },
+    "button_14_region": {
+      "text": "Region",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(15)"
+    },
+    "button_15_us_east_(ohio)": {
+      "text": "US East (Ohio)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(16)"
+    },
+    "button_16_shared_instances": {
+      "text": "Shared Instances",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(17)"
+    },
+    "button_17_linux": {
+      "text": "Linux",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(18)"
+    },
+    "button_18_constant_usage": {
+      "text": "Constant usage",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(19)"
+    },
+    "button_19_daily_spike_traffic": {
+      "text": "Daily spike traffic",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(20)"
+    },
+    "button_20_weekly_spike_traffic": {
+      "text": "Weekly spike traffic",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(21)"
+    },
+    "button_21_monthly_spike_traffic": {
+      "text": "Monthly spike traffic",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(22)"
+    },
+    "button_22_any_instance_family": {
+      "text": "Any Instance family",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(23)"
+    },
+    "button_23_any_vcpus": {
+      "text": "Any vCPUs",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(24)"
+    },
+    "button_24_any_memory_(gib)": {
+      "text": "Any Memory (GiB)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(25)"
+    },
+    "button_25_any_network_performance": {
+      "text": "Any Network Performance",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(26)"
+    },
+    "button_27_1": {
+      "text": "1",
+      "aria_label": "Page 1 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(28)"
+    },
+    "button_28_2": {
+      "text": "2",
+      "aria_label": "Page 2 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(29)"
+    },
+    "button_29_3": {
+      "text": "3",
+      "aria_label": "Page 3 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(30)"
+    },
+    "button_30_4": {
+      "text": "4",
+      "aria_label": "Page 4 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(31)"
+    },
+    "button_31_5": {
+      "text": "5",
+      "aria_label": "Page 5 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(32)"
+    },
+    "button_32_6": {
+      "text": "6",
+      "aria_label": "Page 6 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(33)"
+    },
+    "button_33_7": {
+      "text": "7",
+      "aria_label": "Page 7 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(34)"
+    },
+    "button_34_94": {
+      "text": "94",
+      "aria_label": "Page 94 of all pages",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(35)"
+    },
+    "button_37_potential_effective_hourly_cost_(savings_%)": {
+      "text": "Potential Effective Hourly Cost (Savings %)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(38)"
+    },
+    "button_38_utilization_percent_per_month": {
+      "text": "Utilization percent per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(39)"
+    },
+    "button_39_general_purpose_ssd_(gp3)": {
+      "text": "General Purpose SSD (gp3)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(40)"
+    },
+    "button_40_mbps": {
+      "text": "MBps",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(41)"
+    },
+    "button_41_gb": {
+      "text": "GB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(42)"
+    },
+    "button_42_no_snapshot_storage": {
+      "text": "No snapshot storage",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(43)"
+    },
+    "button_43_data_transfer_from": {
+      "text": "Data transfer from",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(44)"
+    },
+    "button_44_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(45)"
+    },
+    "button_45_add_inbound_data_transfer": {
+      "text": "Add inbound data transfer",
+      "aria_label": "Add inbound data transfer",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(46)"
+    },
+    "button_46_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(47)"
+    },
+    "button_47_data_transfer_to": {
+      "text": "Data transfer to",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(48)"
+    },
+    "button_48_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(49)"
+    },
+    "button_49_add_outbound_data_transfer": {
+      "text": "Add outbound data transfer",
+      "aria_label": "Add outbound data transfer",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(50)"
+    },
+    "button_50_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(51)"
+    },
+    "button_51_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(52)"
+    },
+    "button_52_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(53)"
+    },
+    "button_53_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(54)"
+    },
+    "button_56_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(57)"
+    },
+    "button_57_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(58)"
+    },
+    "button_58_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(59)"
+    },
+    "button_59_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(60)"
+    }
+  },
+  "inputs": {
+    "input_0_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "selector": "input:nth-of-type(1)"
+    },
+    "input_1_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "selector": "input:nth-of-type(2)"
+    },
+    "input_2_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "selector": "input:nth-of-type(3)"
+    },
+    "input_3_text_enter_a_description_for_your_estimate": {
+      "type": "text",
+      "placeholder": "Enter a description for your estimate",
+      "name": "",
+      "id": "formField2197-1761333306576-8527",
+      "aria_label": "Description - optional",
+      "selector": "input:nth-of-type(4)"
+    },
+    "input_4_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "",
+      "aria_label": "",
+      "selector": "input:nth-of-type(5)"
+    },
+    "input_5_radio_awsui-radio-2245-1761333306646-9454": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2246-1761333306646-4764",
+      "aria_label": "",
+      "selector": "input:nth-of-type(6)"
+    },
+    "input_6_radio_awsui-radio-2245-1761333306646-9454": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2248-1761333306647-1633",
+      "aria_label": "",
+      "selector": "input:nth-of-type(7)"
+    },
+    "input_7_radio_awsui-radio-2245-1761333306646-9454": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2250-1761333306650-2572",
+      "aria_label": "",
+      "selector": "input:nth-of-type(8)"
+    },
+    "input_8_radio_awsui-radio-2245-1761333306646-9454": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2252-1761333306652-1699",
+      "aria_label": "",
+      "selector": "input:nth-of-type(9)"
+    },
+    "input_9_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2375-1761333306745-5217",
+      "aria_label": "Number of instances Enter amount",
+      "selector": "input:nth-of-type(10)"
+    },
+    "input_10_search_search_by_instance_name_or_filter_by_keyword": {
+      "type": "search",
+      "placeholder": "Search by instance name or filter by keyword",
+      "name": "",
+      "id": "formField2427-1761333308877-4062",
+      "aria_label": "Search instance types Search by instance name or filter by keyword",
+      "selector": "input:nth-of-type(11)"
+    },
+    "input_11_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2471-1761333308885-4117",
+      "aria_label": "",
+      "selector": "input:nth-of-type(12)"
+    },
+    "input_12_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2501-1761333311928-1101",
+      "aria_label": "",
+      "selector": "input:nth-of-type(13)"
+    },
+    "input_13_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2503-1761333311929-1779",
+      "aria_label": "",
+      "selector": "input:nth-of-type(14)"
+    },
+    "input_14_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2505-1761333311929-7824",
+      "aria_label": "",
+      "selector": "input:nth-of-type(15)"
+    },
+    "input_15_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2507-1761333311930-5416",
+      "aria_label": "",
+      "selector": "input:nth-of-type(16)"
+    },
+    "input_16_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2509-1761333311931-857",
+      "aria_label": "",
+      "selector": "input:nth-of-type(17)"
+    },
+    "input_17_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2511-1761333311932-3653",
+      "aria_label": "",
+      "selector": "input:nth-of-type(18)"
+    },
+    "input_18_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2513-1761333311934-215",
+      "aria_label": "",
+      "selector": "input:nth-of-type(19)"
+    },
+    "input_19_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2515-1761333311934-3540",
+      "aria_label": "",
+      "selector": "input:nth-of-type(20)"
+    },
+    "input_20_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2517-1761333311935-2556",
+      "aria_label": "",
+      "selector": "input:nth-of-type(21)"
+    },
+    "input_21_radio_2423-1761333308876-7142": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "2423-1761333308876-7142",
+      "id": "2519-1761333311936-1821",
+      "aria_label": "",
+      "selector": "input:nth-of-type(22)"
+    },
+    "input_22_radio_pricingStrategy": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "pricingStrategy",
+      "id": "compute-savings",
+      "aria_label": "Compute Savings Plans",
+      "selector": "input:nth-of-type(23)"
+    },
+    "input_23_radio_compute-savings-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "compute-savings-term",
+      "id": "compute-savings-1 Year",
+      "aria_label": "1 year",
+      "selector": "input:nth-of-type(24)"
+    },
+    "input_24_radio_compute-savings-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "compute-savings-term",
+      "id": "compute-savings-3 Year",
+      "aria_label": "3 year",
+      "selector": "input:nth-of-type(25)"
+    },
+    "input_25_radio_compute-savings-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "compute-savings-payment",
+      "id": "compute-savings-None",
+      "aria_label": "No upfront",
+      "selector": "input:nth-of-type(26)"
+    },
+    "input_26_radio_compute-savings-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "compute-savings-payment",
+      "id": "compute-savings-Partial",
+      "aria_label": "Partial upfront",
+      "selector": "input:nth-of-type(27)"
+    },
+    "input_27_radio_compute-savings-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "compute-savings-payment",
+      "id": "compute-savings-All",
+      "aria_label": "All upfront",
+      "selector": "input:nth-of-type(28)"
+    },
+    "input_28_radio_pricingStrategy": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "pricingStrategy",
+      "id": "instance-savings",
+      "aria_label": "EC2 Instance Savings Plans",
+      "selector": "input:nth-of-type(29)"
+    },
+    "input_29_radio_instance-savings-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "instance-savings-term",
+      "id": "instance-savings-1 Year",
+      "aria_label": "1 year",
+      "selector": "input:nth-of-type(30)"
+    },
+    "input_30_radio_instance-savings-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "instance-savings-term",
+      "id": "instance-savings-3 Year",
+      "aria_label": "3 year",
+      "selector": "input:nth-of-type(31)"
+    },
+    "input_31_radio_instance-savings-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "instance-savings-payment",
+      "id": "instance-savings-None",
+      "aria_label": "No upfront",
+      "selector": "input:nth-of-type(32)"
+    },
+    "input_32_radio_instance-savings-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "instance-savings-payment",
+      "id": "instance-savings-Partial",
+      "aria_label": "Partial upfront",
+      "selector": "input:nth-of-type(33)"
+    },
+    "input_33_radio_instance-savings-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "instance-savings-payment",
+      "id": "instance-savings-All",
+      "aria_label": "All upfront",
+      "selector": "input:nth-of-type(34)"
+    },
+    "input_34_radio_pricingStrategy": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "pricingStrategy",
+      "id": "on-demand",
+      "aria_label": "On-Demand",
+      "selector": "input:nth-of-type(35)"
+    },
+    "input_35_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2485-1761333308991-5340",
+      "aria_label": "Usage",
+      "selector": "input:nth-of-type(36)"
+    },
+    "input_36_radio_pricingStrategy": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "pricingStrategy",
+      "id": "spot",
+      "aria_label": "Spot Instances",
+      "selector": "input:nth-of-type(37)"
+    },
+    "input_37_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2497-1761333308993-7216",
+      "aria_label": "Assume percentage discount for my estimate",
+      "selector": "input:nth-of-type(38)"
+    },
+    "input_38_radio_pricingStrategy": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "pricingStrategy",
+      "id": "standard",
+      "aria_label": "Standard Reserved Instances",
+      "selector": "input:nth-of-type(39)"
+    },
+    "input_39_radio_standard-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "standard-term",
+      "id": "standard-1 Year",
+      "aria_label": "1 year",
+      "selector": "input:nth-of-type(40)"
+    },
+    "input_40_radio_standard-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "standard-term",
+      "id": "standard-3 Year",
+      "aria_label": "3 year",
+      "selector": "input:nth-of-type(41)"
+    },
+    "input_41_radio_standard-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "standard-payment",
+      "id": "standard-None",
+      "aria_label": "No upfront",
+      "selector": "input:nth-of-type(42)"
+    },
+    "input_42_radio_standard-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "standard-payment",
+      "id": "standard-Partial",
+      "aria_label": "Partial upfront",
+      "selector": "input:nth-of-type(43)"
+    },
+    "input_43_radio_standard-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "standard-payment",
+      "id": "standard-All",
+      "aria_label": "All upfront",
+      "selector": "input:nth-of-type(44)"
+    },
+    "input_44_radio_pricingStrategy": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "pricingStrategy",
+      "id": "convertible",
+      "aria_label": "Convertible Reserved Instances",
+      "selector": "input:nth-of-type(45)"
+    },
+    "input_45_radio_convertible-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "convertible-term",
+      "id": "convertible-1 Year",
+      "aria_label": "1 year",
+      "selector": "input:nth-of-type(46)"
+    },
+    "input_46_radio_convertible-term": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "convertible-term",
+      "id": "convertible-3 Year",
+      "aria_label": "3 year",
+      "selector": "input:nth-of-type(47)"
+    },
+    "input_47_radio_convertible-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "convertible-payment",
+      "id": "convertible-None",
+      "aria_label": "No upfront",
+      "selector": "input:nth-of-type(48)"
+    },
+    "input_48_radio_convertible-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "convertible-payment",
+      "id": "convertible-Partial",
+      "aria_label": "Partial upfront",
+      "selector": "input:nth-of-type(49)"
+    },
+    "input_49_radio_convertible-payment": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "convertible-payment",
+      "id": "convertible-All",
+      "aria_label": "All upfront",
+      "selector": "input:nth-of-type(50)"
+    },
+    "input_50_text_enter_amount_of_iops_per_volume": {
+      "type": "text",
+      "placeholder": "Enter amount of IOPS per volume",
+      "name": "",
+      "id": "formField2407-1761333307710-6458",
+      "aria_label": "General Purpose SSD (gp3) - IOPS Enter amount of IOPS per volume",
+      "selector": "input:nth-of-type(51)"
+    },
+    "input_51_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2409-1761333307711-1407",
+      "aria_label": "General Purpose SSD (gp3) - Throughput Value",
+      "selector": "input:nth-of-type(52)"
+    },
+    "input_52_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2264-1761333306662-5222",
+      "aria_label": "Storage amount Value",
+      "selector": "input:nth-of-type(53)"
+    },
+    "input_53_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2395-1761333307635-1939",
+      "aria_label": "Enable monitoring",
+      "selector": "input:nth-of-type(54)"
+    },
+    "input_54_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2290-1761333306674-8245",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(55)"
+    },
+    "input_55_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2306-1761333306675-4909",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(56)"
+    },
+    "input_56_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2328-1761333306677-2931",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(57)"
+    },
+    "input_57_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2233-1761333306605-2329",
+      "aria_label": "Enter any placeholder cost such as Licensing to add to your estimate",
+      "selector": "input:nth-of-type(58)"
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0_awsccc-u-cb-performance": {
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(1)"
+    },
+    "checkbox_1_awsccc-u-cb-functional": {
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(2)"
+    },
+    "checkbox_2_awsccc-u-cb-advertising": {
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(3)"
+    },
+    "checkbox_3_2471-1761333308885-4117": {
+      "name": "",
+      "id": "2471-1761333308885-4117",
+      "aria_label": "",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(4)"
+    },
+    "checkbox_4_2395-1761333307635-1939": {
+      "name": "",
+      "id": "2395-1761333307635-1939",
+      "aria_label": "Enable monitoring",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(5)"
+    }
+  },
+  "radio_buttons": {
+    "radio_0_awsui-radio-2245-1761333306646-9454": {
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2246-1761333306646-4764",
+      "value": "consistent",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(1)"
+    },
+    "radio_1_awsui-radio-2245-1761333306646-9454": {
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2248-1761333306647-1633",
+      "value": "daily",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(2)"
+    },
+    "radio_2_awsui-radio-2245-1761333306646-9454": {
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2250-1761333306650-2572",
+      "value": "weekly",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(3)"
+    },
+    "radio_3_awsui-radio-2245-1761333306646-9454": {
+      "name": "awsui-radio-2245-1761333306646-9454",
+      "id": "2252-1761333306652-1699",
+      "value": "monthly",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(4)"
+    },
+    "radio_4_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2501-1761333311928-1101",
+      "value": "",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(5)"
+    },
+    "radio_5_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2503-1761333311929-1779",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(6)"
+    },
+    "radio_6_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2505-1761333311929-7824",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(7)"
+    },
+    "radio_7_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2507-1761333311930-5416",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(8)"
+    },
+    "radio_8_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2509-1761333311931-857",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(9)"
+    },
+    "radio_9_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2511-1761333311932-3653",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(10)"
+    },
+    "radio_10_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2513-1761333311934-215",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(11)"
+    },
+    "radio_11_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2515-1761333311934-3540",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(12)"
+    },
+    "radio_12_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2517-1761333311935-2556",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(13)"
+    },
+    "radio_13_2423-1761333308876-7142": {
+      "name": "2423-1761333308876-7142",
+      "id": "2519-1761333311936-1821",
+      "value": "",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(14)"
+    },
+    "radio_14_pricingStrategy": {
+      "name": "pricingStrategy",
+      "id": "compute-savings",
+      "value": "compute-savings",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(15)"
+    },
+    "radio_15_compute-savings-term": {
+      "name": "compute-savings-term",
+      "id": "compute-savings-1 Year",
+      "value": "1 Year",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(16)"
+    },
+    "radio_16_compute-savings-term": {
+      "name": "compute-savings-term",
+      "id": "compute-savings-3 Year",
+      "value": "3 Year",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(17)"
+    },
+    "radio_17_compute-savings-payment": {
+      "name": "compute-savings-payment",
+      "id": "compute-savings-None",
+      "value": "None",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(18)"
+    },
+    "radio_18_compute-savings-payment": {
+      "name": "compute-savings-payment",
+      "id": "compute-savings-Partial",
+      "value": "Partial",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(19)"
+    },
+    "radio_19_compute-savings-payment": {
+      "name": "compute-savings-payment",
+      "id": "compute-savings-All",
+      "value": "All",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(20)"
+    },
+    "radio_20_pricingStrategy": {
+      "name": "pricingStrategy",
+      "id": "instance-savings",
+      "value": "instance-savings",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(21)"
+    },
+    "radio_21_instance-savings-term": {
+      "name": "instance-savings-term",
+      "id": "instance-savings-1 Year",
+      "value": "1 Year",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(22)"
+    },
+    "radio_22_instance-savings-term": {
+      "name": "instance-savings-term",
+      "id": "instance-savings-3 Year",
+      "value": "3 Year",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(23)"
+    },
+    "radio_23_instance-savings-payment": {
+      "name": "instance-savings-payment",
+      "id": "instance-savings-None",
+      "value": "None",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(24)"
+    },
+    "radio_24_instance-savings-payment": {
+      "name": "instance-savings-payment",
+      "id": "instance-savings-Partial",
+      "value": "Partial",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(25)"
+    },
+    "radio_25_instance-savings-payment": {
+      "name": "instance-savings-payment",
+      "id": "instance-savings-All",
+      "value": "All",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(26)"
+    },
+    "radio_26_pricingStrategy": {
+      "name": "pricingStrategy",
+      "id": "on-demand",
+      "value": "on-demand",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(27)"
+    },
+    "radio_27_pricingStrategy": {
+      "name": "pricingStrategy",
+      "id": "spot",
+      "value": "spot",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(28)"
+    },
+    "radio_28_pricingStrategy": {
+      "name": "pricingStrategy",
+      "id": "standard",
+      "value": "standard",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(29)"
+    },
+    "radio_29_standard-term": {
+      "name": "standard-term",
+      "id": "standard-1 Year",
+      "value": "1 Year",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(30)"
+    },
+    "radio_30_standard-term": {
+      "name": "standard-term",
+      "id": "standard-3 Year",
+      "value": "3 Year",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(31)"
+    },
+    "radio_31_standard-payment": {
+      "name": "standard-payment",
+      "id": "standard-None",
+      "value": "None",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(32)"
+    },
+    "radio_32_standard-payment": {
+      "name": "standard-payment",
+      "id": "standard-Partial",
+      "value": "Partial",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(33)"
+    },
+    "radio_33_standard-payment": {
+      "name": "standard-payment",
+      "id": "standard-All",
+      "value": "All",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(34)"
+    },
+    "radio_34_pricingStrategy": {
+      "name": "pricingStrategy",
+      "id": "convertible",
+      "value": "convertible",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(35)"
+    },
+    "radio_35_convertible-term": {
+      "name": "convertible-term",
+      "id": "convertible-1 Year",
+      "value": "1 Year",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(36)"
+    },
+    "radio_36_convertible-term": {
+      "name": "convertible-term",
+      "id": "convertible-3 Year",
+      "value": "3 Year",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(37)"
+    },
+    "radio_37_convertible-payment": {
+      "name": "convertible-payment",
+      "id": "convertible-None",
+      "value": "None",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(38)"
+    },
+    "radio_38_convertible-payment": {
+      "name": "convertible-payment",
+      "id": "convertible-Partial",
+      "value": "Partial",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(39)"
+    },
+    "radio_39_convertible-payment": {
+      "name": "convertible-payment",
+      "id": "convertible-All",
+      "value": "All",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(40)"
+    }
+  },
+  "text_areas": {}
+}

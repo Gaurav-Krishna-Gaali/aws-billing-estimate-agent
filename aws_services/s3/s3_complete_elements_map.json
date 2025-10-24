@@ -1,0 +1,1477 @@
+{
+  "buttons": {
+    "button_0_accept": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(1)"
+    },
+    "button_1_decline": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(2)"
+    },
+    "button_2_customize": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(3)"
+    },
+    "button_3_cancel": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(4)"
+    },
+    "button_4_save_preferences": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(5)"
+    },
+    "button_5_dismiss": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(6)"
+    },
+    "button_6_i_can_connect_you_with_an_aws_sales_representative_if_you_like_to_learn_more_about_our_products_and_services.": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(7)"
+    },
+    "button_8_1": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(9)"
+    },
+    "button_12_language:_english": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(13)"
+    },
+    "button_13_...": {
+      "text": "...",
+      "aria_label": "Show path",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(14)"
+    },
+    "button_14_region": {
+      "text": "Region",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(15)"
+    },
+    "button_15_us_east_(ohio)": {
+      "text": "US East (Ohio)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(16)"
+    },
+    "button_16_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(17)"
+    },
+    "button_17_the_specified_amount_of_data_is_already_stored_in_s3_standard": {
+      "text": "The specified amount of data is already stored in S3 Standard",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(18)"
+    },
+    "button_18_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(19)"
+    },
+    "button_19_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(20)"
+    },
+    "button_20_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(21)"
+    },
+    "button_21_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(22)"
+    },
+    "button_22_the_specified_amount_of_data_is_already_stored_in_s3_int": {
+      "text": "The specified amount of data is already stored in S3 INT",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(23)"
+    },
+    "button_23_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(24)"
+    },
+    "button_24_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(25)"
+    },
+    "button_25_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(26)"
+    },
+    "button_26_the_specified_amount_of_data_is_already_stored_in_s3_standard-ia": {
+      "text": "The specified amount of data is already stored in S3 Standard-IA",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(27)"
+    },
+    "button_27_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(28)"
+    },
+    "button_28_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(29)"
+    },
+    "button_29_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(30)"
+    },
+    "button_30_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(31)"
+    },
+    "button_31_the_specified_amount_of_data_is_already_stored_in_one_zone-ia": {
+      "text": "The specified amount of data is already stored in One Zone-IA",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(32)"
+    },
+    "button_32_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(33)"
+    },
+    "button_33_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(34)"
+    },
+    "button_34_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(35)"
+    },
+    "button_35_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(36)"
+    },
+    "button_36_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(37)"
+    },
+    "button_37_the_specified_amount_of_data_is_already_stored_in_s3_glacier_flexible_retrieval": {
+      "text": "The specified amount of data is already stored in S3 Glacier Flexible Retrieval",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(38)"
+    },
+    "button_38_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(39)"
+    },
+    "button_39_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(40)"
+    },
+    "button_40_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(41)"
+    },
+    "button_41_0": {
+      "text": "0",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(42)"
+    },
+    "button_42_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(43)"
+    },
+    "button_43_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(44)"
+    },
+    "button_44_the_specified_amount_of_data_is_already_stored_in_s3_glacier_deep_archive": {
+      "text": "The specified amount of data is already stored in S3 Glacier Deep Archive",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(45)"
+    },
+    "button_45_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(46)"
+    },
+    "button_46_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(47)"
+    },
+    "button_47_million_per_month": {
+      "text": "million per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(48)"
+    },
+    "button_48_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(49)"
+    },
+    "button_49_million_per_month": {
+      "text": "million per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(50)"
+    },
+    "button_50_gb": {
+      "text": "GB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(51)"
+    },
+    "button_51_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(52)"
+    },
+    "button_52_million_per_month": {
+      "text": "million per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(53)"
+    },
+    "button_53_million_per_month": {
+      "text": "million per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(54)"
+    },
+    "button_54_thousand_per_month": {
+      "text": "thousand per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(55)"
+    },
+    "button_55_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(56)"
+    },
+    "button_56_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(57)"
+    },
+    "button_57_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(58)"
+    },
+    "button_58_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(59)"
+    },
+    "button_59_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(60)"
+    },
+    "button_60_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(61)"
+    },
+    "button_61_the_specified_amount_of_data_is_already_stored_in_s3_glacier_instant_retrieval": {
+      "text": "The specified amount of data is already stored in S3 Glacier Instant Retrieval",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(62)"
+    },
+    "button_62_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(63)"
+    },
+    "button_63_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(64)"
+    },
+    "button_64_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(65)"
+    },
+    "button_65_data_transfer_from": {
+      "text": "Data transfer from",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(66)"
+    },
+    "button_66_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(67)"
+    },
+    "button_67_add_inbound_data_transfer": {
+      "text": "Add inbound data transfer",
+      "aria_label": "Add inbound data transfer",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(68)"
+    },
+    "button_68_data_transfer_to": {
+      "text": "Data transfer to",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(69)"
+    },
+    "button_69_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(70)"
+    },
+    "button_70_add_outbound_data_transfer": {
+      "text": "Add outbound data transfer",
+      "aria_label": "Add outbound data transfer",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(71)"
+    },
+    "button_71_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(72)"
+    },
+    "button_72_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(73)"
+    },
+    "button_73_kb": {
+      "text": "KB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(74)"
+    },
+    "button_74_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(75)"
+    },
+    "button_75_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(76)"
+    },
+    "button_76_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(77)"
+    },
+    "button_77_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(78)"
+    },
+    "button_80_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(81)"
+    },
+    "button_81_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(82)"
+    },
+    "button_82_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(83)"
+    },
+    "button_83_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(84)"
+    }
+  },
+  "inputs": {
+    "input_0_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "selector": "input:nth-of-type(1)"
+    },
+    "input_1_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "selector": "input:nth-of-type(2)"
+    },
+    "input_2_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "selector": "input:nth-of-type(3)"
+    },
+    "input_3_text_enter_a_description_for_your_estimate": {
+      "type": "text",
+      "placeholder": "Enter a description for your estimate",
+      "name": "",
+      "id": "formField2200-1761202284514-2674",
+      "aria_label": "Description - optional",
+      "selector": "input:nth-of-type(4)"
+    },
+    "input_4_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "",
+      "aria_label": "",
+      "selector": "input:nth-of-type(5)"
+    },
+    "input_5_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2230-1761202284524-7136",
+      "aria_label": "",
+      "selector": "input:nth-of-type(6)"
+    },
+    "input_6_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2231-1761202284524-2005",
+      "aria_label": "",
+      "selector": "input:nth-of-type(7)"
+    },
+    "input_7_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2232-1761202284524-3690",
+      "aria_label": "",
+      "selector": "input:nth-of-type(8)"
+    },
+    "input_8_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2233-1761202284525-5498",
+      "aria_label": "",
+      "selector": "input:nth-of-type(9)"
+    },
+    "input_9_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2234-1761202284525-8841",
+      "aria_label": "",
+      "selector": "input:nth-of-type(10)"
+    },
+    "input_10_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2235-1761202284525-9341",
+      "aria_label": "",
+      "selector": "input:nth-of-type(11)"
+    },
+    "input_11_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2236-1761202284525-1501",
+      "aria_label": "",
+      "selector": "input:nth-of-type(12)"
+    },
+    "input_12_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2237-1761202284525-7905",
+      "aria_label": "",
+      "selector": "input:nth-of-type(13)"
+    },
+    "input_13_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2238-1761202284525-7289",
+      "aria_label": "",
+      "selector": "input:nth-of-type(14)"
+    },
+    "input_14_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2239-1761202284526-5391",
+      "aria_label": "",
+      "selector": "input:nth-of-type(15)"
+    },
+    "input_15_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2240-1761202284526-8628",
+      "aria_label": "",
+      "selector": "input:nth-of-type(16)"
+    },
+    "input_16_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2241-1761202284526-4807",
+      "aria_label": "",
+      "selector": "input:nth-of-type(17)"
+    },
+    "input_17_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2242-1761202284526-6714",
+      "aria_label": "",
+      "selector": "input:nth-of-type(18)"
+    },
+    "input_18_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2892-1761202288732-7057",
+      "aria_label": "S3 Standard storage Value",
+      "selector": "input:nth-of-type(19)"
+    },
+    "input_19_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2903-1761202288734-1299",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 Standard Enter amount of requests",
+      "selector": "input:nth-of-type(20)"
+    },
+    "input_20_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2904-1761202288734-1489",
+      "aria_label": "GET, SELECT, and all other requests from S3 Standard Enter amount of requests",
+      "selector": "input:nth-of-type(21)"
+    },
+    "input_21_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2906-1761202288735-459",
+      "aria_label": "Data returned by S3 Select Value",
+      "selector": "input:nth-of-type(22)"
+    },
+    "input_22_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2918-1761202288739-9972",
+      "aria_label": "Data scanned by S3 Select Value",
+      "selector": "input:nth-of-type(23)"
+    },
+    "input_23_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2730-1761202287312-241",
+      "aria_label": "S3 INT storage Value",
+      "selector": "input:nth-of-type(24)"
+    },
+    "input_24_number_enter_amount.": {
+      "type": "number",
+      "placeholder": "Enter amount.",
+      "name": "",
+      "id": "formField2742-1761202287314-2209",
+      "aria_label": "S3 INT Average Object Size Value",
+      "selector": "input:nth-of-type(25)"
+    },
+    "input_25_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2753-1761202287315-7597",
+      "aria_label": "Percentage of Storage in INT-Frequent Access Tier",
+      "selector": "input:nth-of-type(26)"
+    },
+    "input_26_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2754-1761202287315-8784",
+      "aria_label": "Percentage of Storage in INT-Infrequent Access Tier (% of storage that hasn't been accessed in the last 30 days)",
+      "selector": "input:nth-of-type(27)"
+    },
+    "input_27_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2755-1761202287316-2513",
+      "aria_label": "Percentage of Storage in INT-Archive Instant Access Tier (% of storage that hasn't been accessed in the last 90 days)",
+      "selector": "input:nth-of-type(28)"
+    },
+    "input_28_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2756-1761202287317-6638",
+      "aria_label": "Percentage of Storage in INT-Archive Access Tier (% of storage that hasn't been accessed for a minimum of 90 days)",
+      "selector": "input:nth-of-type(29)"
+    },
+    "input_29_number": {
+      "type": "number",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2757-1761202287317-5280",
+      "aria_label": "Percentage of Storage in INT-Deep Archive Access Tier (% of storage that hasn't been accessed for a minimum of 180 days)",
+      "selector": "input:nth-of-type(30)"
+    },
+    "input_30_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2758-1761202287318-610",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 INT Enter amount of requests",
+      "selector": "input:nth-of-type(31)"
+    },
+    "input_31_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2759-1761202287318-8073",
+      "aria_label": "GET, SELECT, and all other requests from S3 INT Enter amount of requests",
+      "selector": "input:nth-of-type(32)"
+    },
+    "input_32_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2760-1761202287318-2326",
+      "aria_label": "Lifecycle Transition requests Enter amount of requests",
+      "selector": "input:nth-of-type(33)"
+    },
+    "input_33_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2762-1761202287319-3871",
+      "aria_label": "Data returned by S3 Select Value",
+      "selector": "input:nth-of-type(34)"
+    },
+    "input_34_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2774-1761202287323-3728",
+      "aria_label": "Data scanned by S3 Select Value",
+      "selector": "input:nth-of-type(35)"
+    },
+    "input_35_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField3036-1761202290883-9233",
+      "aria_label": "S3 Standard-IA storage Value",
+      "selector": "input:nth-of-type(36)"
+    },
+    "input_36_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField3047-1761202290884-1585",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 Standard-IA Enter amount of requests",
+      "selector": "input:nth-of-type(37)"
+    },
+    "input_37_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField3048-1761202290884-8222",
+      "aria_label": "GET, SELECT, and all other requests from S3 Standard-IA Enter amount of requests",
+      "selector": "input:nth-of-type(38)"
+    },
+    "input_38_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField3049-1761202290884-1153",
+      "aria_label": "Lifecycle Transition requests Enter amount of requests",
+      "selector": "input:nth-of-type(39)"
+    },
+    "input_39_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField3051-1761202290885-6760",
+      "aria_label": "Data retrievals Value",
+      "selector": "input:nth-of-type(40)"
+    },
+    "input_40_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField3063-1761202290889-4194",
+      "aria_label": "Data returned by S3 Select Value",
+      "selector": "input:nth-of-type(41)"
+    },
+    "input_41_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField3075-1761202290891-377",
+      "aria_label": "Data scanned by S3 Select Value",
+      "selector": "input:nth-of-type(42)"
+    },
+    "input_42_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2785-1761202287813-7044",
+      "aria_label": "S3 One Zone-IA storage Value",
+      "selector": "input:nth-of-type(43)"
+    },
+    "input_43_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2796-1761202287814-9288",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 One Zone-IA Enter amount of requests",
+      "selector": "input:nth-of-type(44)"
+    },
+    "input_44_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2797-1761202287814-4058",
+      "aria_label": "GET, SELECT, and all other requests from S3 One Zone-IA Enter amount of requests",
+      "selector": "input:nth-of-type(45)"
+    },
+    "input_45_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2798-1761202287815-2341",
+      "aria_label": "Lifecycle Transition requests Enter amount of requests",
+      "selector": "input:nth-of-type(46)"
+    },
+    "input_46_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2800-1761202287815-1765",
+      "aria_label": "Data Retrievals Value",
+      "selector": "input:nth-of-type(47)"
+    },
+    "input_47_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2812-1761202287816-6435",
+      "aria_label": "Data returned by S3 Select Value",
+      "selector": "input:nth-of-type(48)"
+    },
+    "input_48_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2824-1761202287817-2995",
+      "aria_label": "Data scanned by S3 Select Value",
+      "selector": "input:nth-of-type(49)"
+    },
+    "input_49_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2940-1761202289693-5854",
+      "aria_label": "S3 Glacier Flexible Retrieval storage Value",
+      "selector": "input:nth-of-type(50)"
+    },
+    "input_50_number_enter_amount.": {
+      "type": "number",
+      "placeholder": "Enter amount.",
+      "name": "",
+      "id": "formField2277-1761202284579-9973",
+      "aria_label": "S3 Glacier Flexible Retrieval Average Object Size Value",
+      "selector": "input:nth-of-type(51)"
+    },
+    "input_51_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2951-1761202289695-3182",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 Glacier Flexible Retrieval Enter amount of requests",
+      "selector": "input:nth-of-type(52)"
+    },
+    "input_52_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2952-1761202289695-6266",
+      "aria_label": "Lifecycle Transitions into S3 Glacier Flexible Retrieval Enter amount of requests",
+      "selector": "input:nth-of-type(53)"
+    },
+    "input_53_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2953-1761202289696-3304",
+      "aria_label": "Restore requests (Standard) Enter amount of requests",
+      "selector": "input:nth-of-type(54)"
+    },
+    "input_54_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2954-1761202289696-8964",
+      "aria_label": "Restore requests (Expedited) Enter amount of requests",
+      "selector": "input:nth-of-type(55)"
+    },
+    "input_55_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2955-1761202289696-9259",
+      "aria_label": "Restore requests (Bulk) Enter amount of requests",
+      "selector": "input:nth-of-type(56)"
+    },
+    "input_56_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2957-1761202289697-8997",
+      "aria_label": "Data retrievals (Standard) Value",
+      "selector": "input:nth-of-type(57)"
+    },
+    "input_57_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2969-1761202289698-3298",
+      "aria_label": "Data retrievals (Expedited) Value",
+      "selector": "input:nth-of-type(58)"
+    },
+    "input_58_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2981-1761202289700-3793",
+      "aria_label": "Data retrievals (Bulk) Value",
+      "selector": "input:nth-of-type(59)"
+    },
+    "input_59_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2691-1761202286877-6659",
+      "aria_label": "S3 Glacier Deep Archive storage Value",
+      "selector": "input:nth-of-type(60)"
+    },
+    "input_60_number_enter_amount.": {
+      "type": "number",
+      "placeholder": "Enter amount.",
+      "name": "",
+      "id": "formField2297-1761202284591-2176",
+      "aria_label": "S3 Glacier Deep Archive Average Object Size Value",
+      "selector": "input:nth-of-type(61)"
+    },
+    "input_61_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2702-1761202286880-4460",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 Glacier Deep Archive Enter amount of requests",
+      "selector": "input:nth-of-type(62)"
+    },
+    "input_62_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2703-1761202286881-6190",
+      "aria_label": "Lifecycle Transitions into S3 Glacier Deep Archive Enter amount of requests",
+      "selector": "input:nth-of-type(63)"
+    },
+    "input_63_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2704-1761202286881-3117",
+      "aria_label": "Restore requests (Standard) Enter amount of requests",
+      "selector": "input:nth-of-type(64)"
+    },
+    "input_64_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2705-1761202286881-3296",
+      "aria_label": "Restore requests (Bulk) Enter amount of requests",
+      "selector": "input:nth-of-type(65)"
+    },
+    "input_65_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2707-1761202286882-7916",
+      "aria_label": "Data retrievals (Standard) Value",
+      "selector": "input:nth-of-type(66)"
+    },
+    "input_66_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2719-1761202286884-6059",
+      "aria_label": "Data retrievals (Bulk) Value",
+      "selector": "input:nth-of-type(67)"
+    },
+    "input_67_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2627-1761202286380-6557",
+      "aria_label": "S3 Storage Lens Objects Value",
+      "selector": "input:nth-of-type(68)"
+    },
+    "input_68_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2315-1761202284600-1581",
+      "aria_label": "S3 Batch Operations Jobs Value",
+      "selector": "input:nth-of-type(69)"
+    },
+    "input_69_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2326-1761202284605-8533",
+      "aria_label": "S3 Batch Operations Objects Value",
+      "selector": "input:nth-of-type(70)"
+    },
+    "input_70_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2346-1761202284615-9631",
+      "aria_label": "Size of encrypted data Value",
+      "selector": "input:nth-of-type(71)"
+    },
+    "input_71_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2645-1761202286386-5966",
+      "aria_label": "S3 General Purpose Buckets Value",
+      "selector": "input:nth-of-type(72)"
+    },
+    "input_72_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2656-1761202286389-1050",
+      "aria_label": "S3 Inventory Value",
+      "selector": "input:nth-of-type(73)"
+    },
+    "input_73_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2667-1761202286391-3062",
+      "aria_label": "S3 Storage Class Analysis Value",
+      "selector": "input:nth-of-type(74)"
+    },
+    "input_74_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2678-1761202286392-541",
+      "aria_label": "S3 Object Tagging Value",
+      "selector": "input:nth-of-type(75)"
+    },
+    "input_75_text_enter_number_of_indexes": {
+      "type": "text",
+      "placeholder": "Enter number of indexes",
+      "name": "",
+      "id": "formField2581-1761202285896-426",
+      "aria_label": "Number of indexes Enter number of indexes",
+      "selector": "input:nth-of-type(76)"
+    },
+    "input_76_text_enter_number_of_vectors_per_index": {
+      "type": "text",
+      "placeholder": "Enter Number of vectors per index",
+      "name": "",
+      "id": "formField2582-1761202285896-9343",
+      "aria_label": "Number of vectors per index Enter Number of vectors per index",
+      "selector": "input:nth-of-type(77)"
+    },
+    "input_77_text_enter_number": {
+      "type": "text",
+      "placeholder": "Enter number",
+      "name": "",
+      "id": "formField2583-1761202285897-462",
+      "aria_label": "Vector Dimensions Enter number",
+      "selector": "input:nth-of-type(78)"
+    },
+    "input_78_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2585-1761202285897-1021",
+      "aria_label": "Filterable metadata (KB) per vector Value",
+      "selector": "input:nth-of-type(79)"
+    },
+    "input_79_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2597-1761202285898-6601",
+      "aria_label": "Non-filterable metadata (KB) per vector Value",
+      "selector": "input:nth-of-type(80)"
+    },
+    "input_80_number_field_value": {
+      "type": "number",
+      "placeholder": "Field value",
+      "name": "",
+      "id": "formField2608-1761202285899-7073",
+      "aria_label": "Percentage of vectors overwritten per month Field value",
+      "selector": "input:nth-of-type(81)"
+    },
+    "input_81_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2609-1761202285900-9801",
+      "aria_label": "Total number of queries per month (across all indexes) Value",
+      "selector": "input:nth-of-type(82)"
+    },
+    "input_82_text_enter_number_of_requests": {
+      "type": "text",
+      "placeholder": "Enter number of requests",
+      "name": "",
+      "id": "formField3009-1761202290163-6322",
+      "aria_label": "GET requests from S3 Enter number of requests",
+      "selector": "input:nth-of-type(83)"
+    },
+    "input_83_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField3010-1761202290163-1919",
+      "aria_label": "Duration that the Lambda function is set to execute per request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(84)"
+    },
+    "input_84_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField3012-1761202290164-3239",
+      "aria_label": "Amount of memory allocated to the Lambda function Value",
+      "selector": "input:nth-of-type(85)"
+    },
+    "input_85_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField3024-1761202290165-119",
+      "aria_label": "Size of data returned by S3 Object Lambda Value",
+      "selector": "input:nth-of-type(86)"
+    },
+    "input_86_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2835-1761202288201-5112",
+      "aria_label": "S3 Glacier Instant Retrieval storage Value",
+      "selector": "input:nth-of-type(87)"
+    },
+    "input_87_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2846-1761202288203-604",
+      "aria_label": "PUT, COPY, POST, LIST requests to S3 Glacier Instant Retrieval Enter amount of requests",
+      "selector": "input:nth-of-type(88)"
+    },
+    "input_88_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2847-1761202288205-598",
+      "aria_label": "GET, SELECT, and all other requests from S3 Glacier Instant Retrieval Enter amount of requests",
+      "selector": "input:nth-of-type(89)"
+    },
+    "input_89_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2848-1761202288205-4334",
+      "aria_label": "Lifecycle Transition requests Enter amount of requests",
+      "selector": "input:nth-of-type(90)"
+    },
+    "input_90_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2850-1761202288206-5250",
+      "aria_label": "Data Retrievals Value",
+      "selector": "input:nth-of-type(91)"
+    },
+    "input_91_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2862-1761202288208-2156",
+      "aria_label": "Data returned by S3 Select Value",
+      "selector": "input:nth-of-type(92)"
+    },
+    "input_92_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2874-1761202288210-6119",
+      "aria_label": "Data scanned by S3 Select Value",
+      "selector": "input:nth-of-type(93)"
+    },
+    "input_93_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2395-1761202284650-9263",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(94)"
+    },
+    "input_94_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2421-1761202284659-8072",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(95)"
+    },
+    "input_95_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2443-1761202284670-1738",
+      "aria_label": "S3 Express One Zone storage Value",
+      "selector": "input:nth-of-type(96)"
+    },
+    "input_96_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2454-1761202284676-8397",
+      "aria_label": "PUT, COPY, POST, LIST, RENAME requests to S3 Express One Zone Enter amount of requests",
+      "selector": "input:nth-of-type(97)"
+    },
+    "input_97_text_enter_amount_of_requests": {
+      "type": "text",
+      "placeholder": "Enter amount of requests",
+      "name": "",
+      "id": "formField2580-1761202285580-6778",
+      "aria_label": "GET and all other requests from S3 Express One Zone Enter amount of requests",
+      "selector": "input:nth-of-type(98)"
+    },
+    "input_98_number_enter_average_put/_copy_request_size": {
+      "type": "number",
+      "placeholder": "Enter average PUT/ COPY request size",
+      "name": "",
+      "id": "formField2455-1761202284678-616",
+      "aria_label": "PUT/ COPY request size Value",
+      "selector": "input:nth-of-type(99)"
+    },
+    "input_99_number_enter_average_get_request_size.": {
+      "type": "number",
+      "placeholder": "Enter average GET request size.",
+      "name": "",
+      "id": "formField2466-1761202284682-8254",
+      "aria_label": "GET request size Value",
+      "selector": "input:nth-of-type(100)"
+    },
+    "input_100_text_enter_number_of_requests": {
+      "type": "text",
+      "placeholder": "Enter number of requests",
+      "name": "",
+      "id": "formField2484-1761202284693-2706",
+      "aria_label": "Number of AccessGrants Requests Enter number of requests",
+      "selector": "input:nth-of-type(101)"
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0_awsccc-u-cb-performance": {
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(1)"
+    },
+    "checkbox_1_awsccc-u-cb-functional": {
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(2)"
+    },
+    "checkbox_2_awsccc-u-cb-advertising": {
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(3)"
+    },
+    "checkbox_3_2230-1761202284524-7136": {
+      "name": "",
+      "id": "2230-1761202284524-7136",
+      "aria_label": "",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(4)"
+    },
+    "checkbox_4_2231-1761202284524-2005": {
+      "name": "",
+      "id": "2231-1761202284524-2005",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(5)"
+    },
+    "checkbox_5_2232-1761202284524-3690": {
+      "name": "",
+      "id": "2232-1761202284524-3690",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(6)"
+    },
+    "checkbox_6_2233-1761202284525-5498": {
+      "name": "",
+      "id": "2233-1761202284525-5498",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(7)"
+    },
+    "checkbox_7_2234-1761202284525-8841": {
+      "name": "",
+      "id": "2234-1761202284525-8841",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(8)"
+    },
+    "checkbox_8_2235-1761202284525-9341": {
+      "name": "",
+      "id": "2235-1761202284525-9341",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(9)"
+    },
+    "checkbox_9_2236-1761202284525-1501": {
+      "name": "",
+      "id": "2236-1761202284525-1501",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(10)"
+    },
+    "checkbox_10_2237-1761202284525-7905": {
+      "name": "",
+      "id": "2237-1761202284525-7905",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(11)"
+    },
+    "checkbox_11_2238-1761202284525-7289": {
+      "name": "",
+      "id": "2238-1761202284525-7289",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(12)"
+    },
+    "checkbox_12_2239-1761202284526-5391": {
+      "name": "",
+      "id": "2239-1761202284526-5391",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(13)"
+    },
+    "checkbox_13_2240-1761202284526-8628": {
+      "name": "",
+      "id": "2240-1761202284526-8628",
+      "aria_label": "",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(14)"
+    },
+    "checkbox_14_2241-1761202284526-4807": {
+      "name": "",
+      "id": "2241-1761202284526-4807",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(15)"
+    },
+    "checkbox_15_2242-1761202284526-6714": {
+      "name": "",
+      "id": "2242-1761202284526-6714",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(16)"
+    }
+  },
+  "radio_buttons": {},
+  "text_areas": {}
+}

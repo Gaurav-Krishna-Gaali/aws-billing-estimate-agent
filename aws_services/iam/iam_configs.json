@@ -1,0 +1,143 @@
+{
+  "small_organization": {
+    "name": "Small Organization",
+    "description": "IAM Access Analyzer for small organizations with basic security monitoring",
+    "estimated_monthly_cost": "$5-15",
+    "settings": {
+      "accounts_to_monitor": 3,
+      "average_roles_per_account": 10,
+      "average_users_per_account": 25,
+      "analyzers_per_account": 2,
+      "check_no_new_access_requests": 100,
+      "check_access_not_granted_requests": 50,
+      "resources_to_monitor": 100
+    }
+  },
+  "medium_enterprise": {
+    "name": "Medium Enterprise",
+    "description": "IAM Access Analyzer for medium-sized enterprises with comprehensive security monitoring",
+    "estimated_monthly_cost": "$25-75",
+    "settings": {
+      "accounts_to_monitor": 10,
+      "average_roles_per_account": 50,
+      "average_users_per_account": 100,
+      "analyzers_per_account": 5,
+      "check_no_new_access_requests": 1000,
+      "check_access_not_granted_requests": 500,
+      "resources_to_monitor": 1000
+    }
+  },
+  "large_enterprise": {
+    "name": "Large Enterprise",
+    "description": "IAM Access Analyzer for large enterprises with extensive multi-account security monitoring",
+    "estimated_monthly_cost": "$100-300",
+    "settings": {
+      "accounts_to_monitor": 50,
+      "average_roles_per_account": 100,
+      "average_users_per_account": 500,
+      "analyzers_per_account": 10,
+      "check_no_new_access_requests": 5000,
+      "check_access_not_granted_requests": 2500,
+      "resources_to_monitor": 5000
+    }
+  },
+  "compliance_focused": {
+    "name": "Compliance Focused",
+    "description": "IAM Access Analyzer optimized for compliance requirements with high monitoring frequency",
+    "estimated_monthly_cost": "$150-500",
+    "settings": {
+      "accounts_to_monitor": 25,
+      "average_roles_per_account": 75,
+      "average_users_per_account": 200,
+      "analyzers_per_account": 8,
+      "check_no_new_access_requests": 10000,
+      "check_access_not_granted_requests": 5000,
+      "resources_to_monitor": 2000
+    }
+  },
+  "high_security": {
+    "name": "High Security Environment",
+    "description": "IAM Access Analyzer for high-security environments with maximum monitoring coverage",
+    "estimated_monthly_cost": "$300-1000",
+    "settings": {
+      "accounts_to_monitor": 100,
+      "average_roles_per_account": 200,
+      "average_users_per_account": 1000,
+      "analyzers_per_account": 20,
+      "check_no_new_access_requests": 25000,
+      "check_access_not_granted_requests": 15000,
+      "resources_to_monitor": 10000
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "IAM Access Analyzer for development and testing environments",
+    "estimated_monthly_cost": "$2-10",
+    "settings": {
+      "accounts_to_monitor": 1,
+      "average_roles_per_account": 5,
+      "average_users_per_account": 10,
+      "analyzers_per_account": 1,
+      "check_no_new_access_requests": 50,
+      "check_access_not_granted_requests": 25,
+      "resources_to_monitor": 50
+    }
+  },
+  "multi_tenant_saas": {
+    "name": "Multi-Tenant SaaS",
+    "description": "IAM Access Analyzer for multi-tenant SaaS applications with customer isolation monitoring",
+    "estimated_monthly_cost": "$200-600",
+    "settings": {
+      "accounts_to_monitor": 75,
+      "average_roles_per_account": 150,
+      "average_users_per_account": 750,
+      "analyzers_per_account": 15,
+      "check_no_new_access_requests": 15000,
+      "check_access_not_granted_requests": 7500,
+      "resources_to_monitor": 7500
+    }
+  },
+  "government_compliance": {
+    "name": "Government & Compliance",
+    "description": "IAM Access Analyzer for government and highly regulated environments",
+    "estimated_monthly_cost": "$500-1500",
+    "settings": {
+      "accounts_to_monitor": 200,
+      "average_roles_per_account": 300,
+      "average_users_per_account": 2000,
+      "analyzers_per_account": 50,
+      "check_no_new_access_requests": 50000,
+      "check_access_not_granted_requests": 30000,
+      "resources_to_monitor": 20000
+    }
+  },
+  "startup": {
+    "name": "Startup",
+    "description": "IAM Access Analyzer for startups with minimal but essential security monitoring",
+    "estimated_monthly_cost": "$1-5",
+    "settings": {
+      "accounts_to_monitor": 1,
+      "average_roles_per_account": 3,
+      "average_users_per_account": 5,
+      "analyzers_per_account": 1,
+      "check_no_new_access_requests": 25,
+      "check_access_not_granted_requests": 10,
+      "resources_to_monitor": 25
+    }
+  },
+  "custom": {
+    "name": "Custom IAM Configuration",
+    "description": "Edit this configuration to match your specific IAM Access Analyzer needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "accounts_to_monitor": 0,
+      "average_roles_per_account": 0,
+      "average_users_per_account": 0,
+      "analyzers_per_account": 0,
+      "check_no_new_access_requests": 0,
+      "check_access_not_granted_requests": 0,
+      "resources_to_monitor": 0
+    }
+  }
+}
+

@@ -1,0 +1,302 @@
+{
+  "buttons": {
+    "button_0_accept": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(1)"
+    },
+    "button_1_decline": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(2)"
+    },
+    "button_2_customize": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(3)"
+    },
+    "button_3_cancel": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(4)"
+    },
+    "button_4_save_preferences": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(5)"
+    },
+    "button_5_dismiss": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(6)"
+    },
+    "button_6_i_can_connect_you_with_an_aws_sales_representative_if_you_like_to_learn_more_about_our_products_and_services.": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(7)"
+    },
+    "button_8_1": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(9)"
+    },
+    "button_12_language:_english": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(13)"
+    },
+    "button_13_...": {
+      "text": "...",
+      "aria_label": "Show path",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(14)"
+    },
+    "button_14_region": {
+      "text": "Region",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(15)"
+    },
+    "button_15_us_east_(ohio)": {
+      "text": "US East (Ohio)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(16)"
+    },
+    "button_16_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(17)"
+    },
+    "button_17_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(18)"
+    },
+    "button_18_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(19)"
+    },
+    "button_19_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(20)"
+    },
+    "button_20_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(21)"
+    },
+    "button_21_million_per_month": {
+      "text": "million per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(22)"
+    },
+    "button_22_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(23)"
+    },
+    "button_23_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(24)"
+    },
+    "button_24_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(25)"
+    },
+    "button_25_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(26)"
+    },
+    "button_28_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(29)"
+    },
+    "button_29_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(30)"
+    },
+    "button_30_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(31)"
+    },
+    "button_31_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(32)"
+    }
+  },
+  "inputs": {
+    "input_0_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "selector": "input:nth-of-type(1)"
+    },
+    "input_1_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "selector": "input:nth-of-type(2)"
+    },
+    "input_2_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "selector": "input:nth-of-type(3)"
+    },
+    "input_3_text_enter_a_description_for_your_estimate": {
+      "type": "text",
+      "placeholder": "Enter a description for your estimate",
+      "name": "",
+      "id": "formField2200-1761251238332-897",
+      "aria_label": "Description - optional",
+      "selector": "input:nth-of-type(4)"
+    },
+    "input_4_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "",
+      "aria_label": "",
+      "selector": "input:nth-of-type(5)"
+    },
+    "input_5_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2253-1761251238514-719",
+      "aria_label": "Number of Web Access Control Lists (Web ACLs) utilized Value",
+      "selector": "input:nth-of-type(6)"
+    },
+    "input_6_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2264-1761251238515-8997",
+      "aria_label": "Number of Rules added per Web ACL Value",
+      "selector": "input:nth-of-type(7)"
+    },
+    "input_7_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2276-1761251238517-3516",
+      "aria_label": "Number of Rule Groups per Web ACL Value",
+      "selector": "input:nth-of-type(8)"
+    },
+    "input_8_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2287-1761251238518-6623",
+      "aria_label": "Number of Rules inside each Rule Group Value",
+      "selector": "input:nth-of-type(9)"
+    },
+    "input_9_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2299-1761251238519-2340",
+      "aria_label": "Number of Managed Rule Groups per Web ACL Value",
+      "selector": "input:nth-of-type(10)"
+    },
+    "input_10_number_enter_a_number": {
+      "type": "number",
+      "placeholder": "Enter a number",
+      "name": "",
+      "id": "formField2310-1761251238523-4564",
+      "aria_label": "Number of web requests received across all web ACLs Value",
+      "selector": "input:nth-of-type(11)"
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0_awsccc-u-cb-performance": {
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(1)"
+    },
+    "checkbox_1_awsccc-u-cb-functional": {
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(2)"
+    },
+    "checkbox_2_awsccc-u-cb-advertising": {
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(3)"
+    }
+  },
+  "radio_buttons": {},
+  "text_areas": {}
+}

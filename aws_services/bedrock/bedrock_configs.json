@@ -1,0 +1,76 @@
+{
+  "light_usage": {
+    "name": "Light Usage - Small App",
+    "description": "Small application with minimal AI usage",
+    "estimated_monthly_cost": "$50-100",
+    "settings": {
+      "input_8_text": "10",
+      "input_9_text": "8",
+      "input_10_text": "100",
+      "input_11_text": "50",
+      "checkbox_4_2231-1761201177945-8554": false,
+      "checkbox_5_2232-1761201177945-115": false
+    }
+  },
+  "medium_usage": {
+    "name": "Medium Usage - Business App",
+    "description": "Business application with moderate AI usage",
+    "estimated_monthly_cost": "$200-500",
+    "settings": {
+      "input_8_text": "50",
+      "input_9_text": "12",
+      "input_10_text": "500",
+      "input_11_text": "200",
+      "input_12_text": "30",
+      "input_13_text": "8",
+      "input_14_text": "200",
+      "input_15_text": "100",
+      "checkbox_5_2232-1761201177945-115": false
+    }
+  },
+  "heavy_usage": {
+    "name": "Heavy Usage - Enterprise App",
+    "description": "Enterprise application with high AI usage",
+    "estimated_monthly_cost": "$1000-3000",
+    "settings": {
+      "input_8_text": "100",
+      "input_9_text": "16",
+      "input_10_text": "2000",
+      "input_11_text": "1000",
+      "input_12_text": "80",
+      "input_13_text": "12",
+      "input_14_text": "1000",
+      "input_15_text": "500",
+      "input_16_text": "150",
+      "input_17_text": "8",
+      "input_18_text": "300",
+      "input_19_text": "150"
+    }
+  },
+  "ai_research": {
+    "name": "AI Research - High Token Usage",
+    "description": "Research project with high token consumption",
+    "estimated_monthly_cost": "$2000-5000",
+    "settings": {
+      "input_8_text": "20",
+      "input_9_text": "24",
+      "input_10_text": "8000",
+      "input_11_text": "4000",
+      "checkbox_4_2231-1761201177945-8554": false,
+      "checkbox_5_2232-1761201177945-115": false
+    }
+  },
+  "custom": {
+    "name": "Custom Configuration",
+    "description": "Edit this configuration to match your needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "input_8_text": "0",
+      "input_9_text": "0",
+      "input_10_text": "0",
+      "input_11_text": "0",
+      "checkbox_4_2231-1761201177945-8554": false,
+      "checkbox_5_2232-1761201177945-115": false
+    }
+  }
+}

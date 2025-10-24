@@ -1,0 +1,302 @@
+{
+  "basic_web_server": {
+    "name": "Basic Web Server",
+    "description": "Simple EC2 setup for basic web hosting with minimal resources",
+    "estimated_monthly_cost": "$20-50",
+    "settings": {
+      "number_of_instances": 1,
+      "storage_amount_gb": 20,
+      "iops_per_volume": 100,
+      "throughput_mbps": 125,
+      "enable_monitoring": false,
+      "inbound_data_transfer_tb": 1,
+      "outbound_data_transfer_tb": 0.5,
+      "licensing_cost": 0
+    }
+  },
+  "small_business": {
+    "name": "Small Business Server",
+    "description": "EC2 configuration for small business applications with moderate resources",
+    "estimated_monthly_cost": "$100-300",
+    "settings": {
+      "number_of_instances": 2,
+      "storage_amount_gb": 100,
+      "iops_per_volume": 1000,
+      "throughput_mbps": 125,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 5,
+      "outbound_data_transfer_tb": 2,
+      "licensing_cost": 200
+    }
+  },
+  "medium_enterprise": {
+    "name": "Medium Enterprise Server",
+    "description": "EC2 configuration for medium-sized enterprises with comprehensive resources",
+    "estimated_monthly_cost": "$500-1500",
+    "settings": {
+      "number_of_instances": 5,
+      "storage_amount_gb": 500,
+      "iops_per_volume": 3000,
+      "throughput_mbps": 250,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 20,
+      "outbound_data_transfer_tb": 10,
+      "licensing_cost": 1000
+    }
+  },
+  "large_enterprise": {
+    "name": "Large Enterprise Server",
+    "description": "Enterprise-grade EC2 configuration with high-performance resources",
+    "estimated_monthly_cost": "$2000-8000",
+    "settings": {
+      "number_of_instances": 20,
+      "storage_amount_gb": 2000,
+      "iops_per_volume": 10000,
+      "throughput_mbps": 1000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 100,
+      "outbound_data_transfer_tb": 50,
+      "licensing_cost": 5000
+    }
+  },
+  "high_performance": {
+    "name": "High Performance Computing",
+    "description": "EC2 configuration optimized for high-performance computing workloads",
+    "estimated_monthly_cost": "$5000-20000",
+    "settings": {
+      "number_of_instances": 50,
+      "storage_amount_gb": 10000,
+      "iops_per_volume": 50000,
+      "throughput_mbps": 4000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 500,
+      "outbound_data_transfer_tb": 250,
+      "licensing_cost": 15000
+    }
+  },
+  "web_application": {
+    "name": "Web Application Server",
+    "description": "EC2 configuration for web applications with load balancing",
+    "estimated_monthly_cost": "$300-1200",
+    "settings": {
+      "number_of_instances": 3,
+      "storage_amount_gb": 200,
+      "iops_per_volume": 2000,
+      "throughput_mbps": 250,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 15,
+      "outbound_data_transfer_tb": 8,
+      "licensing_cost": 500
+    }
+  },
+  "database_server": {
+    "name": "Database Server",
+    "description": "EC2 configuration optimized for database workloads with high IOPS",
+    "estimated_monthly_cost": "$800-3000",
+    "settings": {
+      "number_of_instances": 2,
+      "storage_amount_gb": 1000,
+      "iops_per_volume": 16000,
+      "throughput_mbps": 1000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 10,
+      "outbound_data_transfer_tb": 5,
+      "licensing_cost": 2000
+    }
+  },
+  "development_environment": {
+    "name": "Development Environment",
+    "description": "EC2 configuration for development and testing environments",
+    "estimated_monthly_cost": "$50-200",
+    "settings": {
+      "number_of_instances": 1,
+      "storage_amount_gb": 50,
+      "iops_per_volume": 500,
+      "throughput_mbps": 125,
+      "enable_monitoring": false,
+      "inbound_data_transfer_tb": 2,
+      "outbound_data_transfer_tb": 1,
+      "licensing_cost": 100
+    }
+  },
+  "staging_environment": {
+    "name": "Staging Environment",
+    "description": "EC2 configuration for staging environments with production-like resources",
+    "estimated_monthly_cost": "$200-800",
+    "settings": {
+      "number_of_instances": 2,
+      "storage_amount_gb": 200,
+      "iops_per_volume": 1500,
+      "throughput_mbps": 250,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 8,
+      "outbound_data_transfer_tb": 4,
+      "licensing_cost": 300
+    }
+  },
+  "production_environment": {
+    "name": "Production Environment",
+    "description": "EC2 configuration for production workloads with high availability",
+    "estimated_monthly_cost": "$1000-5000",
+    "settings": {
+      "number_of_instances": 8,
+      "storage_amount_gb": 800,
+      "iops_per_volume": 8000,
+      "throughput_mbps": 500,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 50,
+      "outbound_data_transfer_tb": 25,
+      "licensing_cost": 2000
+    }
+  },
+  "microservices": {
+    "name": "Microservices Architecture",
+    "description": "EC2 configuration for microservices with multiple small instances",
+    "estimated_monthly_cost": "$400-1600",
+    "settings": {
+      "number_of_instances": 10,
+      "storage_amount_gb": 300,
+      "iops_per_volume": 3000,
+      "throughput_mbps": 250,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 25,
+      "outbound_data_transfer_tb": 12,
+      "licensing_cost": 800
+    }
+  },
+  "container_hosting": {
+    "name": "Container Hosting",
+    "description": "EC2 configuration for hosting containerized applications",
+    "estimated_monthly_cost": "$600-2400",
+    "settings": {
+      "number_of_instances": 6,
+      "storage_amount_gb": 600,
+      "iops_per_volume": 6000,
+      "throughput_mbps": 500,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 30,
+      "outbound_data_transfer_tb": 15,
+      "licensing_cost": 1200
+    }
+  },
+  "data_processing": {
+    "name": "Data Processing",
+    "description": "EC2 configuration for data processing and analytics workloads",
+    "estimated_monthly_cost": "$1500-6000",
+    "settings": {
+      "number_of_instances": 15,
+      "storage_amount_gb": 2000,
+      "iops_per_volume": 15000,
+      "throughput_mbps": 1000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 100,
+      "outbound_data_transfer_tb": 50,
+      "licensing_cost": 3000
+    }
+  },
+  "machine_learning": {
+    "name": "Machine Learning",
+    "description": "EC2 configuration for machine learning training and inference",
+    "estimated_monthly_cost": "$2000-10000",
+    "settings": {
+      "number_of_instances": 8,
+      "storage_amount_gb": 1500,
+      "iops_per_volume": 12000,
+      "throughput_mbps": 1000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 200,
+      "outbound_data_transfer_tb": 100,
+      "licensing_cost": 5000
+    }
+  },
+  "gaming_server": {
+    "name": "Gaming Server",
+    "description": "EC2 configuration for gaming servers with low latency requirements",
+    "estimated_monthly_cost": "$800-3200",
+    "settings": {
+      "number_of_instances": 12,
+      "storage_amount_gb": 800,
+      "iops_per_volume": 8000,
+      "throughput_mbps": 1000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 50,
+      "outbound_data_transfer_tb": 25,
+      "licensing_cost": 1500
+    }
+  },
+  "iot_backend": {
+    "name": "IoT Backend",
+    "description": "EC2 configuration for IoT backend services with high data ingestion",
+    "estimated_monthly_cost": "$1000-4000",
+    "settings": {
+      "number_of_instances": 5,
+      "storage_amount_gb": 1000,
+      "iops_per_volume": 10000,
+      "throughput_mbps": 1000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 150,
+      "outbound_data_transfer_tb": 75,
+      "licensing_cost": 2000
+    }
+  },
+  "media_processing": {
+    "name": "Media Processing",
+    "description": "EC2 configuration for media processing with high storage and bandwidth",
+    "estimated_monthly_cost": "$3000-12000",
+    "settings": {
+      "number_of_instances": 10,
+      "storage_amount_gb": 5000,
+      "iops_per_volume": 25000,
+      "throughput_mbps": 2000,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 500,
+      "outbound_data_transfer_tb": 250,
+      "licensing_cost": 8000
+    }
+  },
+  "backup_storage": {
+    "name": "Backup Storage",
+    "description": "EC2 configuration for backup and archival storage with cost optimization",
+    "estimated_monthly_cost": "$200-800",
+    "settings": {
+      "number_of_instances": 1,
+      "storage_amount_gb": 2000,
+      "iops_per_volume": 1000,
+      "throughput_mbps": 125,
+      "enable_monitoring": false,
+      "inbound_data_transfer_tb": 20,
+      "outbound_data_transfer_tb": 5,
+      "licensing_cost": 500
+    }
+  },
+  "disaster_recovery": {
+    "name": "Disaster Recovery",
+    "description": "EC2 configuration for disaster recovery with standby instances",
+    "estimated_monthly_cost": "$1000-4000",
+    "settings": {
+      "number_of_instances": 4,
+      "storage_amount_gb": 800,
+      "iops_per_volume": 4000,
+      "throughput_mbps": 500,
+      "enable_monitoring": true,
+      "inbound_data_transfer_tb": 30,
+      "outbound_data_transfer_tb": 15,
+      "licensing_cost": 2000
+    }
+  },
+  "custom": {
+    "name": "Custom EC2 Configuration",
+    "description": "Edit this configuration to match your specific EC2 compute needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "number_of_instances": 0,
+      "storage_amount_gb": 0,
+      "iops_per_volume": 0,
+      "throughput_mbps": 0,
+      "enable_monitoring": false,
+      "inbound_data_transfer_tb": 0,
+      "outbound_data_transfer_tb": 0,
+      "licensing_cost": 0
+    }
+  }
+}

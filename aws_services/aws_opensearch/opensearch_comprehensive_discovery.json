@@ -1,0 +1,662 @@
+{
+  "buttons": {
+    "button_0": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "type": "submit",
+      "class": "awsccc-u-btn awsccc-u-btn-primary",
+      "visible": false
+    },
+    "button_1": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "type": "submit",
+      "class": "awsccc-u-btn awsccc-u-btn-secondary",
+      "visible": false
+    },
+    "button_2": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "type": "submit",
+      "class": "awsccc-u-btn awsccc-u-btn-secondary",
+      "visible": false
+    },
+    "button_3": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "type": "submit",
+      "class": "awsccc-u-btn awsccc-u-btn-secondary",
+      "visible": false
+    },
+    "button_4": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "type": "submit",
+      "class": "awsccc-u-btn awsccc-u-btn-primary",
+      "visible": false
+    },
+    "button_5": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "type": "submit",
+      "class": "awsccc-u-btn awsccc-u-btn-primary",
+      "visible": false
+    },
+    "button_6": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": null,
+      "type": null,
+      "class": "interact-module__notificationBubble__JME58",
+      "visible": false
+    },
+    "button_7": {
+      "text": "",
+      "aria_label": "Close notification",
+      "type": null,
+      "class": "interact-module__notificationBubbleCloseIcon__PAHLX",
+      "visible": false
+    },
+    "button_8": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "type": null,
+      "class": "interact-module__alwaysVisibleChat__Z1+LL interact-module__botIconContainer__Ghjjo",
+      "visible": false
+    },
+    "button_9": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "type": "button",
+      "class": "awsui_button_m5h9f_f4bpv_145 awsui_test-utils-button-trigger_sne0l_1t2lq_263",
+      "visible": false
+    },
+    "button_10": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "type": "button",
+      "class": "awsui_button_m5h9f_f4bpv_145 awsui_test-utils-button-trigger_sne0l_1t2lq_263",
+      "visible": false
+    },
+    "button_11": {
+      "text": "",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button_m5h9f_f4bpv_145 awsui_offset-right-l_m5h9f_f4bpv_211",
+      "visible": false
+    },
+    "button_12": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "type": "button",
+      "class": "awsui_button_m5h9f_f4bpv_145 awsui_test-utils-button-trigger_sne0l_1t2lq_263",
+      "visible": true
+    },
+    "button_13": {
+      "text": "...",
+      "aria_label": "Show path",
+      "type": "button",
+      "class": "awsui_test-utils-button-trigger_sne0l_1t2lq_263 awsui_button_vjswe_1qz6m_157 awsui_variant-breadcrumb-group_vjswe_1qz6m_471",
+      "visible": false
+    },
+    "button_14": {
+      "text": "Region",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_15": {
+      "text": "US East (Ohio)",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_16": {
+      "text": "",
+      "aria_label": "clear input",
+      "type": "button",
+      "class": "awsui_input-button-right_2rhyz_8c1nk_314 awsui_button_vjswe_1qz6m_157 awsui_variant-inline-icon-pointer-target_vjswe_1qz6m_351 awsui_button-no-text_vjswe_1qz6m_601",
+      "visible": true
+    },
+    "button_17": {
+      "text": "%Utilized/Month",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_18": {
+      "text": "Memory optimized",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_19": {
+      "text": "OnDemand",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_20": {
+      "text": "EBS Only",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_21": {
+      "text": "",
+      "aria_label": "clear input",
+      "type": "button",
+      "class": "awsui_input-button-right_2rhyz_8c1nk_314 awsui_button_vjswe_1qz6m_157 awsui_variant-inline-icon-pointer-target_vjswe_1qz6m_351 awsui_button-no-text_vjswe_1qz6m_601",
+      "visible": true
+    },
+    "button_22": {
+      "text": "%Utilized/Month",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_23": {
+      "text": "Memory optimized",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_24": {
+      "text": "OnDemand",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_25": {
+      "text": "EBS Only",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_26": {
+      "text": "General Purpose SSD (gp3)",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_27": {
+      "text": "GB",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_28": {
+      "text": "MBps",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_29": {
+      "text": "",
+      "aria_label": "clear input",
+      "type": "button",
+      "class": "awsui_input-button-right_2rhyz_8c1nk_314 awsui_button_vjswe_1qz6m_157 awsui_variant-inline-icon-pointer-target_vjswe_1qz6m_351 awsui_button-no-text_vjswe_1qz6m_601",
+      "visible": true
+    },
+    "button_30": {
+      "text": "%Utilized/Month",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_31": {
+      "text": "OnDemand",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_32": {
+      "text": "TB",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_33": {
+      "text": "GB",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": true
+    },
+    "button_34": {
+      "text": "GB",
+      "aria_label": null,
+      "type": "button",
+      "class": "awsui_button-trigger_18eso_1jwcj_161 awsui_button-trigger_l32fn_xo3sj_5 awsui_has-caret_18eso_1jwcj_257",
+      "visible": false
+    },
+    "button_35": {
+      "text": "Show Details",
+      "aria_label": null,
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-link_vjswe_1qz6m_264",
+      "visible": false
+    },
+    "button_36": {
+      "text": "Cancel",
+      "aria_label": null,
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-link_vjswe_1qz6m_264",
+      "visible": false
+    },
+    "button_37": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206",
+      "visible": false
+    },
+    "button_38": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-primary_vjswe_1qz6m_235",
+      "visible": false
+    },
+    "button_39": {
+      "text": "",
+      "aria_label": "Open help panel",
+      "type": "button",
+      "class": "awsui_tools-toggle_1fj9k_q6akd_14 awsui_toggle-button_16w0h_qg1c0_185",
+      "visible": true
+    },
+    "button_40": {
+      "text": "",
+      "aria_label": "Close help panel",
+      "type": "button",
+      "class": "awsui_tools-close_1fj9k_q6akd_13 awsui_button_vjswe_1qz6m_157 awsui_variant-icon_vjswe_1qz6m_293 awsui_button-no-text_vjswe_1qz6m_601",
+      "visible": false
+    },
+    "button_41": {
+      "text": "Show Details",
+      "aria_label": null,
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-link_vjswe_1qz6m_264",
+      "visible": true
+    },
+    "button_42": {
+      "text": "Cancel",
+      "aria_label": null,
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-link_vjswe_1qz6m_264",
+      "visible": true
+    },
+    "button_43": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-normal_vjswe_1qz6m_206",
+      "visible": true
+    },
+    "button_44": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "type": "submit",
+      "class": "awsui_button_vjswe_1qz6m_157 awsui_variant-primary_vjswe_1qz6m_235",
+      "visible": true
+    }
+  },
+  "inputs": {
+    "input_0": {
+      "type": "checkbox",
+      "aria_label": "Allow performance category Allowed",
+      "placeholder": null,
+      "name": null,
+      "value": null,
+      "checked": "true",
+      "visible": false
+    },
+    "input_1": {
+      "type": "checkbox",
+      "aria_label": "Allow functional category Allowed",
+      "placeholder": null,
+      "name": null,
+      "value": null,
+      "checked": "true",
+      "visible": false
+    },
+    "input_2": {
+      "type": "checkbox",
+      "aria_label": "Allow advertising category Allowed",
+      "placeholder": null,
+      "name": null,
+      "value": null,
+      "checked": "true",
+      "visible": false
+    },
+    "input_3": {
+      "type": "text",
+      "aria_label": "Description - optional",
+      "placeholder": "Enter a description for your estimate",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": true
+    },
+    "input_4": {
+      "type": "text",
+      "aria_label": null,
+      "placeholder": null,
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": false
+    },
+    "input_5": {
+      "type": "radio",
+      "aria_label": null,
+      "placeholder": null,
+      "name": "awsui-tiles-2221-1761328089814-4455",
+      "value": "elasticSearchService",
+      "checked": "",
+      "visible": true
+    },
+    "input_6": {
+      "type": "radio",
+      "aria_label": null,
+      "placeholder": null,
+      "name": "awsui-tiles-2221-1761328089814-4455",
+      "value": "elasticSearchService-serverlesss",
+      "checked": null,
+      "visible": true
+    },
+    "input_7": {
+      "type": "radio",
+      "aria_label": null,
+      "placeholder": null,
+      "name": "awsui-tiles-2221-1761328089814-4455",
+      "value": "elasticSearchService-serverlesss-Ingestion",
+      "checked": null,
+      "visible": true
+    },
+    "input_8": {
+      "type": "text",
+      "aria_label": "Nodes",
+      "placeholder": "",
+      "name": null,
+      "value": "1",
+      "checked": null,
+      "visible": true
+    },
+    "input_9": {
+      "type": "text",
+      "aria_label": null,
+      "placeholder": "Select an instance",
+      "name": null,
+      "value": "r5.2xlarge.search",
+      "checked": null,
+      "visible": true
+    },
+    "input_10": {
+      "type": "number",
+      "aria_label": "Utilization (On-Demand only) Value",
+      "placeholder": null,
+      "name": null,
+      "value": "100",
+      "checked": null,
+      "visible": true
+    },
+    "input_11": {
+      "type": "text",
+      "aria_label": "Nodes",
+      "placeholder": "",
+      "name": null,
+      "value": "3",
+      "checked": null,
+      "visible": true
+    },
+    "input_12": {
+      "type": "text",
+      "aria_label": null,
+      "placeholder": "Select an instance",
+      "name": null,
+      "value": "r5.2xlarge.search",
+      "checked": null,
+      "visible": true
+    },
+    "input_13": {
+      "type": "number",
+      "aria_label": "Utilization (On-Demand only)  Value",
+      "placeholder": null,
+      "name": null,
+      "value": "100",
+      "checked": null,
+      "visible": true
+    },
+    "input_14": {
+      "type": "text",
+      "aria_label": "Number of instances Enter amount",
+      "placeholder": "Enter amount",
+      "name": null,
+      "value": "1",
+      "checked": null,
+      "visible": true
+    },
+    "input_15": {
+      "type": "number",
+      "aria_label": "Storage amount per volume (gp3) Value",
+      "placeholder": "Enter amount",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": true
+    },
+    "input_16": {
+      "type": "text",
+      "aria_label": "Provisioning IOPS per volume (gp3) Enter amount",
+      "placeholder": "Enter amount",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": true
+    },
+    "input_17": {
+      "type": "number",
+      "aria_label": "Provisioning throughput (MB/s) per volume (gp3) Value",
+      "placeholder": null,
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": true
+    },
+    "input_18": {
+      "type": "text",
+      "aria_label": "Number of nodes",
+      "placeholder": "",
+      "name": null,
+      "value": "2",
+      "checked": null,
+      "visible": true
+    },
+    "input_19": {
+      "type": "text",
+      "aria_label": null,
+      "placeholder": "Select an instance",
+      "name": null,
+      "value": "ultrawarm1.large.search",
+      "checked": null,
+      "visible": true
+    },
+    "input_20": {
+      "type": "number",
+      "aria_label": "Utilization (On-Demand only) Value",
+      "placeholder": null,
+      "name": null,
+      "value": "100",
+      "checked": null,
+      "visible": true
+    },
+    "input_21": {
+      "type": "number",
+      "aria_label": "Managed storage amount (per UltraWarm instance) Value",
+      "placeholder": "",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": true
+    },
+    "input_22": {
+      "type": "number",
+      "aria_label": "Managed storage size Value",
+      "placeholder": "Enter amount",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": true
+    },
+    "input_23": {
+      "type": "text",
+      "aria_label": "How many Indexing OCUs? Enter number of Indexing OCUs",
+      "placeholder": "Enter number of Indexing OCUs",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": false
+    },
+    "input_24": {
+      "type": "text",
+      "aria_label": "How many Search and Query OCUs? Enter number of Search and Query OCUs",
+      "placeholder": "Enter number of Search and Query OCUs",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": false
+    },
+    "input_25": {
+      "type": "number",
+      "aria_label": "How big is the index data? Value",
+      "placeholder": "Enter amount",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": false
+    },
+    "input_26": {
+      "type": "text",
+      "aria_label": "How many Ingestion OCUs? Enter number of Ingestion OCUs",
+      "placeholder": "Enter number of Ingestion OCUs",
+      "name": null,
+      "value": "",
+      "checked": null,
+      "visible": false
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0": {
+      "aria_label": "Allow performance category Allowed",
+      "name": null,
+      "checked": true,
+      "visible": false
+    },
+    "checkbox_1": {
+      "aria_label": "Allow functional category Allowed",
+      "name": null,
+      "checked": true,
+      "visible": false
+    },
+    "checkbox_2": {
+      "aria_label": "Allow advertising category Allowed",
+      "name": null,
+      "checked": true,
+      "visible": false
+    }
+  },
+  "radio_buttons": {
+    "radio_0": {
+      "aria_label": null,
+      "name": "awsui-tiles-2221-1761328089814-4455",
+      "value": "elasticSearchService",
+      "checked": true,
+      "visible": true
+    },
+    "radio_1": {
+      "aria_label": null,
+      "name": "awsui-tiles-2221-1761328089814-4455",
+      "value": "elasticSearchService-serverlesss",
+      "checked": false,
+      "visible": true
+    },
+    "radio_2": {
+      "aria_label": null,
+      "name": "awsui-tiles-2221-1761328089814-4455",
+      "value": "elasticSearchService-serverlesss-Ingestion",
+      "checked": false,
+      "visible": true
+    }
+  },
+  "text_areas": {},
+  "links": {},
+  "divs": {
+    "div_0": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": true
+    },
+    "div_1": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": true
+    },
+    "div_2": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": true
+    },
+    "div_3": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": true
+    },
+    "div_4": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": true
+    },
+    "div_5": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": false
+    },
+    "div_6": {
+      "text": "Show calculations",
+      "role": "button",
+      "onclick": null,
+      "class": "awsui_expand-button_gwq0h_piid9_246 awsui_header-button_gwq0h_piid9_365",
+      "visible": false
+    }
+  },
+  "spans": {}
+}

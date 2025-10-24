@@ -1,0 +1,805 @@
+{
+  "buttons": {
+    "button_0_accept": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(1)"
+    },
+    "button_1_decline": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(2)"
+    },
+    "button_2_customize": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(3)"
+    },
+    "button_3_cancel": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(4)"
+    },
+    "button_4_save_preferences": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(5)"
+    },
+    "button_5_dismiss": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(6)"
+    },
+    "button_6_i_can_connect_you_with_an_aws_sales_representative_if_you_like_to_learn_more_about_our_products_and_services.": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(7)"
+    },
+    "button_8_1": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(9)"
+    },
+    "button_12_language:_english": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(13)"
+    },
+    "button_13_...": {
+      "text": "...",
+      "aria_label": "Show path",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(14)"
+    },
+    "button_14_region": {
+      "text": "Region",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(15)"
+    },
+    "button_15_us_east_(ohio)": {
+      "text": "US East (Ohio)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(16)"
+    },
+    "button_16_hours_per_day": {
+      "text": "hours per day",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(17)"
+    },
+    "button_17_per_day": {
+      "text": "per day",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(18)"
+    },
+    "button_18_hours_per_day": {
+      "text": "hours per day",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(19)"
+    },
+    "button_19_data_transfer_from": {
+      "text": "Data transfer from",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(20)"
+    },
+    "button_20_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(21)"
+    },
+    "button_21_add_inbound_data_transfer": {
+      "text": "Add inbound data transfer",
+      "aria_label": "Add inbound data transfer",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(22)"
+    },
+    "button_22_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(23)"
+    },
+    "button_23_data_transfer_to": {
+      "text": "Data transfer to",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(24)"
+    },
+    "button_24_tb_per_month": {
+      "text": "TB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(25)"
+    },
+    "button_25_add_outbound_data_transfer": {
+      "text": "Add outbound data transfer",
+      "aria_label": "Add outbound data transfer",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(26)"
+    },
+    "button_26_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(27)"
+    },
+    "button_27_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(28)"
+    },
+    "button_28_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(29)"
+    },
+    "button_29_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(30)"
+    },
+    "button_30_gb_per_hour": {
+      "text": "GB per hour",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(31)"
+    },
+    "button_31_per_second": {
+      "text": "per second",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(32)"
+    },
+    "button_32_seconds": {
+      "text": "seconds",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(33)"
+    },
+    "button_33_gb_per_month": {
+      "text": "GB per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(34)"
+    },
+    "button_34_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(35)"
+    },
+    "button_35_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(36)"
+    },
+    "button_36_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(37)"
+    },
+    "button_37_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(38)"
+    },
+    "button_40_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(41)"
+    },
+    "button_41_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(42)"
+    },
+    "button_42_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(43)"
+    },
+    "button_43_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(44)"
+    }
+  },
+  "inputs": {
+    "input_0_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "selector": "input:nth-of-type(1)"
+    },
+    "input_1_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "selector": "input:nth-of-type(2)"
+    },
+    "input_2_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "selector": "input:nth-of-type(3)"
+    },
+    "input_3_text_enter_a_description_for_your_estimate": {
+      "type": "text",
+      "placeholder": "Enter a description for your estimate",
+      "name": "",
+      "id": "formField2197-1761332445828-3484",
+      "aria_label": "Description - optional",
+      "selector": "input:nth-of-type(4)"
+    },
+    "input_4_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "",
+      "aria_label": "",
+      "selector": "input:nth-of-type(5)"
+    },
+    "input_5_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2224-1761332445833-8387",
+      "aria_label": "",
+      "selector": "input:nth-of-type(6)"
+    },
+    "input_6_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2225-1761332445834-5931",
+      "aria_label": "",
+      "selector": "input:nth-of-type(7)"
+    },
+    "input_7_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2226-1761332445834-7976",
+      "aria_label": "",
+      "selector": "input:nth-of-type(8)"
+    },
+    "input_8_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2227-1761332445834-5122",
+      "aria_label": "",
+      "selector": "input:nth-of-type(9)"
+    },
+    "input_9_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2228-1761332445834-6432",
+      "aria_label": "",
+      "selector": "input:nth-of-type(10)"
+    },
+    "input_10_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2229-1761332445834-3149",
+      "aria_label": "",
+      "selector": "input:nth-of-type(11)"
+    },
+    "input_11_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2230-1761332445834-7815",
+      "aria_label": "",
+      "selector": "input:nth-of-type(12)"
+    },
+    "input_12_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2231-1761332445834-153",
+      "aria_label": "",
+      "selector": "input:nth-of-type(13)"
+    },
+    "input_13_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2232-1761332445834-8412",
+      "aria_label": "",
+      "selector": "input:nth-of-type(14)"
+    },
+    "input_14_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2233-1761332445834-612",
+      "aria_label": "",
+      "selector": "input:nth-of-type(15)"
+    },
+    "input_15_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2234-1761332445835-4475",
+      "aria_label": "",
+      "selector": "input:nth-of-type(16)"
+    },
+    "input_16_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2235-1761332445835-4044",
+      "aria_label": "",
+      "selector": "input:nth-of-type(17)"
+    },
+    "input_17_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "2236-1761332445835-4301",
+      "aria_label": "",
+      "selector": "input:nth-of-type(18)"
+    },
+    "input_18_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2243-1761332445843-3907",
+      "aria_label": "Number of Site-to-Site VPN Connections Enter the amount",
+      "selector": "input:nth-of-type(19)"
+    },
+    "input_19_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2244-1761332445844-432",
+      "aria_label": "Average duration for each connection Value",
+      "selector": "input:nth-of-type(20)"
+    },
+    "input_20_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2506-1761332446402-9134",
+      "aria_label": "Number of subnet associations Enter the amount",
+      "selector": "input:nth-of-type(21)"
+    },
+    "input_21_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2508-1761332446403-7199",
+      "aria_label": "Number of active Client VPN connections (or users) Value",
+      "selector": "input:nth-of-type(22)"
+    },
+    "input_22_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2519-1761332446405-3029",
+      "aria_label": "Average duration for each connection Value",
+      "selector": "input:nth-of-type(23)"
+    },
+    "input_23_text_enter_the_number_of_working_days": {
+      "type": "text",
+      "placeholder": "Enter the number of working days",
+      "name": "",
+      "id": "formField2530-1761332446406-4648",
+      "aria_label": "Working days per month Enter the number of working days",
+      "selector": "input:nth-of-type(24)"
+    },
+    "input_24_text_enter_the_number_of_network_assessments_using_network_access_analyzer_in_a_month.": {
+      "type": "text",
+      "placeholder": "Enter the number of network assessments using Network Access Analyzer in a month.",
+      "name": "",
+      "id": "formField2261-1761332445849-8054",
+      "aria_label": "Number of network assessments per month Enter the number of network assessments using Network Access Analyzer in a month.",
+      "selector": "input:nth-of-type(25)"
+    },
+    "input_25_text_enter_the_number_of_eins_(elastic_network_interfaces).": {
+      "type": "text",
+      "placeholder": "Enter the number of EINs (elastic network interfaces).",
+      "name": "",
+      "id": "formField2262-1761332445849-3969",
+      "aria_label": "Number of ENIs (elastic network interfaces) Enter the number of EINs (elastic network interfaces).",
+      "selector": "input:nth-of-type(26)"
+    },
+    "input_26_text_enter_the_number_of_times_you_analyze_connectivity.": {
+      "type": "text",
+      "placeholder": "Enter the number of times you analyze connectivity.",
+      "name": "",
+      "id": "formField2269-1761332445852-7445",
+      "aria_label": "Number of connectivity analysis per month Enter the number of times you analyze connectivity.",
+      "selector": "input:nth-of-type(27)"
+    },
+    "input_27_text_enter_the_number_of_traffic_mirroring_sessions_on_enis.": {
+      "type": "text",
+      "placeholder": "Enter the number of traffic mirroring sessions on ENIs.",
+      "name": "",
+      "id": "formField2276-1761332445854-1899",
+      "aria_label": "Number of traffic mirroring sessions Enter the number of traffic mirroring sessions on ENIs.",
+      "selector": "input:nth-of-type(28)"
+    },
+    "input_28_text_enter_the_number_of_public_ipv4_addresses_attached_to_ec2_instances_and_aws_services.": {
+      "type": "text",
+      "placeholder": "Enter the number of public IPv4 addresses attached to EC2 instances and AWS services.",
+      "name": "",
+      "id": "formField2280-1761332445856-7003",
+      "aria_label": "Number of In-use public IPv4 addresses Enter the number of public IPv4 addresses attached to EC2 instances and AWS services.",
+      "selector": "input:nth-of-type(29)"
+    },
+    "input_29_text_enter_the_number_of_idle_public_ipv4_addresses_allocated_to_the_account,_unattached_to_aws_services.": {
+      "type": "text",
+      "placeholder": "Enter the number of Idle public IPv4 addresses allocated to the account, unattached to AWS services.",
+      "name": "",
+      "id": "formField2281-1761332445857-849",
+      "aria_label": "Number of Idle public IPv4 addresses Enter the number of Idle public IPv4 addresses allocated to the account, unattached to AWS services.",
+      "selector": "input:nth-of-type(30)"
+    },
+    "input_30_text_enter_the_number_of_ip_addresses_used_on_ec2_instance.": {
+      "type": "text",
+      "placeholder": "Enter the number of IP addresses used on EC2 instance.",
+      "name": "",
+      "id": "formField2288-1761332445859-8339",
+      "aria_label": "Number of active IP addresses Enter the number of IP addresses used on EC2 instance.",
+      "selector": "input:nth-of-type(31)"
+    },
+    "input_31_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2306-1761332445864-7960",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(32)"
+    },
+    "input_32_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2322-1761332445866-3978",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(33)"
+    },
+    "input_33_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2344-1761332445869-1963",
+      "aria_label": "Enter Amount Enter amount",
+      "selector": "input:nth-of-type(34)"
+    },
+    "input_34_text_enter_the_number_of_of_route_server_endpoints.": {
+      "type": "text",
+      "placeholder": "Enter the number of of Route Server endpoints.",
+      "name": "",
+      "id": "formField2365-1761332445875-4743",
+      "aria_label": "Number of Route Server endpoints Enter the number of of Route Server endpoints.",
+      "selector": "input:nth-of-type(35)"
+    },
+    "input_35_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2538-1761332447797-3682",
+      "aria_label": "Number of NAT Gateways Enter the amount",
+      "selector": "input:nth-of-type(36)"
+    },
+    "input_36_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2539-1761332447797-8091",
+      "aria_label": "Data Processed per NAT Gateway Value",
+      "selector": "input:nth-of-type(37)"
+    },
+    "input_37_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2372-1761332445878-8204",
+      "aria_label": "Number of Transit Gateway attachments Enter the amount",
+      "selector": "input:nth-of-type(38)"
+    },
+    "input_38_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2373-1761332445879-4868",
+      "aria_label": "Ingress data processed per TGW attachment Value",
+      "selector": "input:nth-of-type(39)"
+    },
+    "input_39_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2557-1761332447995-1179",
+      "aria_label": "Number of Multicast Receivers Enter the amount",
+      "selector": "input:nth-of-type(40)"
+    },
+    "input_40_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2558-1761332447996-8641",
+      "aria_label": "Multicast data processed per Transit Gateway Receiver Value",
+      "selector": "input:nth-of-type(41)"
+    },
+    "input_41_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2570-1761332448243-2005",
+      "aria_label": "Number of VPC Interface endpoints per AWS region Enter the amount",
+      "selector": "input:nth-of-type(42)"
+    },
+    "input_42_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2571-1761332448243-4392",
+      "aria_label": "Number of Availability Zones an Interface endpoint is deployed in Enter the amount",
+      "selector": "input:nth-of-type(43)"
+    },
+    "input_43_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2391-1761332445882-5201",
+      "aria_label": "Total data processed by all VPCE Interface endpoints in the AWS region Value",
+      "selector": "input:nth-of-type(44)"
+    },
+    "input_44_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2408-1761332445889-924",
+      "aria_label": "Number of Availability Zones that Gateway Load Balancer is deployed to",
+      "selector": "input:nth-of-type(45)"
+    },
+    "input_45_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2416-1761332445890-210",
+      "aria_label": "Total processed bytes Value",
+      "selector": "input:nth-of-type(46)"
+    },
+    "input_46_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2427-1761332445892-1878",
+      "aria_label": "Average number of new connections/flows Value",
+      "selector": "input:nth-of-type(47)"
+    },
+    "input_47_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2439-1761332445893-988",
+      "aria_label": "Average connection/flow duration Value",
+      "selector": "input:nth-of-type(48)"
+    },
+    "input_48_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "formField2456-1761332445896-3659",
+      "aria_label": "Number of Gateway Load Balancer Endpoints",
+      "selector": "input:nth-of-type(49)"
+    },
+    "input_49_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2572-1761332448442-9730",
+      "aria_label": "Number of Attachments Enter the amount",
+      "selector": "input:nth-of-type(50)"
+    },
+    "input_50_text_enter_the_amount": {
+      "type": "text",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2573-1761332448442-3681",
+      "aria_label": "Number of Transit Gateway Peering Connections Enter the amount",
+      "selector": "input:nth-of-type(51)"
+    },
+    "input_51_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2574-1761332448442-4807",
+      "aria_label": "Total amount of data processed Value",
+      "selector": "input:nth-of-type(52)"
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0_awsccc-u-cb-performance": {
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(1)"
+    },
+    "checkbox_1_awsccc-u-cb-functional": {
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(2)"
+    },
+    "checkbox_2_awsccc-u-cb-advertising": {
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(3)"
+    },
+    "checkbox_3_2224-1761332445833-8387": {
+      "name": "",
+      "id": "2224-1761332445833-8387",
+      "aria_label": "",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(4)"
+    },
+    "checkbox_4_2225-1761332445834-5931": {
+      "name": "",
+      "id": "2225-1761332445834-5931",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(5)"
+    },
+    "checkbox_5_2226-1761332445834-7976": {
+      "name": "",
+      "id": "2226-1761332445834-7976",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(6)"
+    },
+    "checkbox_6_2227-1761332445834-5122": {
+      "name": "",
+      "id": "2227-1761332445834-5122",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(7)"
+    },
+    "checkbox_7_2228-1761332445834-6432": {
+      "name": "",
+      "id": "2228-1761332445834-6432",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(8)"
+    },
+    "checkbox_8_2229-1761332445834-3149": {
+      "name": "",
+      "id": "2229-1761332445834-3149",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(9)"
+    },
+    "checkbox_9_2230-1761332445834-7815": {
+      "name": "",
+      "id": "2230-1761332445834-7815",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(10)"
+    },
+    "checkbox_10_2231-1761332445834-153": {
+      "name": "",
+      "id": "2231-1761332445834-153",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(11)"
+    },
+    "checkbox_11_2232-1761332445834-8412": {
+      "name": "",
+      "id": "2232-1761332445834-8412",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(12)"
+    },
+    "checkbox_12_2233-1761332445834-612": {
+      "name": "",
+      "id": "2233-1761332445834-612",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(13)"
+    },
+    "checkbox_13_2234-1761332445835-4475": {
+      "name": "",
+      "id": "2234-1761332445835-4475",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(14)"
+    },
+    "checkbox_14_2235-1761332445835-4044": {
+      "name": "",
+      "id": "2235-1761332445835-4044",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(15)"
+    },
+    "checkbox_15_2236-1761332445835-4301": {
+      "name": "",
+      "id": "2236-1761332445835-4301",
+      "aria_label": "",
+      "checked": false,
+      "selector": "input[type='checkbox']:nth-of-type(16)"
+    }
+  },
+  "radio_buttons": {},
+  "text_areas": {}
+}

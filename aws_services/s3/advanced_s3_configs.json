@@ -1,0 +1,423 @@
+{
+  "enterprise_multi_tier": {
+    "name": "Enterprise Multi-Tier Storage",
+    "description": "Comprehensive enterprise storage with all tiers and advanced features",
+    "estimated_monthly_cost": "$2000-8000",
+    "standard": {
+      "storage_gb": 5000,
+      "put_requests": 500000,
+      "get_requests": 2000000,
+      "s3_select_returned_gb": 100,
+      "s3_select_scanned_gb": 1000
+    },
+    "int": {
+      "storage_gb": 2000,
+      "average_object_size_mb": 5,
+      "put_requests": 200000,
+      "get_requests": 800000,
+      "tiering": {
+        "int_frequent_percent": 50,
+        "int_infrequent_percent": 35,
+        "int_archive_instant_percent": 10,
+        "int_archive_percent": 4,
+        "int_deep_archive_percent": 1
+      }
+    },
+    "standard_ia": {
+      "storage_gb": 1000,
+      "put_requests": 50000,
+      "get_requests": 100000,
+      "lifecycle_transitions": 10000,
+      "data_retrievals_gb": 200
+    },
+    "one_zone_ia": {
+      "storage_gb": 500,
+      "put_requests": 25000,
+      "get_requests": 50000,
+      "lifecycle_transitions": 5000,
+      "data_retrievals_gb": 100
+    },
+    "glacier_flexible": {
+      "storage_gb": 10000,
+      "average_object_size_mb": 50,
+      "put_requests": 5000,
+      "lifecycle_transitions": 2000,
+      "retrieval": {
+        "restore_standard_requests": 500,
+        "restore_expedited_requests": 50,
+        "restore_bulk_requests": 25,
+        "data_retrievals_standard_gb": 200,
+        "data_retrievals_expedited_gb": 20,
+        "data_retrievals_bulk_gb": 50
+      }
+    },
+    "glacier_deep": {
+      "storage_gb": 20000,
+      "average_object_size_mb": 100,
+      "put_requests": 1000,
+      "lifecycle_transitions": 500,
+      "retrieval": {
+        "restore_standard_requests": 100,
+        "restore_bulk_requests": 10,
+        "data_retrievals_standard_gb": 50,
+        "data_retrievals_bulk_gb": 20
+      }
+    },
+    "glacier_instant": {
+      "storage_gb": 1000,
+      "put_requests": 10000,
+      "get_requests": 50000,
+      "lifecycle_transitions": 2000,
+      "data_retrievals_gb": 100
+    },
+    "express_one_zone": {
+      "storage_gb": 200,
+      "put_requests": 100000,
+      "get_requests": 500000
+    },
+    "advanced_features": {
+      "storage_lens_objects": 10000000,
+      "batch_operations_jobs": 50,
+      "batch_operations_objects": 1000000,
+      "encrypted_data_gb": 2000,
+      "object_lambda_requests": 100000,
+      "object_lambda_duration_ms": 2000,
+      "object_lambda_memory_mb": 1024,
+      "object_lambda_data_returned_gb": 50,
+      "vector_indexes": 20,
+      "vectors_per_index": 500000,
+      "vector_dimensions": 1024,
+      "vector_queries_per_month": 100000
+    }
+  },
+  "ai_ml_workload": {
+    "name": "AI/ML Data Lake",
+    "description": "Optimized for AI/ML workloads with vector search and high-performance access",
+    "estimated_monthly_cost": "$1500-5000",
+    "standard": {
+      "storage_gb": 10000,
+      "put_requests": 1000000,
+      "get_requests": 5000000,
+      "s3_select_returned_gb": 500,
+      "s3_select_scanned_gb": 5000
+    },
+    "int": {
+      "storage_gb": 5000,
+      "average_object_size_mb": 10,
+      "put_requests": 500000,
+      "get_requests": 2000000,
+      "tiering": {
+        "int_frequent_percent": 70,
+        "int_infrequent_percent": 25,
+        "int_archive_instant_percent": 4,
+        "int_archive_percent": 1,
+        "int_deep_archive_percent": 0
+      }
+    },
+    "express_one_zone": {
+      "storage_gb": 1000,
+      "put_requests": 500000,
+      "get_requests": 2000000
+    },
+    "glacier_flexible": {
+      "storage_gb": 2000,
+      "average_object_size_mb": 100,
+      "put_requests": 10000,
+      "lifecycle_transitions": 5000,
+      "retrieval": {
+        "restore_standard_requests": 200,
+        "restore_expedited_requests": 20,
+        "restore_bulk_requests": 10,
+        "data_retrievals_standard_gb": 100,
+        "data_retrievals_expedited_gb": 10,
+        "data_retrievals_bulk_gb": 25
+      }
+    },
+    "advanced_features": {
+      "storage_lens_objects": 50000000,
+      "batch_operations_jobs": 100,
+      "batch_operations_objects": 5000000,
+      "encrypted_data_gb": 5000,
+      "object_lambda_requests": 500000,
+      "object_lambda_duration_ms": 3000,
+      "object_lambda_memory_mb": 2048,
+      "object_lambda_data_returned_gb": 200,
+      "vector_indexes": 100,
+      "vectors_per_index": 1000000,
+      "vector_dimensions": 1536,
+      "vector_queries_per_month": 1000000
+    }
+  },
+  "compliance_archive": {
+    "name": "Compliance & Long-term Archive",
+    "description": "Compliance-focused storage with heavy archival and encryption",
+    "estimated_monthly_cost": "$500-2000",
+    "standard": {
+      "storage_gb": 1000,
+      "put_requests": 100000,
+      "get_requests": 200000,
+      "s3_select_returned_gb": 10,
+      "s3_select_scanned_gb": 100
+    },
+    "standard_ia": {
+      "storage_gb": 2000,
+      "put_requests": 50000,
+      "get_requests": 50000,
+      "lifecycle_transitions": 20000,
+      "data_retrievals_gb": 50
+    },
+    "glacier_flexible": {
+      "storage_gb": 5000,
+      "average_object_size_mb": 20,
+      "put_requests": 2000,
+      "lifecycle_transitions": 1000,
+      "retrieval": {
+        "restore_standard_requests": 100,
+        "restore_expedited_requests": 10,
+        "restore_bulk_requests": 5,
+        "data_retrievals_standard_gb": 25,
+        "data_retrievals_expedited_gb": 2,
+        "data_retrievals_bulk_gb": 5
+      }
+    },
+    "glacier_deep": {
+      "storage_gb": 10000,
+      "average_object_size_mb": 50,
+      "put_requests": 500,
+      "lifecycle_transitions": 200,
+      "retrieval": {
+        "restore_standard_requests": 20,
+        "restore_bulk_requests": 2,
+        "data_retrievals_standard_gb": 5,
+        "data_retrievals_bulk_gb": 2
+      }
+    },
+    "advanced_features": {
+      "storage_lens_objects": 1000000,
+      "batch_operations_jobs": 5,
+      "batch_operations_objects": 100000,
+      "encrypted_data_gb": 8000,
+      "object_lambda_requests": 1000,
+      "object_lambda_duration_ms": 500,
+      "object_lambda_memory_mb": 256,
+      "object_lambda_data_returned_gb": 1
+    }
+  },
+  "high_performance_app": {
+    "name": "High-Performance Application",
+    "description": "Ultra-low latency application with Express One Zone and high request volumes",
+    "estimated_monthly_cost": "$3000-10000",
+    "standard": {
+      "storage_gb": 2000,
+      "put_requests": 2000000,
+      "get_requests": 10000000,
+      "s3_select_returned_gb": 200,
+      "s3_select_scanned_gb": 2000
+    },
+    "express_one_zone": {
+      "storage_gb": 1000,
+      "put_requests": 1000000,
+      "get_requests": 5000000
+    },
+    "int": {
+      "storage_gb": 500,
+      "average_object_size_mb": 1,
+      "put_requests": 100000,
+      "get_requests": 500000,
+      "tiering": {
+        "int_frequent_percent": 80,
+        "int_infrequent_percent": 15,
+        "int_archive_instant_percent": 4,
+        "int_archive_percent": 1,
+        "int_deep_archive_percent": 0
+      }
+    },
+    "glacier_instant": {
+      "storage_gb": 500,
+      "put_requests": 50000,
+      "get_requests": 100000,
+      "lifecycle_transitions": 10000,
+      "data_retrievals_gb": 50
+    },
+    "advanced_features": {
+      "storage_lens_objects": 20000000,
+      "batch_operations_jobs": 20,
+      "batch_operations_objects": 500000,
+      "encrypted_data_gb": 1000,
+      "object_lambda_requests": 200000,
+      "object_lambda_duration_ms": 100,
+      "object_lambda_memory_mb": 512,
+      "object_lambda_data_returned_gb": 100
+    }
+  },
+  "cost_optimized": {
+    "name": "Cost-Optimized Storage",
+    "description": "Maximum cost savings with intelligent tiering and lifecycle management",
+    "estimated_monthly_cost": "$100-500",
+    "standard": {
+      "storage_gb": 500,
+      "put_requests": 50000,
+      "get_requests": 200000,
+      "s3_select_returned_gb": 5,
+      "s3_select_scanned_gb": 50
+    },
+    "int": {
+      "storage_gb": 1000,
+      "average_object_size_mb": 2,
+      "put_requests": 25000,
+      "get_requests": 100000,
+      "tiering": {
+        "int_frequent_percent": 30,
+        "int_infrequent_percent": 40,
+        "int_archive_instant_percent": 20,
+        "int_archive_percent": 8,
+        "int_deep_archive_percent": 2
+      }
+    },
+    "standard_ia": {
+      "storage_gb": 200,
+      "put_requests": 10000,
+      "get_requests": 20000,
+      "lifecycle_transitions": 5000,
+      "data_retrievals_gb": 20
+    },
+    "glacier_flexible": {
+      "storage_gb": 500,
+      "average_object_size_mb": 10,
+      "put_requests": 500,
+      "lifecycle_transitions": 200,
+      "retrieval": {
+        "restore_standard_requests": 20,
+        "restore_expedited_requests": 2,
+        "restore_bulk_requests": 1,
+        "data_retrievals_standard_gb": 5,
+        "data_retrievals_expedited_gb": 0.5,
+        "data_retrievals_bulk_gb": 1
+      }
+    },
+    "glacier_deep": {
+      "storage_gb": 1000,
+      "average_object_size_mb": 25,
+      "put_requests": 100,
+      "lifecycle_transitions": 50,
+      "retrieval": {
+        "restore_standard_requests": 5,
+        "restore_bulk_requests": 1,
+        "data_retrievals_standard_gb": 1,
+        "data_retrievals_bulk_gb": 0.5
+      }
+    },
+    "advanced_features": {
+      "storage_lens_objects": 100000,
+      "batch_operations_jobs": 2,
+      "batch_operations_objects": 10000,
+      "encrypted_data_gb": 200
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "Simple setup for development and testing environments",
+    "estimated_monthly_cost": "$20-100",
+    "standard": {
+      "storage_gb": 100,
+      "put_requests": 10000,
+      "get_requests": 50000,
+      "s3_select_returned_gb": 1,
+      "s3_select_scanned_gb": 10
+    },
+    "int": {
+      "storage_gb": 50,
+      "average_object_size_mb": 1,
+      "put_requests": 5000,
+      "get_requests": 25000,
+      "tiering": {
+        "int_frequent_percent": 60,
+        "int_infrequent_percent": 30,
+        "int_archive_instant_percent": 8,
+        "int_archive_percent": 2,
+        "int_deep_archive_percent": 0
+      }
+    },
+    "advanced_features": {
+      "storage_lens_objects": 10000,
+      "encrypted_data_gb": 50
+    }
+  },
+  "disaster_recovery": {
+    "name": "Disaster Recovery & Backup",
+    "description": "Comprehensive backup and disaster recovery solution",
+    "estimated_monthly_cost": "$800-3000",
+    "standard": {
+      "storage_gb": 2000,
+      "put_requests": 200000,
+      "get_requests": 500000,
+      "s3_select_returned_gb": 20,
+      "s3_select_scanned_gb": 200
+    },
+    "standard_ia": {
+      "storage_gb": 1000,
+      "put_requests": 100000,
+      "get_requests": 200000,
+      "lifecycle_transitions": 50000,
+      "data_retrievals_gb": 100
+    },
+    "one_zone_ia": {
+      "storage_gb": 500,
+      "put_requests": 50000,
+      "get_requests": 100000,
+      "lifecycle_transitions": 25000,
+      "data_retrievals_gb": 50
+    },
+    "glacier_flexible": {
+      "storage_gb": 3000,
+      "average_object_size_mb": 30,
+      "put_requests": 5000,
+      "lifecycle_transitions": 2000,
+      "retrieval": {
+        "restore_standard_requests": 200,
+        "restore_expedited_requests": 20,
+        "restore_bulk_requests": 10,
+        "data_retrievals_standard_gb": 100,
+        "data_retrievals_expedited_gb": 10,
+        "data_retrievals_bulk_gb": 25
+      }
+    },
+    "glacier_deep": {
+      "storage_gb": 2000,
+      "average_object_size_mb": 50,
+      "put_requests": 1000,
+      "lifecycle_transitions": 500,
+      "retrieval": {
+        "restore_standard_requests": 50,
+        "restore_bulk_requests": 5,
+        "data_retrievals_standard_gb": 25,
+        "data_retrievals_bulk_gb": 10
+      }
+    },
+    "advanced_features": {
+      "storage_lens_objects": 5000000,
+      "batch_operations_jobs": 10,
+      "batch_operations_objects": 500000,
+      "encrypted_data_gb": 3000
+    }
+  },
+  "custom": {
+    "name": "Custom S3 Configuration",
+    "description": "Edit this configuration to match your specific needs",
+    "estimated_monthly_cost": "TBD",
+    "standard": {
+      "storage_gb": 0,
+      "put_requests": 0,
+      "get_requests": 0,
+      "s3_select_returned_gb": 0,
+      "s3_select_scanned_gb": 0
+    },
+    "advanced_features": {
+      "storage_lens_objects": 0,
+      "batch_operations_jobs": 0,
+      "batch_operations_objects": 0,
+      "encrypted_data_gb": 0
+    }
+  }
+}
+

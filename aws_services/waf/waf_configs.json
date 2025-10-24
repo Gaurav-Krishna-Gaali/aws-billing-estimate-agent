@@ -1,0 +1,158 @@
+{
+  "basic_website": {
+    "name": "Basic Website Protection",
+    "description": "Basic WAF protection for small websites with essential security rules",
+    "estimated_monthly_cost": "$5-15",
+    "settings": {
+      "web_acls": 1,
+      "rules_per_web_acl": 5,
+      "rule_groups_per_web_acl": 1,
+      "rules_inside_rule_group": 3,
+      "managed_rule_groups_per_web_acl": 1,
+      "web_requests_received": 100000
+    }
+  },
+  "small_business": {
+    "name": "Small Business Protection",
+    "description": "Comprehensive WAF protection for small business websites",
+    "estimated_monthly_cost": "$15-40",
+    "settings": {
+      "web_acls": 2,
+      "rules_per_web_acl": 10,
+      "rule_groups_per_web_acl": 2,
+      "rules_inside_rule_group": 5,
+      "managed_rule_groups_per_web_acl": 2,
+      "web_requests_received": 500000
+    }
+  },
+  "medium_enterprise": {
+    "name": "Medium Enterprise Protection",
+    "description": "Advanced WAF protection for medium-sized enterprises",
+    "estimated_monthly_cost": "$50-150",
+    "settings": {
+      "web_acls": 5,
+      "rules_per_web_acl": 20,
+      "rule_groups_per_web_acl": 5,
+      "rules_inside_rule_group": 10,
+      "managed_rule_groups_per_web_acl": 3,
+      "web_requests_received": 2000000
+    }
+  },
+  "large_enterprise": {
+    "name": "Large Enterprise Protection",
+    "description": "Enterprise-grade WAF protection with comprehensive security rules",
+    "estimated_monthly_cost": "$200-600",
+    "settings": {
+      "web_acls": 10,
+      "rules_per_web_acl": 50,
+      "rule_groups_per_web_acl": 10,
+      "rules_inside_rule_group": 20,
+      "managed_rule_groups_per_web_acl": 5,
+      "web_requests_received": 10000000
+    }
+  },
+  "high_traffic_application": {
+    "name": "High Traffic Application",
+    "description": "WAF protection optimized for high-traffic applications",
+    "estimated_monthly_cost": "$500-1500",
+    "settings": {
+      "web_acls": 20,
+      "rules_per_web_acl": 100,
+      "rule_groups_per_web_acl": 20,
+      "rules_inside_rule_group": 50,
+      "managed_rule_groups_per_web_acl": 10,
+      "web_requests_received": 50000000
+    }
+  },
+  "e_commerce_site": {
+    "name": "E-commerce Site Protection",
+    "description": "WAF protection optimized for e-commerce websites with payment security",
+    "estimated_monthly_cost": "$100-400",
+    "settings": {
+      "web_acls": 8,
+      "rules_per_web_acl": 30,
+      "rule_groups_per_web_acl": 8,
+      "rules_inside_rule_group": 15,
+      "managed_rule_groups_per_web_acl": 4,
+      "web_requests_received": 5000000
+    }
+  },
+  "api_gateway_protection": {
+    "name": "API Gateway Protection",
+    "description": "WAF protection for API Gateway endpoints with rate limiting and security",
+    "estimated_monthly_cost": "$75-250",
+    "settings": {
+      "web_acls": 6,
+      "rules_per_web_acl": 25,
+      "rule_groups_per_web_acl": 6,
+      "rules_inside_rule_group": 12,
+      "managed_rule_groups_per_web_acl": 3,
+      "web_requests_received": 3000000
+    }
+  },
+  "compliance_focused": {
+    "name": "Compliance & Security Focused",
+    "description": "WAF protection optimized for compliance requirements (PCI DSS, HIPAA, etc.)",
+    "estimated_monthly_cost": "$300-800",
+    "settings": {
+      "web_acls": 15,
+      "rules_per_web_acl": 75,
+      "rule_groups_per_web_acl": 15,
+      "rules_inside_rule_group": 30,
+      "managed_rule_groups_per_web_acl": 8,
+      "web_requests_received": 15000000
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "Minimal WAF setup for development and testing environments",
+    "estimated_monthly_cost": "$2-8",
+    "settings": {
+      "web_acls": 1,
+      "rules_per_web_acl": 3,
+      "rule_groups_per_web_acl": 1,
+      "rules_inside_rule_group": 2,
+      "managed_rule_groups_per_web_acl": 1,
+      "web_requests_received": 10000
+    }
+  },
+  "multi_tenant_saas": {
+    "name": "Multi-Tenant SaaS Protection",
+    "description": "WAF protection for multi-tenant SaaS applications with customer isolation",
+    "estimated_monthly_cost": "$400-1200",
+    "settings": {
+      "web_acls": 25,
+      "rules_per_web_acl": 80,
+      "rule_groups_per_web_acl": 25,
+      "rules_inside_rule_group": 40,
+      "managed_rule_groups_per_web_acl": 12,
+      "web_requests_received": 25000000
+    }
+  },
+  "government_compliance": {
+    "name": "Government & High Compliance",
+    "description": "WAF protection for government and highly regulated environments",
+    "estimated_monthly_cost": "$600-2000",
+    "settings": {
+      "web_acls": 30,
+      "rules_per_web_acl": 150,
+      "rule_groups_per_web_acl": 30,
+      "rules_inside_rule_group": 60,
+      "managed_rule_groups_per_web_acl": 15,
+      "web_requests_received": 40000000
+    }
+  },
+  "custom": {
+    "name": "Custom WAF Configuration",
+    "description": "Edit this configuration to match your specific WAF protection needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "web_acls": 0,
+      "rules_per_web_acl": 0,
+      "rule_groups_per_web_acl": 0,
+      "rules_inside_rule_group": 0,
+      "managed_rule_groups_per_web_acl": 0,
+      "web_requests_received": 0
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "description": "Fargate tasks running backend API service returning structured responses",
+  "number_of_instances": 4,
+  "instance_type": "fargate-equivalent (2 vCPU, 4 GB)",
+  "region": "us-east-1",
+  "operating_system": "Linux",
+  "purchase_option": "On-Demand",
+  "tenancy": "Default",
+  "enable_monitoring": true,
+  "storage_type": "ephemeral",
+  "storage_amount_gb": 50,
+  "iops_per_volume": 0,
+  "throughput_mbps": 0,
+  "ebs_optimized": false,
+  "instance_hours_per_month": 730,
+  "spot_instance": false,
+  "inbound_data_transfer_tb": 0,
+  "outbound_data_transfer_tb": 40,
+  "elastic_ip_count": 0,
+  "load_balancer_enabled": false,
+  "autoscaling_enabled": false,
+  "licensing_cost": 0,
+  "support_plan": "Basic",
+  "os_software_cost": 0,
+  "tagging_metadata": {
+    "Environment": "Production",
+    "Owner": "DevOps",
+    "Project": "API Service"
+  },
+  "notes": "Estimated yearly price: $60,000 for ECS Fargate API Service configuration",
+  "_metadata": {
+    "version": 1.0,
+    "last_updated": "2025-10-24",
+    "created_by": "automated-mapping-script"
+  }
+}

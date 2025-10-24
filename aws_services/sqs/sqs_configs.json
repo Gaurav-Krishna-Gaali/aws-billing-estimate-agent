@@ -1,0 +1,158 @@
+{
+  "basic_messaging": {
+    "name": "Basic Messaging",
+    "description": "Simple SQS setup for basic message queuing with standard queues",
+    "estimated_monthly_cost": "$5-20",
+    "settings": {
+      "standard_queue_requests": 100000,
+      "fifo_queue_requests": 0,
+      "fair_queue_requests": 0,
+      "inbound_data_transfer_tb": 1,
+      "outbound_data_transfer_tb": 0.5
+    }
+  },
+  "small_business": {
+    "name": "Small Business Messaging",
+    "description": "SQS configuration for small business applications with moderate message volume",
+    "estimated_monthly_cost": "$20-80",
+    "settings": {
+      "standard_queue_requests": 500000,
+      "fifo_queue_requests": 100000,
+      "fair_queue_requests": 0,
+      "inbound_data_transfer_tb": 5,
+      "outbound_data_transfer_tb": 2
+    }
+  },
+  "medium_enterprise": {
+    "name": "Medium Enterprise Messaging",
+    "description": "SQS configuration for medium-sized enterprises with comprehensive message queuing",
+    "estimated_monthly_cost": "$100-400",
+    "settings": {
+      "standard_queue_requests": 2000000,
+      "fifo_queue_requests": 500000,
+      "fair_queue_requests": 200000,
+      "inbound_data_transfer_tb": 20,
+      "outbound_data_transfer_tb": 10
+    }
+  },
+  "large_enterprise": {
+    "name": "Large Enterprise Messaging",
+    "description": "Enterprise-grade SQS configuration with high message volume and advanced features",
+    "estimated_monthly_cost": "$500-2000",
+    "settings": {
+      "standard_queue_requests": 10000000,
+      "fifo_queue_requests": 2000000,
+      "fair_queue_requests": 1000000,
+      "inbound_data_transfer_tb": 100,
+      "outbound_data_transfer_tb": 50
+    }
+  },
+  "high_throughput": {
+    "name": "High Throughput Messaging",
+    "description": "SQS configuration optimized for high-throughput applications with millions of messages",
+    "estimated_monthly_cost": "$1000-4000",
+    "settings": {
+      "standard_queue_requests": 50000000,
+      "fifo_queue_requests": 10000000,
+      "fair_queue_requests": 5000000,
+      "inbound_data_transfer_tb": 500,
+      "outbound_data_transfer_tb": 250
+    }
+  },
+  "microservices": {
+    "name": "Microservices Messaging",
+    "description": "SQS configuration for microservices architecture with service-to-service communication",
+    "estimated_monthly_cost": "$200-800",
+    "settings": {
+      "standard_queue_requests": 5000000,
+      "fifo_queue_requests": 1000000,
+      "fair_queue_requests": 500000,
+      "inbound_data_transfer_tb": 50,
+      "outbound_data_transfer_tb": 25
+    }
+  },
+  "event_driven": {
+    "name": "Event-Driven Architecture",
+    "description": "SQS configuration for event-driven architectures with high event volume",
+    "estimated_monthly_cost": "$300-1200",
+    "settings": {
+      "standard_queue_requests": 8000000,
+      "fifo_queue_requests": 2000000,
+      "fair_queue_requests": 1000000,
+      "inbound_data_transfer_tb": 80,
+      "outbound_data_transfer_tb": 40
+    }
+  },
+  "batch_processing": {
+    "name": "Batch Processing Queues",
+    "description": "SQS configuration for batch processing workloads with large message volumes",
+    "estimated_monthly_cost": "$400-1600",
+    "settings": {
+      "standard_queue_requests": 15000000,
+      "fifo_queue_requests": 3000000,
+      "fair_queue_requests": 2000000,
+      "inbound_data_transfer_tb": 150,
+      "outbound_data_transfer_tb": 75
+    }
+  },
+  "real_time_processing": {
+    "name": "Real-time Processing",
+    "description": "SQS configuration for real-time processing applications with continuous message flow",
+    "estimated_monthly_cost": "$600-2400",
+    "settings": {
+      "standard_queue_requests": 25000000,
+      "fifo_queue_requests": 5000000,
+      "fair_queue_requests": 3000000,
+      "inbound_data_transfer_tb": 250,
+      "outbound_data_transfer_tb": 125
+    }
+  },
+  "iot_messaging": {
+    "name": "IoT Messaging",
+    "description": "SQS configuration for IoT applications with high device message volume",
+    "estimated_monthly_cost": "$800-3200",
+    "settings": {
+      "standard_queue_requests": 30000000,
+      "fifo_queue_requests": 8000000,
+      "fair_queue_requests": 5000000,
+      "inbound_data_transfer_tb": 300,
+      "outbound_data_transfer_tb": 150
+    }
+  },
+  "gaming_messaging": {
+    "name": "Gaming Messaging",
+    "description": "SQS configuration for gaming applications with real-time multiplayer messaging",
+    "estimated_monthly_cost": "$1000-4000",
+    "settings": {
+      "standard_queue_requests": 40000000,
+      "fifo_queue_requests": 10000000,
+      "fair_queue_requests": 8000000,
+      "inbound_data_transfer_tb": 400,
+      "outbound_data_transfer_tb": 200
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "Minimal SQS setup for development and testing environments",
+    "estimated_monthly_cost": "$2-10",
+    "settings": {
+      "standard_queue_requests": 10000,
+      "fifo_queue_requests": 0,
+      "fair_queue_requests": 0,
+      "inbound_data_transfer_tb": 0.1,
+      "outbound_data_transfer_tb": 0.05
+    }
+  },
+  "custom": {
+    "name": "Custom SQS Configuration",
+    "description": "Edit this configuration to match your specific SQS messaging needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "standard_queue_requests": 0,
+      "fifo_queue_requests": 0,
+      "fair_queue_requests": 0,
+      "inbound_data_transfer_tb": 0,
+      "outbound_data_transfer_tb": 0
+    }
+  }
+}

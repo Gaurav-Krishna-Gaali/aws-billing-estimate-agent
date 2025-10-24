@@ -1,0 +1,589 @@
+{
+  "buttons": {
+    "button_0_accept": {
+      "text": "Accept",
+      "aria_label": "Accept all cookies",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(1)"
+    },
+    "button_1_decline": {
+      "text": "Decline",
+      "aria_label": "Continue without accepting",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(2)"
+    },
+    "button_2_customize": {
+      "text": "Customize",
+      "aria_label": "Customize cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(3)"
+    },
+    "button_3_cancel": {
+      "text": "Cancel",
+      "aria_label": "Cancel customizing cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(4)"
+    },
+    "button_4_save_preferences": {
+      "text": "Save preferences",
+      "aria_label": "Save customized cookie preferences",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(5)"
+    },
+    "button_5_dismiss": {
+      "text": "Dismiss",
+      "aria_label": "Dismiss error message modal",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(6)"
+    },
+    "button_6_i_can_connect_you_with_an_aws_sales_representative_if_you_like_to_learn_more_about_our_products_and_services.": {
+      "text": "I can connect you with an AWS sales representative if you like to learn more about our products and services.",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(7)"
+    },
+    "button_8_1": {
+      "text": "1",
+      "aria_label": "Ask a Question",
+      "data_cy": "",
+      "type": "",
+      "selector": "button:nth-of-type(9)"
+    },
+    "button_12_language:_english": {
+      "text": "Language: English",
+      "aria_label": "Language: English",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(13)"
+    },
+    "button_13_...": {
+      "text": "...",
+      "aria_label": "Show path",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(14)"
+    },
+    "button_14_region": {
+      "text": "Region",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(15)"
+    },
+    "button_15_us_east_(ohio)": {
+      "text": "US East (Ohio)",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(16)"
+    },
+    "button_16_x86": {
+      "text": "x86",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(17)"
+    },
+    "button_17_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(18)"
+    },
+    "button_18_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(19)"
+    },
+    "button_19_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(20)"
+    },
+    "button_20_x86": {
+      "text": "x86",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(21)"
+    },
+    "button_21_hours": {
+      "text": "hours",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(22)"
+    },
+    "button_22_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(23)"
+    },
+    "button_23_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(24)"
+    },
+    "button_24_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(25)"
+    },
+    "button_25_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(26)"
+    },
+    "button_26_buffered": {
+      "text": "Buffered",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(27)"
+    },
+    "button_27_x86": {
+      "text": "x86",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(28)"
+    },
+    "button_28_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(29)"
+    },
+    "button_29_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(30)"
+    },
+    "button_30_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(31)"
+    },
+    "button_31_x86": {
+      "text": "x86",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(32)"
+    },
+    "button_32_hours": {
+      "text": "hours",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(33)"
+    },
+    "button_33_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(34)"
+    },
+    "button_34_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(35)"
+    },
+    "button_35_per_month": {
+      "text": "per month",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(36)"
+    },
+    "button_36_mb": {
+      "text": "MB",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(37)"
+    },
+    "button_37_buffered": {
+      "text": "Buffered",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "button",
+      "selector": "button:nth-of-type(38)"
+    },
+    "button_38_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(39)"
+    },
+    "button_39_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(40)"
+    },
+    "button_40_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(41)"
+    },
+    "button_41_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(42)"
+    },
+    "button_44_show_details": {
+      "text": "Show Details",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(45)"
+    },
+    "button_45_cancel": {
+      "text": "Cancel",
+      "aria_label": "",
+      "data_cy": "",
+      "type": "submit",
+      "selector": "button:nth-of-type(46)"
+    },
+    "button_46_save_and_view_summary": {
+      "text": "Save and view summary",
+      "aria_label": "Save and view summary",
+      "data_cy": "Save and view summary-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(47)"
+    },
+    "button_47_save_and_add_service": {
+      "text": "Save and add service",
+      "aria_label": "Save and add service",
+      "data_cy": "Save and add service-button",
+      "type": "submit",
+      "selector": "button:nth-of-type(48)"
+    }
+  },
+  "inputs": {
+    "input_0_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "selector": "input:nth-of-type(1)"
+    },
+    "input_1_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "selector": "input:nth-of-type(2)"
+    },
+    "input_2_checkbox": {
+      "type": "checkbox",
+      "placeholder": "",
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "selector": "input:nth-of-type(3)"
+    },
+    "input_3_text_enter_a_description_for_your_estimate": {
+      "type": "text",
+      "placeholder": "Enter a description for your estimate",
+      "name": "",
+      "id": "formField2197-1761326999455-1919",
+      "aria_label": "Description - optional",
+      "selector": "input:nth-of-type(4)"
+    },
+    "input_4_text": {
+      "type": "text",
+      "placeholder": "",
+      "name": "",
+      "id": "",
+      "aria_label": "",
+      "selector": "input:nth-of-type(5)"
+    },
+    "input_5_radio_awsui-tiles-2221-1761326999478-4244": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "awsui-tiles-2221-1761326999478-4244",
+      "id": "2222-1761326999478-6509",
+      "aria_label": "",
+      "selector": "input:nth-of-type(6)"
+    },
+    "input_6_radio_awsui-tiles-2221-1761326999478-4244": {
+      "type": "radio",
+      "placeholder": "",
+      "name": "awsui-tiles-2221-1761326999478-4244",
+      "id": "2223-1761326999479-666",
+      "aria_label": "",
+      "selector": "input:nth-of-type(7)"
+    },
+    "input_7_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2305-1761327000069-7706",
+      "aria_label": "Number of requests Value",
+      "selector": "input:nth-of-type(8)"
+    },
+    "input_8_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField2316-1761327000071-3765",
+      "aria_label": "Duration of each request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(9)"
+    },
+    "input_9_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2318-1761327000073-7690",
+      "aria_label": "Amount of memory allocated Value",
+      "selector": "input:nth-of-type(10)"
+    },
+    "input_10_number_enter_the_amount": {
+      "type": "number",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2551-1761327000253-4971",
+      "aria_label": "Amount of ephemeral storage allocated Value",
+      "selector": "input:nth-of-type(11)"
+    },
+    "input_11_text_enter_amount": {
+      "type": "text",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2329-1761327000075-7712",
+      "aria_label": "Concurrency Enter amount",
+      "selector": "input:nth-of-type(12)"
+    },
+    "input_12_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2331-1761327000077-5224",
+      "aria_label": "Time for which Provisioned Concurrency is enabled Value",
+      "selector": "input:nth-of-type(13)"
+    },
+    "input_13_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2343-1761327000082-9241",
+      "aria_label": "Number of requests for Provisioned Concurrency Value",
+      "selector": "input:nth-of-type(14)"
+    },
+    "input_14_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField2354-1761327000085-4986",
+      "aria_label": "Duration of each provisioned request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(15)"
+    },
+    "input_15_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2356-1761327000085-814",
+      "aria_label": "Amount of memory allocated Value",
+      "selector": "input:nth-of-type(16)"
+    },
+    "input_16_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2373-1761327000088-7455",
+      "aria_label": "Number of requests Value",
+      "selector": "input:nth-of-type(17)"
+    },
+    "input_17_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField2384-1761327000089-9778",
+      "aria_label": "Duration of each request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(18)"
+    },
+    "input_18_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2386-1761327000089-6313",
+      "aria_label": "Amount of memory allocated Value",
+      "selector": "input:nth-of-type(19)"
+    },
+    "input_19_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2244-1761326999504-9944",
+      "aria_label": "Number of requests Value",
+      "selector": "input:nth-of-type(20)"
+    },
+    "input_20_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField2255-1761326999507-4219",
+      "aria_label": "Duration of each request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(21)"
+    },
+    "input_21_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2257-1761326999509-7044",
+      "aria_label": "Amount of memory allocated Value",
+      "selector": "input:nth-of-type(22)"
+    },
+    "input_22_number_enter_the_amount": {
+      "type": "number",
+      "placeholder": "Enter the amount",
+      "name": "",
+      "id": "formField2404-1761327000098-5731",
+      "aria_label": "Amount of ephemeral storage allocated Value",
+      "selector": "input:nth-of-type(23)"
+    },
+    "input_23_text_enter_amount": {
+      "type": "text",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2421-1761327000102-357",
+      "aria_label": "Concurrency Enter amount",
+      "selector": "input:nth-of-type(24)"
+    },
+    "input_24_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2423-1761327000103-4792",
+      "aria_label": "Time for which Provisioned Concurrency is enabled Value",
+      "selector": "input:nth-of-type(25)"
+    },
+    "input_25_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2435-1761327000104-5307",
+      "aria_label": "Number of requests for Provisioned Concurrency Value",
+      "selector": "input:nth-of-type(26)"
+    },
+    "input_26_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField2446-1761327000105-5647",
+      "aria_label": "Duration of each provisioned request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(27)"
+    },
+    "input_27_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2448-1761327000105-2926",
+      "aria_label": "Amount of memory allocated Value",
+      "selector": "input:nth-of-type(28)"
+    },
+    "input_28_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2465-1761327000108-9241",
+      "aria_label": "Number of requests Value",
+      "selector": "input:nth-of-type(29)"
+    },
+    "input_29_text_enter_duration_in_ms": {
+      "type": "text",
+      "placeholder": "Enter duration in ms",
+      "name": "",
+      "id": "formField2476-1761327000109-6199",
+      "aria_label": "Duration of each request (in ms) Enter duration in ms",
+      "selector": "input:nth-of-type(30)"
+    },
+    "input_30_number_enter_amount": {
+      "type": "number",
+      "placeholder": "Enter amount",
+      "name": "",
+      "id": "formField2478-1761327000110-2107",
+      "aria_label": "Amount of memory allocated Value",
+      "selector": "input:nth-of-type(31)"
+    }
+  },
+  "selects": {},
+  "checkboxes": {
+    "checkbox_0_awsccc-u-cb-performance": {
+      "name": "",
+      "id": "awsccc-u-cb-performance",
+      "aria_label": "Allow performance category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(1)"
+    },
+    "checkbox_1_awsccc-u-cb-functional": {
+      "name": "",
+      "id": "awsccc-u-cb-functional",
+      "aria_label": "Allow functional category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(2)"
+    },
+    "checkbox_2_awsccc-u-cb-advertising": {
+      "name": "",
+      "id": "awsccc-u-cb-advertising",
+      "aria_label": "Allow advertising category Allowed",
+      "checked": true,
+      "selector": "input[type='checkbox']:nth-of-type(3)"
+    }
+  },
+  "radio_buttons": {
+    "radio_0_awsui-tiles-2221-1761326999478-4244": {
+      "name": "awsui-tiles-2221-1761326999478-4244",
+      "id": "2222-1761326999478-6509",
+      "value": "lambdaWithFreeTier",
+      "checked": true,
+      "selector": "input[type='radio']:nth-of-type(1)"
+    },
+    "radio_1_awsui-tiles-2221-1761326999478-4244": {
+      "name": "awsui-tiles-2221-1761326999478-4244",
+      "id": "2223-1761326999479-666",
+      "value": "lambdaWithoutFreeTier",
+      "checked": false,
+      "selector": "input[type='radio']:nth-of-type(2)"
+    }
+  },
+  "text_areas": {}
+}

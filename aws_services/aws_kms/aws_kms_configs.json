@@ -1,0 +1,184 @@
+{
+  "basic_encryption": {
+    "name": "Basic Encryption",
+    "description": "Basic KMS setup for simple encryption needs",
+    "estimated_monthly_cost": "$5-20",
+    "settings": {
+      "customer_managed_cmks": 1,
+      "symmetric_requests": 10000,
+      "asymmetric_requests_non_rsa": 1000,
+      "asymmetric_requests_rsa_2048": 500,
+      "ecc_generate_data_key_pair_requests": 100,
+      "rsa_generate_data_key_pair_requests": 50
+    }
+  },
+  "application_encryption": {
+    "name": "Application Encryption",
+    "description": "KMS configuration for application-level encryption",
+    "estimated_monthly_cost": "$20-100",
+    "settings": {
+      "customer_managed_cmks": 3,
+      "symmetric_requests": 100000,
+      "asymmetric_requests_non_rsa": 10000,
+      "asymmetric_requests_rsa_2048": 5000,
+      "ecc_generate_data_key_pair_requests": 2000,
+      "rsa_generate_data_key_pair_requests": 1000
+    }
+  },
+  "database_encryption": {
+    "name": "Database Encryption",
+    "description": "KMS configuration for database encryption at rest",
+    "estimated_monthly_cost": "$50-200",
+    "settings": {
+      "customer_managed_cmks": 5,
+      "symmetric_requests": 500000,
+      "asymmetric_requests_non_rsa": 20000,
+      "asymmetric_requests_rsa_2048": 10000,
+      "ecc_generate_data_key_pair_requests": 5000,
+      "rsa_generate_data_key_pair_requests": 2500
+    }
+  },
+  "enterprise_encryption": {
+    "name": "Enterprise Encryption",
+    "description": "Enterprise-grade KMS configuration with high security requirements",
+    "estimated_monthly_cost": "$200-800",
+    "settings": {
+      "customer_managed_cmks": 20,
+      "symmetric_requests": 2000000,
+      "asymmetric_requests_non_rsa": 100000,
+      "asymmetric_requests_rsa_2048": 50000,
+      "ecc_generate_data_key_pair_requests": 25000,
+      "rsa_generate_data_key_pair_requests": 12500
+    }
+  },
+  "multi_tenant_encryption": {
+    "name": "Multi-Tenant Encryption",
+    "description": "KMS configuration for multi-tenant applications with tenant isolation",
+    "estimated_monthly_cost": "$300-1200",
+    "settings": {
+      "customer_managed_cmks": 50,
+      "symmetric_requests": 5000000,
+      "asymmetric_requests_non_rsa": 250000,
+      "asymmetric_requests_rsa_2048": 125000,
+      "ecc_generate_data_key_pair_requests": 62500,
+      "rsa_generate_data_key_pair_requests": 31250
+    }
+  },
+  "compliance_encryption": {
+    "name": "Compliance Encryption",
+    "description": "KMS configuration for compliance requirements (HIPAA, PCI DSS, etc.)",
+    "estimated_monthly_cost": "$400-1500",
+    "settings": {
+      "customer_managed_cmks": 30,
+      "symmetric_requests": 3000000,
+      "asymmetric_requests_non_rsa": 150000,
+      "asymmetric_requests_rsa_2048": 75000,
+      "ecc_generate_data_key_pair_requests": 37500,
+      "rsa_generate_data_key_pair_requests": 18750
+    }
+  },
+  "iot_encryption": {
+    "name": "IoT Encryption",
+    "description": "KMS configuration for IoT device encryption and key management",
+    "estimated_monthly_cost": "$100-500",
+    "settings": {
+      "customer_managed_cmks": 10,
+      "symmetric_requests": 1000000,
+      "asymmetric_requests_non_rsa": 50000,
+      "asymmetric_requests_rsa_2048": 25000,
+      "ecc_generate_data_key_pair_requests": 12500,
+      "rsa_generate_data_key_pair_requests": 6250
+    }
+  },
+  "blockchain_encryption": {
+    "name": "Blockchain Encryption",
+    "description": "KMS configuration for blockchain and cryptocurrency applications",
+    "estimated_monthly_cost": "$250-1000",
+    "settings": {
+      "customer_managed_cmks": 15,
+      "symmetric_requests": 1500000,
+      "asymmetric_requests_non_rsa": 75000,
+      "asymmetric_requests_rsa_2048": 37500,
+      "ecc_generate_data_key_pair_requests": 18750,
+      "rsa_generate_data_key_pair_requests": 9375
+    }
+  },
+  "ai_ml_encryption": {
+    "name": "AI/ML Encryption",
+    "description": "KMS configuration for AI/ML model encryption and data protection",
+    "estimated_monthly_cost": "$150-600",
+    "settings": {
+      "customer_managed_cmks": 8,
+      "symmetric_requests": 800000,
+      "asymmetric_requests_non_rsa": 40000,
+      "asymmetric_requests_rsa_2048": 20000,
+      "ecc_generate_data_key_pair_requests": 10000,
+      "rsa_generate_data_key_pair_requests": 5000
+    }
+  },
+  "financial_encryption": {
+    "name": "Financial Services Encryption",
+    "description": "KMS configuration for financial services with high security requirements",
+    "estimated_monthly_cost": "$500-2000",
+    "settings": {
+      "customer_managed_cmks": 40,
+      "symmetric_requests": 4000000,
+      "asymmetric_requests_non_rsa": 200000,
+      "asymmetric_requests_rsa_2048": 100000,
+      "ecc_generate_data_key_pair_requests": 50000,
+      "rsa_generate_data_key_pair_requests": 25000
+    }
+  },
+  "healthcare_encryption": {
+    "name": "Healthcare Encryption",
+    "description": "KMS configuration for healthcare applications with HIPAA compliance",
+    "estimated_monthly_cost": "$300-1200",
+    "settings": {
+      "customer_managed_cmks": 25,
+      "symmetric_requests": 2500000,
+      "asymmetric_requests_non_rsa": 125000,
+      "asymmetric_requests_rsa_2048": 62500,
+      "ecc_generate_data_key_pair_requests": 31250,
+      "rsa_generate_data_key_pair_requests": 15625
+    }
+  },
+  "government_encryption": {
+    "name": "Government Encryption",
+    "description": "KMS configuration for government applications with FISMA compliance",
+    "estimated_monthly_cost": "$600-2500",
+    "settings": {
+      "customer_managed_cmks": 60,
+      "symmetric_requests": 6000000,
+      "asymmetric_requests_non_rsa": 300000,
+      "asymmetric_requests_rsa_2048": 150000,
+      "ecc_generate_data_key_pair_requests": 75000,
+      "rsa_generate_data_key_pair_requests": 37500
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "Minimal KMS setup for development and testing environments",
+    "estimated_monthly_cost": "$2-10",
+    "settings": {
+      "customer_managed_cmks": 1,
+      "symmetric_requests": 1000,
+      "asymmetric_requests_non_rsa": 100,
+      "asymmetric_requests_rsa_2048": 50,
+      "ecc_generate_data_key_pair_requests": 25,
+      "rsa_generate_data_key_pair_requests": 10
+    }
+  },
+  "custom": {
+    "name": "Custom KMS Configuration",
+    "description": "Edit this configuration to match your specific encryption and key management needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "customer_managed_cmks": 0,
+      "symmetric_requests": 0,
+      "asymmetric_requests_non_rsa": 0,
+      "asymmetric_requests_rsa_2048": 0,
+      "ecc_generate_data_key_pair_requests": 0,
+      "rsa_generate_data_key_pair_requests": 0
+    }
+  }
+}

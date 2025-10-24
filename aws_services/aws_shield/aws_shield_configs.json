@@ -1,0 +1,178 @@
+{
+  "basic_protection": {
+    "name": "Basic DDoS Protection",
+    "description": "Basic AWS Shield protection for small applications with minimal infrastructure",
+    "estimated_monthly_cost": "$0-50",
+    "settings": {
+      "cloudfront_usage": 100,
+      "elb_usage": 50,
+      "elastic_ip_usage": 2,
+      "global_accelerator_usage": 0
+    }
+  },
+  "small_business": {
+    "name": "Small Business Protection",
+    "description": "AWS Shield protection for small business applications with moderate traffic",
+    "estimated_monthly_cost": "$50-200",
+    "settings": {
+      "cloudfront_usage": 500,
+      "elb_usage": 200,
+      "elastic_ip_usage": 5,
+      "global_accelerator_usage": 50
+    }
+  },
+  "medium_enterprise": {
+    "name": "Medium Enterprise Protection",
+    "description": "Comprehensive AWS Shield protection for medium-sized enterprises",
+    "estimated_monthly_cost": "$200-800",
+    "settings": {
+      "cloudfront_usage": 2000,
+      "elb_usage": 1000,
+      "elastic_ip_usage": 20,
+      "global_accelerator_usage": 200
+    }
+  },
+  "large_enterprise": {
+    "name": "Large Enterprise Protection",
+    "description": "Enterprise-grade AWS Shield protection with high traffic volumes",
+    "estimated_monthly_cost": "$800-3000",
+    "settings": {
+      "cloudfront_usage": 10000,
+      "elb_usage": 5000,
+      "elastic_ip_usage": 100,
+      "global_accelerator_usage": 1000
+    }
+  },
+  "high_traffic": {
+    "name": "High Traffic Protection",
+    "description": "AWS Shield protection for high-traffic applications with millions of requests",
+    "estimated_monthly_cost": "$2000-8000",
+    "settings": {
+      "cloudfront_usage": 50000,
+      "elb_usage": 25000,
+      "elastic_ip_usage": 500,
+      "global_accelerator_usage": 5000
+    }
+  },
+  "e_commerce": {
+    "name": "E-commerce Protection",
+    "description": "AWS Shield protection optimized for e-commerce platforms with high transaction volumes",
+    "estimated_monthly_cost": "$1000-4000",
+    "settings": {
+      "cloudfront_usage": 25000,
+      "elb_usage": 12000,
+      "elastic_ip_usage": 250,
+      "global_accelerator_usage": 2500
+    }
+  },
+  "gaming_platform": {
+    "name": "Gaming Platform Protection",
+    "description": "AWS Shield protection for gaming platforms with real-time multiplayer traffic",
+    "estimated_monthly_cost": "$1500-6000",
+    "settings": {
+      "cloudfront_usage": 30000,
+      "elb_usage": 15000,
+      "elastic_ip_usage": 300,
+      "global_accelerator_usage": 3000
+    }
+  },
+  "media_streaming": {
+    "name": "Media Streaming Protection",
+    "description": "AWS Shield protection for media streaming platforms with high bandwidth usage",
+    "estimated_monthly_cost": "$3000-12000",
+    "settings": {
+      "cloudfront_usage": 100000,
+      "elb_usage": 50000,
+      "elastic_ip_usage": 1000,
+      "global_accelerator_usage": 10000
+    }
+  },
+  "iot_platform": {
+    "name": "IoT Platform Protection",
+    "description": "AWS Shield protection for IoT platforms with high device connectivity",
+    "estimated_monthly_cost": "$800-3200",
+    "settings": {
+      "cloudfront_usage": 15000,
+      "elb_usage": 8000,
+      "elastic_ip_usage": 150,
+      "global_accelerator_usage": 1500
+    }
+  },
+  "api_platform": {
+    "name": "API Platform Protection",
+    "description": "AWS Shield protection for API platforms with high request volumes",
+    "estimated_monthly_cost": "$1200-4800",
+    "settings": {
+      "cloudfront_usage": 20000,
+      "elb_usage": 10000,
+      "elastic_ip_usage": 200,
+      "global_accelerator_usage": 2000
+    }
+  },
+  "financial_services": {
+    "name": "Financial Services Protection",
+    "description": "AWS Shield protection for financial services with high security requirements",
+    "estimated_monthly_cost": "$2000-8000",
+    "settings": {
+      "cloudfront_usage": 30000,
+      "elb_usage": 15000,
+      "elastic_ip_usage": 300,
+      "global_accelerator_usage": 3000
+    }
+  },
+  "healthcare_platform": {
+    "name": "Healthcare Platform Protection",
+    "description": "AWS Shield protection for healthcare platforms with compliance requirements",
+    "estimated_monthly_cost": "$1500-6000",
+    "settings": {
+      "cloudfront_usage": 25000,
+      "elb_usage": 12000,
+      "elastic_ip_usage": 250,
+      "global_accelerator_usage": 2500
+    }
+  },
+  "government_platform": {
+    "name": "Government Platform Protection",
+    "description": "AWS Shield protection for government platforms with high security standards",
+    "estimated_monthly_cost": "$2500-10000",
+    "settings": {
+      "cloudfront_usage": 40000,
+      "elb_usage": 20000,
+      "elastic_ip_usage": 400,
+      "global_accelerator_usage": 4000
+    }
+  },
+  "multi_region": {
+    "name": "Multi-Region Protection",
+    "description": "AWS Shield protection for multi-region deployments with global traffic",
+    "estimated_monthly_cost": "$4000-16000",
+    "settings": {
+      "cloudfront_usage": 80000,
+      "elb_usage": 40000,
+      "elastic_ip_usage": 800,
+      "global_accelerator_usage": 8000
+    }
+  },
+  "development_testing": {
+    "name": "Development & Testing",
+    "description": "Minimal AWS Shield setup for development and testing environments",
+    "estimated_monthly_cost": "$0-20",
+    "settings": {
+      "cloudfront_usage": 10,
+      "elb_usage": 5,
+      "elastic_ip_usage": 1,
+      "global_accelerator_usage": 0
+    }
+  },
+  "custom": {
+    "name": "Custom AWS Shield Configuration",
+    "description": "Edit this configuration to match your specific DDoS protection needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "cloudfront_usage": 0,
+      "elb_usage": 0,
+      "elastic_ip_usage": 0,
+      "global_accelerator_usage": 0
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "small_bucket": {
+    "name": "Small Bucket - Development",
+    "description": "Small S3 bucket for development and testing",
+    "estimated_monthly_cost": "$5-15",
+    "settings": {
+      "storage_gb": 50,
+      "put_requests": 10000,
+      "get_requests": 50000,
+      "s3_select_returned_gb": 1,
+      "s3_select_scanned_gb": 10
+    }
+  },
+  "medium_bucket": {
+    "name": "Medium Bucket - Business App",
+    "description": "Medium S3 bucket for business applications",
+    "estimated_monthly_cost": "$25-75",
+    "settings": {
+      "storage_gb": 500,
+      "put_requests": 100000,
+      "get_requests": 200000,
+      "s3_select_returned_gb": 10,
+      "s3_select_scanned_gb": 100
+    }
+  },
+  "large_bucket": {
+    "name": "Large Bucket - Enterprise",
+    "description": "Large S3 bucket for enterprise applications",
+    "estimated_monthly_cost": "$100-300",
+    "settings": {
+      "storage_gb": 2000,
+      "put_requests": 500000,
+      "get_requests": 1000000,
+      "s3_select_returned_gb": 50,
+      "s3_select_scanned_gb": 500
+    }
+  },
+  "archive_bucket": {
+    "name": "Archive Bucket - Long-term Storage",
+    "description": "S3 bucket optimized for long-term archival storage",
+    "estimated_monthly_cost": "$20-60",
+    "settings": {
+      "storage_gb": 5000,
+      "put_requests": 1000,
+      "get_requests": 100,
+      "s3_select_returned_gb": 1,
+      "s3_select_scanned_gb": 5
+    }
+  },
+  "high_performance": {
+    "name": "High Performance - Real-time App",
+    "description": "S3 bucket optimized for high-performance real-time applications",
+    "estimated_monthly_cost": "$150-400",
+    "settings": {
+      "storage_gb": 1000,
+      "put_requests": 1000000,
+      "get_requests": 2000000,
+      "s3_select_returned_gb": 100,
+      "s3_select_scanned_gb": 1000
+    }
+  },
+  "custom": {
+    "name": "Custom S3 Configuration",
+    "description": "Edit this configuration to match your specific needs",
+    "estimated_monthly_cost": "TBD",
+    "settings": {
+      "storage_gb": 0,
+      "put_requests": 0,
+      "get_requests": 0,
+      "s3_select_returned_gb": 0,
+      "s3_select_scanned_gb": 0
+    }
+  }
+}
