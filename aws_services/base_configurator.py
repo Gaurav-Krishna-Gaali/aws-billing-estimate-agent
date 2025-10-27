@@ -310,9 +310,15 @@ class BaseAWSConfigurator:
         try:
             print(f"[INFO] Saving {self.service_name} configuration...")
             
-            # Wait for save button and click it using JavaScript (proven method)
-            self.page.wait_for_selector("button[aria-label='Save and add service']", state="attached", timeout=5000)
-            self.page.evaluate("document.querySelector('button[aria-label=\"Save and add service\"]').click()")
+            # Scroll to bottom to ensure footer is visible
+            self.page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            self.page.wait_for_timeout(1000)
+            
+            # Wait for the footer to appear
+            self.page.wait_for_selector(".appFooter", timeout=5000)
+            
+            # Use the working selector: .appFooter button[data-cy='Save and add service-button']
+            self.page.click(".appFooter button[data-cy='Save and add service-button']")
             
             # Wait for page to process
             self.page.wait_for_timeout(3000)
@@ -410,52 +416,28 @@ class BaseAWSConfigurator:
         try:
             print(f"[INFO] Adding {self.service_name} to estimate...")
             
-            # Look for "Add to my estimate" button
-            add_button_selectors = [
-                "button:has-text('Add to my estimate')",
-                "button:has-text('Add to estimate')",
-                "button:has-text('Add service')",
-                "[data-testid='add-to-estimate']",
-                "button[aria-label*='Add to']"
-            ]
+            # Scroll to bottom to ensure footer is visible
+            self.page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            self.page.wait_for_timeout(1000)
             
-            for selector in add_button_selectors:
-                try:
-                    if self.page.locator(selector).is_visible(timeout=2000):
-                        self.page.click(selector)
-                        print(f"[SUCCESS] Clicked {selector}")
-                        break
-                except:
-                    continue
-            else:
-                print(f"[WARNING] Could not find 'Add to estimate' button for {self.service_name}")
-                return False
+            # Wait for the footer to appear
+            self.page.wait_for_selector(".appFooter", timeout=5000)
+            
+            # Use the working selector from b.py: .appFooter button[data-cy='Save and add service-button']
+            self.page.click(".appFooter button[data-cy='Save and add service-button']")
+            
+            print(f"[SUCCESS] Clicked 'Save and add service' for {self.service_name}")
             
             # Wait for service to be added
             self.page.wait_for_timeout(3000)
             
-            # Verify service was added (look for success message or estimate update)
-            try:
-                # Look for success indicators
-                success_indicators = [
-                    "text='Service added'",
-                    "text='Added to estimate'",
-                    "text='Successfully added'",
-                    "[data-testid='success-message']"
-                ]
-                
-                for indicator in success_indicators:
-                    if self.page.locator(indicator).is_visible(timeout=2000):
-                        print(f"[SUCCESS] {self.service_name} added to estimate")
-                        return True
-            except:
-                pass
-            
-            # If no explicit success message, assume success if no error
-            print(f"[INFO] {self.service_name} added to estimate (no explicit confirmation)")
+            # Success - the button click should navigate back to the estimate page
+            print(f"[SUCCESS] {self.service_name} added to estimate")
             return True
             
         except Exception as e:
             print(f"[ERROR] Failed to add {self.service_name} to estimate: {e}")
+            import traceback
+            traceback.print_exc()
             return False
 

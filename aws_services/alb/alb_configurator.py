@@ -19,7 +19,7 @@ class ComprehensiveALBConfigurator(BaseAWSConfigurator):
     def __init__(self, page: Page):
         super().__init__(page, "Application Load Balancer")
     
-    def navigate_to_alb_config(self) -> bool:
+    def navigate_to_service_config(self) -> bool:
         """Navigate to ALB configuration page"""
         try:
             # Navigate to calculator
@@ -36,6 +36,14 @@ class ComprehensiveALBConfigurator(BaseAWSConfigurator):
         except Exception as e:
             print(f"[ERROR] Failed to navigate to ALB config: {e}")
             return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding ALB service in AWS Calculator"""
+        return ["Elastic Load Balancing", "Application Load Balancer", "ALB", "Load Balancer"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply ALB-specific configuration logic"""
+        return self.apply_alb_configuration(config)
     
     def apply_alb_configuration(self, config: Dict[str, Any]) -> bool:
         """Apply ALB configuration with provided settings"""
@@ -290,7 +298,7 @@ def main():
         
         configurator = ComprehensiveALBConfigurator(page)
         
-        if configurator.navigate_to_alb_config():
+        if configurator.navigate_to_service_config():
             # Example configuration
             example_config = {
                 'description': 'Application Load Balancer for production web application',

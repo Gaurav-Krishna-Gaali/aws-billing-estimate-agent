@@ -19,6 +19,18 @@ class ComprehensiveEC2Configurator(BaseAWSConfigurator):
     def __init__(self, page: Page):
         super().__init__(page, "EC2")
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to EC2 configuration page"""
+        return self.navigate_to_ec2_config()
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding EC2 service in AWS Calculator"""
+        return ["Amazon EC2", "EC2", "Elastic Compute Cloud"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply EC2-specific configuration logic"""
+        return self.apply_ec2_configuration(config)
+    
     def navigate_to_ec2_config(self) -> bool:
         """Navigate to EC2 configuration page"""
         try:

@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-27T00:13:17.835103",
+    "total_service_types": 9,
+    "total_instances": 10,
+    "source": "aws_billing_automation"
+  },
+  "services": {
+    "iam": [
+      {
+        "description": "Identity and Access Management for roles and policies used across the architecture (no direct service cost assumed).",
+        "region": "us-east-1",
+        "users_roles": 10,
+        "managed_policies": 5,
+        "custom_policies": 0,
+        "groups": 0
+      }
+    ],
+    "cloudwatch": [
+      {
+        "description": "Monitoring and logging for ECS tasks, ALB, API Gateway and custom application logs.",
+        "region": "us-east-1",
+        "custom_metrics": 50,
+        "alarms": 20,
+        "logs_storage_gb": 50,
+        "logs_ingestion_gb": 15,
+        "dashboards": 1
+      }
+    ],
+    "kms": [
+      {
+        "description": "Customer Master Key(s) for encrypting S3 objects and other resources.",
+        "region": "us-east-1",
+        "customer_managed_keys": 2,
+        "key_usage": "Encrypt/Decrypt for S3 and application",
+        "key_monthly_price": 1
+      }
+    ],
+    "shield": [
+      {
+        "description": "AWS Shield (Standard) protection applied (no additional cost for standard).",
+        "fields": {
+          "description": "AWS Shield (Standard) protection applied (no additional cost for standard).",
+          "region": "Global",
+          "protection_scope": "DDoS basic protection",
+          "shield_type": "Shield Standard",
+          "estimated_cost": "$0"
+        },
+        "region": "us-east-1"
+      }
+    ],
+    "waf": [
+      {
+        "description": "Web Application Firewall protecting API Gateway / ALB with a set of rules.",
+        "region": "us-east-1",
+        "requests_per_month": 20000000,
+        "web_acls": 1,
+        "rules": "10 managed + 5 custom",
+        "estimated_monthly_rate": "~$25"
+      }
+    ],
+    "vpc": [
+      {
+        "description": "Virtual Private Cloud with multi-AZ subnets and routing (no direct hourly charge).",
+        "region": "us-east-1",
+        "nat_gateways": 0,
+        "subnets": "public+private multi-AZ",
+        "availability_zones": 3,
+        "estimated_cost": "$0"
+      }
+    ],
+    "alb": [
+      {
+        "description": "ALB in public subnets for inbound traffic distribution to services.",
+        "region": "us-east-1",
+        "alb_count": 1,
+        "alb_lambda_processed_bytes": 0,
+        "alb_ec2_processed_bytes": 1024,
+        "alb_new_connections": 0,
+        "alb_connection_duration": 0,
+        "alb_requests_per_second": 0,
+        "alb_rule_evaluations": 0,
+        "nlb_count": 0,
+        "nlb_tcp_processed_bytes": 0,
+        "nlb_tcp_connections": 0,
+        "nlb_tcp_connection_duration": 0,
+        "nlb_udp_processed_bytes": 0,
+        "nlb_udp_flows": 0,
+        "nlb_udp_flow_duration": 0,
+        "nlb_tls_processed_bytes": 0,
+        "nlb_tls_connections": 0,
+        "nlb_tls_connection_duration": 0,
+        "glb_availability_zones": 0,
+        "glb_processed_bytes": 0,
+        "glb_connections_flows": 0,
+        "glb_connection_flow_duration": 0,
+        "glb_endpoints": 0,
+        "clb_count": 0,
+        "clb_processed_bytes": 0
+      }
+    ],
+    "s3": [
+      {
+        "description": "S3 bucket for batch ingest and input artifacts.",
+        "region": "us-east-1",
+        "storage_gb": 500,
+        "storage_class": "Standard",
+        "put_requests": 100000,
+        "get_requests": 200000,
+        "data_transfer_out_gb": 100
+      },
+      {
+        "description": "S3 bucket for NDJSON outputs and artifacts produced by verdict generation.",
+        "region": "us-east-1",
+        "storage_gb": 500,
+        "storage_class": "Standard",
+        "put_requests": 50000,
+        "get_requests": 150000,
+        "data_transfer_out_gb": 200
+      }
+    ],
+    "bedrock": [
+      {
+        "description": "Managed foundation models for dual LLM evaluation called by the verdict generation/policy evaluation flows.",
+        "region": "us-east-1",
+        "model_calls_per_month": 100000,
+        "avg_call_duration": "short/text-inference",
+        "usage_tier": "on-demand",
+        "estimated_monthly_spend": "~$102.17"
+      }
+    ]
+  }
+}

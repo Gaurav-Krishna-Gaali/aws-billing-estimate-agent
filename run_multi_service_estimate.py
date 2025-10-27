@@ -38,23 +38,24 @@ def load_input_file(input_path: str) -> Dict[str, Any]:
         sys.exit(1)
 
 
-def process_with_llm(input_data: Dict[str, Any], api_key: str = None, provider: str = 'openai') -> Dict[str, Any]:
-    """Process input data with LLM to standardize service configurations"""
-    print("[INFO] Processing input with LLM...")
+def process_with_llm(input_data: Dict[str, Any], region: str = 'us-east-1', model_id: str = 'anthropic.claude-3-sonnet-20240229-v1:0') -> Dict[str, Any]:
+    """Process input data with AWS Bedrock to standardize service configurations"""
+    print("[INFO] Processing input with AWS Bedrock...")
     
     try:
-        mapper = SOWToSchemaMapper(api_key=api_key, provider=provider)
+        mapper = SOWToSchemaMapper(region=region, model_id=model_id)
         standardized = mapper.map_sow_to_schemas(input_data)
         
         if not standardized:
-            print("[ERROR] LLM processing failed to produce any services")
+            print("[ERROR] Bedrock processing failed to produce any services")
             return {}
         
-        print(f"[SUCCESS] LLM processing completed. {len(standardized)} service types found")
+        print(f"[SUCCESS] Bedrock processing completed. {len(standardized)} service types found")
         return standardized
         
     except Exception as e:
-        print(f"[ERROR] LLM processing failed: {e}")
+        print(f"[ERROR] Bedrock processing failed: {e}")
+        print("Make sure you have AWS credentials configured and Bedrock access enabled")
         return {}
 
 
@@ -134,6 +135,27 @@ def save_estimate_url(url: str, output_path: str):
         print(f"[ERROR] Failed to save URL: {e}")
 
 
+def save_standardized_json(services_dict: Dict[str, Any], output_path: str):
+    """Save standardized services JSON to file"""
+    try:
+        # Create a structured output with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": __import__('datetime').datetime.now().isoformat(),
+                "total_service_types": len(services_dict),
+                "total_instances": sum(len(instances) for instances in services_dict.values()),
+                "source": "aws_billing_automation"
+            },
+            "services": services_dict
+        }
+        
+        with open(output_path, 'w') as f:
+            json.dump(output_data, f, indent=2)
+        print(f"[SUCCESS] Standardized JSON saved to: {output_path}")
+    except Exception as e:
+        print(f"[ERROR] Failed to save JSON: {e}")
+
+
 def main():
     """Main function"""
     parser = argparse.ArgumentParser(
@@ -141,7 +163,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Process SOW with LLM and create estimate
+  # Process SOW with AWS Bedrock and create estimate
   python run_multi_service_estimate.py sow-analysis-Ody.json --llm-process
   
   # Use pre-standardized JSON
@@ -150,22 +172,30 @@ Examples:
   # Run in headless mode
   python run_multi_service_estimate.py input.json --headless
   
+  # Use different AWS region and model
+  python run_multi_service_estimate.py input.json --llm-process --region us-west-2 --model-id anthropic.claude-3-haiku-20240307-v1:0
+  
   # Save URL to specific file
   python run_multi_service_estimate.py input.json --output my_estimate.txt
+  
+  # Save standardized JSON output
+  python run_multi_service_estimate.py sow-analysis-Ody.json --llm-process --save-json standardized_output.json
         """
     )
     
     parser.add_argument('input_file', help='Input JSON file (SOW or standardized)')
     parser.add_argument('--llm-process', action='store_true', 
-                       help='Process input with LLM first (for SOW JSON)')
+                       help='Process input with AWS Bedrock first (for SOW JSON)')
     parser.add_argument('--output', default='estimate_url.txt',
                        help='Output file for estimate URL (default: estimate_url.txt)')
     parser.add_argument('--headless', action='store_true',
                        help='Run browser in headless mode')
-    parser.add_argument('--provider', choices=['openai', 'anthropic'], default='openai',
-                       help='LLM provider (default: openai)')
-    parser.add_argument('--api-key', 
-                       help='LLM API key (or set OPENAI_API_KEY/ANTHROPIC_API_KEY)')
+    parser.add_argument('--region', default='us-east-1',
+                       help='AWS region for Bedrock (default: us-east-1)')
+    parser.add_argument('--model-id', default='anthropic.claude-3-sonnet-20240229-v1:0',
+                       help='Bedrock model ID (default: anthropic.claude-3-sonnet-20240229-v1:0)')
+    parser.add_argument('--save-json', 
+                       help='Save standardized JSON output to file (e.g., --save-json output.json)')
     parser.add_argument('--validate-only', action='store_true',
                        help='Only validate configurations, do not build estimate')
     
@@ -180,18 +210,20 @@ Examples:
     print(f"[INFO] Loading input from: {args.input_file}")
     input_data = load_input_file(args.input_file)
     
-    # Determine if we need LLM processing
+    # Determine if we need Bedrock processing
     if args.llm_process:
-        # Check for API key
-        api_key = args.api_key or os.getenv('OPENAI_API_KEY') or os.getenv('ANTHROPIC_API_KEY')
-        if not api_key:
-            print("[ERROR] API key required for LLM processing. Set OPENAI_API_KEY or ANTHROPIC_API_KEY")
-            sys.exit(1)
+        # Check for AWS credentials
+        if not (os.getenv('AWS_ACCESS_KEY_ID') or os.getenv('AWS_PROFILE')):
+            print("[WARNING] No AWS credentials found. Make sure you have:")
+            print("  - AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables, or")
+            print("  - AWS_PROFILE configured, or")
+            print("  - AWS credentials configured via 'aws configure'")
+            print()
         
-        # Process with LLM
-        services_dict = process_with_llm(input_data, api_key, args.provider)
+        # Process with Bedrock
+        services_dict = process_with_llm(input_data, args.region, args.model_id)
         if not services_dict:
-            print("[ERROR] LLM processing failed")
+            print("[ERROR] Bedrock processing failed")
             sys.exit(1)
     else:
         # Assume already standardized
@@ -204,6 +236,10 @@ Examples:
     # Validate services
     if not validate_services(services_dict):
         print("[WARNING] Some services failed validation, but continuing...")
+    
+    # Save standardized JSON if requested
+    if args.save_json:
+        save_standardized_json(services_dict, args.save_json)
     
     # If validate-only, stop here
     if args.validate_only:
