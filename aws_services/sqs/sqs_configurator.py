@@ -19,8 +19,35 @@ class ComprehensiveSQSConfigurator(BaseAWSConfigurator):
     def __init__(self, page: Page):
         super().__init__(page, "SQS")
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to SQS configuration page from current estimate"""
+        try:
+            print(f"[INFO] Navigating to {self.service_name} configuration...")
+            
+            # Search for the service using search terms
+            search_terms = self._get_service_search_terms()
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    print(f"[OK] Successfully navigated to {self.service_name} configuration page")
+                    return True
+            
+            print(f"[ERROR] Could not find {self.service_name} service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to {self.service_name} configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding SQS service in AWS Calculator"""
+        return ["Amazon Simple Queue Service (SQS)", "SQS", "Simple Queue Service"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply SQS-specific configuration logic"""
+        return self.apply_sqs_configuration(config)
+    
     def navigate_to_sqs_config(self) -> bool:
-        """Navigate to SQS configuration page"""
+        """Navigate to SQS configuration page (standalone mode - creates new estimate)"""
         try:
             # Navigate to calculator
             if not self.navigate_to_calculator():

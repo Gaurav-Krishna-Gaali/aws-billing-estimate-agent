@@ -20,8 +20,43 @@ class ComprehensiveEC2Configurator(BaseAWSConfigurator):
         super().__init__(page, "EC2")
     
     def navigate_to_service_config(self) -> bool:
-        """Navigate to EC2 configuration page"""
-        return self.navigate_to_ec2_config()
+        """Navigate to EC2 configuration page from current estimate"""
+        try:
+            print(f"[INFO] Navigating to {self.service_name} configuration...")
+            
+            # Search for the service using search terms
+            search_terms = self._get_service_search_terms()
+            for term in search_terms:
+                try:
+                    # Look for search input
+                    search_input = self.page.locator("input[placeholder='Search for a service']")
+                    if search_input.count() > 0:
+                        search_input.first.fill(term)
+                        self.page.wait_for_timeout(2000)
+                        
+                        # Look for "Configure Amazon EC2" button
+                        ec2_button = self.page.locator("button[aria-label*='EC2']").first
+                        if ec2_button.count() > 0:
+                            ec2_button.click()
+                            self.page.wait_for_timeout(3000)
+                            print(f"[OK] Successfully navigated to {self.service_name} configuration page")
+                            return True
+                        else:
+                            print(f"[WARNING] EC2 button not found, trying alternative search...")
+                            continue
+                    else:
+                        print(f"[WARNING] Search input not found, trying next search term...")
+                        continue
+                except Exception as e:
+                    print(f"[WARNING] Failed to search for {term}: {e}")
+                    continue
+            
+            print(f"[ERROR] Could not find {self.service_name} service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to {self.service_name} configuration: {e}")
+            return False
     
     def _get_service_search_terms(self) -> List[str]:
         """Get search terms for finding EC2 service in AWS Calculator"""
@@ -32,7 +67,7 @@ class ComprehensiveEC2Configurator(BaseAWSConfigurator):
         return self.apply_ec2_configuration(config)
     
     def navigate_to_ec2_config(self) -> bool:
-        """Navigate to EC2 configuration page"""
+        """Navigate to EC2 configuration page (standalone mode - creates new estimate)"""
         try:
             # Navigate to calculator
             if not self.navigate_to_calculator():

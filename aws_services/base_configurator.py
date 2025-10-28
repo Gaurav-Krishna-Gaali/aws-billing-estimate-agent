@@ -41,10 +41,13 @@ class BaseAWSConfigurator:
             # Wait for search input
             self.page.wait_for_selector("input[placeholder='Search for a service']")
             self.page.fill("input[placeholder='Search for a service']", search_term)
+            self.page.wait_for_timeout(2000)  # Wait for search results
             
-            # Wait for service to appear and click configure
-            self.page.wait_for_selector(f"text='{search_term}'")
-            self.page.click(f"button[aria-label='Configure {search_term}']")
+            # Wait for the configure button to appear and click it
+            # This is better than waiting for text because the button is what we need to click
+            configure_button_selector = f"button[aria-label*='{search_term}']"
+            self.page.wait_for_selector(configure_button_selector, timeout=10000)
+            self.page.click(configure_button_selector)
             
             # Wait for configuration page to load
             self.page.wait_for_timeout(3000)

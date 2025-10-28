@@ -156,29 +156,164 @@ class AWSEstimateBuilder:
         return results
     
     def finalize_estimate(self) -> Optional[str]:
-        """Save estimate and return shareable URL"""
+        """Return the current estimate URL by clicking View Summary"""
         try:
             print("[INFO] Finalizing estimate...")
             
-            # Navigate to estimate summary if not already there
-            self._navigate_to_estimate_summary()
+            # Wait for page to settle
+            self.page.wait_for_timeout(2000)
             
-            # Click save/share button
-            print("[INFO] Saving estimate...")
-            self.page.wait_for_selector("button:has-text('Save and share')", timeout=10000)
-            self.page.click("button:has-text('Save and share')")
-            
-            # Wait for URL to be generated
-            self.page.wait_for_timeout(3000)
-            
-            # Extract the estimate URL
-            current_url = self.page.url
-            if "calculator.aws" in current_url and "estimate" in current_url:
-                self.estimate_url = current_url
-                print(f"[SUCCESS] Estimate finalized: {self.estimate_url}")
-                return self.estimate_url
-            else:
-                print("[ERROR] Failed to generate estimate URL")
+            # Click "View summary" button - user found the correct button!
+            print("[INFO] Clicking 'View summary' button...")
+            try:
+                # Try different selectors for the View summary button
+                view_summary_selectors = [
+                    ".appFooter button[id='estimate-button']",
+                    "button[id='estimate-button']",
+                    "button[aria-label='View summary']",
+                    "button:has-text('View summary')",
+                    "button:has-text('View Summary')"
+                ]
+                
+                clicked = False
+                for selector in view_summary_selectors:
+                    try:
+                        if self.page.locator(selector).is_visible(timeout=2000):
+                            self.page.click(selector)
+                            self.page.wait_for_timeout(3000)
+                            print(f"[SUCCESS] Clicked '{selector}' button")
+                            clicked = True
+                            break
+                    except:
+                        continue
+                
+                if not clicked:
+                    print("[WARNING] Could not find 'View summary' button")
+                
+                # Wait for page to load after clicking View summary
+                self.page.wait_for_timeout(3000)
+                
+                # Now click the "Share" button to get the shareable URL
+                print("[INFO] Clicking 'Share' button...")
+                share_selectors = [
+                    "button[data-cy='save-and-share']",
+                    "button[aria-label='Share']",
+                    "button:has-text('Share')"
+                ]
+                
+                share_clicked = False
+                for selector in share_selectors:
+                    try:
+                        if self.page.locator(selector).is_visible(timeout=2000):
+                            self.page.click(selector)
+                            self.page.wait_for_timeout(3000)
+                            print(f"[SUCCESS] Clicked '{selector}' button")
+                            share_clicked = True
+                            break
+                    except:
+                        continue
+                
+                if not share_clicked:
+                    print("[WARNING] Could not find 'Share' button")
+                else:
+                    # After clicking Share, a notification popup might appear - close it first
+                    print("[INFO] Checking for notification popup...")
+                    try:
+                        # Look for the notification close button
+                        notification_close_selectors = [
+                            "button[data-testid='notification-bubble-close-icon']",
+                            "button[aria-label='Close notification']",
+                            ".interact-module__notificationBubbleCloseIcon__PAHLX"
+                        ]
+                        
+                        for selector in notification_close_selectors:
+                            try:
+                                if self.page.locator(selector).is_visible(timeout=2000):
+                                    self.page.click(selector)
+                                    self.page.wait_for_timeout(1000)
+                                    print(f"[SUCCESS] Closed notification popup: {selector}")
+                                    break
+                            except:
+                                continue
+                    except:
+                        pass
+                    
+                    # Now click "Agree and continue"
+                    print("[INFO] Clicking 'Agree and continue' in modal...")
+                    agree_selectors = [
+                        "button[data-id='agree-continue']",
+                        "button[aria-label='Agree and continue']",
+                        "button:has-text('Agree and continue')"
+                    ]
+                    
+                    agree_clicked = False
+                    for selector in agree_selectors:
+                        try:
+                            if self.page.locator(selector).is_visible(timeout=3000):
+                                self.page.click(selector)
+                                self.page.wait_for_timeout(2000)
+                                print(f"[SUCCESS] Clicked '{selector}' button")
+                                agree_clicked = True
+                                break
+                        except:
+                            continue
+                    
+                    if not agree_clicked:
+                        print("[WARNING] Could not find 'Agree and continue' button")
+                
+                # Wait for the shareable link modal to appear and button to activate
+                print("[INFO] Waiting for shareable link modal...")
+                self.page.wait_for_timeout(3000)  # Wait a bit for the modal to fully load
+                
+                # Extract the URL from the input field in the modal
+                try:
+                    # Wait for the URL to appear in the input field (wait for button to be activated)
+                    print("[INFO] Waiting for URL to populate...")
+                    
+                    # Try to wait for the input field to have a value
+                    url_input_with_value = "input[aria-label='Copy public link'][value*='calculator.aws']"
+                    self.page.wait_for_selector(url_input_with_value, timeout=5000)
+                    
+                    # Get the URL from the first input field (which has the value)
+                    estimate_url = self.page.locator(url_input_with_value).first.get_attribute('value')
+                    
+                    if estimate_url and estimate_url.startswith('https://calculator.aws'):
+                        self.estimate_url = estimate_url
+                        print(f"[SUCCESS] Estimate URL: {self.estimate_url}")
+                        return self.estimate_url
+                    else:
+                        print(f"[ERROR] Invalid URL extracted: {estimate_url}")
+                        
+                except Exception as e:
+                    print(f"[WARNING] Could not extract URL from modal: {e}")
+                    # Try alternative: get the first input field with value
+                    try:
+                        all_inputs = self.page.locator("input[aria-label='Copy public link']").all()
+                        for inp in all_inputs:
+                            value = inp.get_attribute('value')
+                            if value and value.startswith('https://calculator.aws'):
+                                self.estimate_url = value
+                                print(f"[SUCCESS] Estimate URL (alternative): {self.estimate_url}")
+                                return self.estimate_url
+                    except:
+                        pass
+                
+                # Fallback: try to get URL from current page
+                current_url = self.page.url
+                if "calculator.aws" in current_url:
+                    self.estimate_url = current_url
+                    print(f"[SUCCESS] Estimate URL (fallback): {self.estimate_url}")
+                    return self.estimate_url
+                else:
+                    print("[ERROR] Failed to extract estimate URL")
+                    return None
+                    
+            except Exception as e:
+                print(f"[ERROR] Could not click View Summary: {e}")
+                # Fallback: return current URL
+                current_url = self.page.url
+                if "calculator.aws" in current_url:
+                    return current_url
                 return None
                 
         except Exception as e:
@@ -203,17 +338,44 @@ class AWSEstimateBuilder:
     def _navigate_to_service_search(self):
         """Navigate back to service search page"""
         try:
-            # Look for "Add service" or "Add another service" button
-            if self.page.locator("button:has-text('Add service')").is_visible():
-                self.page.click("button:has-text('Add service')")
-            elif self.page.locator("button:has-text('Add another service')").is_visible():
-                self.page.click("button:has-text('Add another service')")
-            else:
-                # Navigate to calculator home
+            # Wait a bit for the page to settle after service was added
+            self.page.wait_for_timeout(2000)
+            
+            # Look for various possible button texts after service is added
+            # Try different button texts that might appear
+            possible_buttons = [
+                "button:has-text('Add service')",
+                "button:has-text('Add another service')",
+                "button:has-text('Add Service')",
+                "button:has-text('Add a service')",
+                ".appFooter button[id='estimate-button']"  # The "View summary" button
+            ]
+            
+            clicked = False
+            for button_selector in possible_buttons:
+                try:
+                    if self.page.locator(button_selector).is_visible(timeout=2000):
+                        self.page.click(button_selector)
+                        print(f"[OK] Clicked button: {button_selector}")
+                        clicked = True
+                        break
+                except:
+                    continue
+            
+            if not clicked:
+                raise Exception("Could not find 'Add service' or 'View summary' button")
+            self.page.wait_for_timeout(2000)
+            print("[OK] Navigated back to service search")
+            
+        except Exception as e:
+            print(f"[WARNING] Could not navigate to service search automatically: {e}")
+            # Try manual navigation as fallback
+            try:
                 self.page.goto(self.base_url)
                 self.page.wait_for_timeout(2000)
-        except Exception as e:
-            print(f"[WARNING] Could not navigate to service search: {e}")
+                print("[OK] Navigated to calculator home as fallback")
+            except:
+                print(f"[ERROR] Failed to navigate after adding service")
     
     def _navigate_to_estimate_summary(self):
         """Navigate to estimate summary page"""
