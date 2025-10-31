@@ -50,36 +50,175 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
     def enable_storage_class(self, storage_class: str) -> bool:
         """Enable a specific storage class by clicking its checkbox"""
         try:
-            # Map of storage class to checkbox ID patterns
-            checkbox_patterns = {
-                'standard': '2230',      # S3 Standard
-                'int': '2231',           # S3 INT
-                'standard_ia': '2232',   # S3 Standard-IA
-                'one_zone_ia': '2233',   # S3 One Zone-IA
-                'glacier_flexible': '2234',  # S3 Glacier Flexible Retrieval
-                'glacier_deep': '2235',      # S3 Glacier Deep Archive
-                'glacier_instant': '2236',   # S3 Glacier Instant Retrieval
-                'express_one_zone': '2237'   # S3 Express One Zone
+            storage_class_name = self.storage_classes[storage_class]
+            print(f"[INFO] Enabling {storage_class_name}...")
+            
+            # Wait for page to be ready and checkboxes to load
+            self.page.wait_for_load_state('networkidle', timeout=5000)
+            self.page.wait_for_timeout(1000)
+            
+            # Map of storage class to multiple selector strategies
+            # Strategy 1: ID pattern (dynamic timestamps)
+            checkbox_id_patterns = {
+                'standard': '2230',
+                'int': '2231',
+                'standard_ia': '2232',
+                'one_zone_ia': '2233',
+                'glacier_flexible': '2234',
+                'glacier_deep': '2235',
+                'glacier_instant': '2236',
+                'express_one_zone': '2237'
             }
             
-            if storage_class in checkbox_patterns:
-                pattern = checkbox_patterns[storage_class]
-                checkbox_selector = f"input[id*='{pattern}']"
-                
-                # Check if already enabled
-                is_checked = self.page.is_checked(checkbox_selector)
-                if not is_checked:
-                    self.page.check(checkbox_selector)
-                    print(f"[OK] Enabled {self.storage_classes[storage_class]}")
-                else:
-                    print(f"[INFO] {self.storage_classes[storage_class]} already enabled")
+            # Strategy 2: nth-of-type position (more stable)
+            checkbox_positions = {
+                'standard': 4,      # input[type='checkbox']:nth-of-type(4)
+                'int': 5,
+                'standard_ia': 6,
+                'one_zone_ia': 7,
+                'glacier_flexible': 8,
+                'glacier_deep': 9,
+                'glacier_instant': 10,
+                'express_one_zone': 11
+            }
+            
+            if storage_class not in checkbox_id_patterns:
+                print(f"[ERROR] Unknown storage class: {storage_class}")
+                return False
+            
+            # Try multiple selector strategies
+            # Note: Cookie checkboxes are usually first 3, so we adjust positions
+            selectors = [
+                # Strategy 1: Try ID pattern with type filter (most specific)
+                f"input[type='checkbox'][id*='{checkbox_id_patterns[storage_class]}']",
+                # Strategy 2: Try ID pattern without type filter
+                f"input[id*='{checkbox_id_patterns[storage_class]}']",
+                # Strategy 3: Try nth-of-type (may need adjustment for cookie checkboxes)
+                f"input[type='checkbox']:nth-of-type({checkbox_positions[storage_class]})",
+                # Strategy 4: Try all checkboxes and find by ID pattern in JS
+                f"input[type='checkbox']"
+            ]
+            
+            checkbox_found = False
+            for i, selector in enumerate(selectors):
+                try:
+                    if i < 3:  # First 3 strategies use specific selectors
+                        # Wait for checkbox to be visible
+                        checkbox = self.page.locator(selector).first
+                        checkbox.wait_for(state='visible', timeout=3000)
+                        
+                        # Verify it's the right checkbox by checking ID
+                        checkbox_id = checkbox.get_attribute('id') or ''
+                        if checkbox_id and checkbox_id_patterns[storage_class] in checkbox_id:
+                            # This is the right checkbox
+                            checkbox.scroll_into_view_if_needed()
+                            self.page.wait_for_timeout(300)
+                            
+                            is_checked = checkbox.is_checked()
+                            if not is_checked:
+                                checkbox.check()
+                                self.page.wait_for_timeout(300)
+                                print(f"[OK] Enabled {storage_class_name}")
+                            else:
+                                print(f"[INFO] {storage_class_name} already enabled")
+                            
+                            checkbox_found = True
+                            break
+                    else:
+                        # Last strategy: find by checking all checkboxes
+                        all_checkboxes = self.page.locator(selector).all()
+                        for cb in all_checkboxes:
+                            try:
+                                cb_id = cb.get_attribute('id') or ''
+                                if checkbox_id_patterns[storage_class] in cb_id:
+                                    cb.wait_for(state='visible', timeout=2000)
+                                    cb.scroll_into_view_if_needed()
+                                    self.page.wait_for_timeout(300)
+                                    
+                                    if not cb.is_checked():
+                                        cb.check()
+                                        self.page.wait_for_timeout(300)
+                                        print(f"[OK] Enabled {storage_class_name}")
+                                    else:
+                                        print(f"[INFO] {storage_class_name} already enabled")
+                                    
+                                    checkbox_found = True
+                                    break
+                            except:
+                                continue
+                        if checkbox_found:
+                            break
+                except Exception as e:
+                    # Try next selector
+                    continue
+            
+            if not checkbox_found:
+                # Last resort: Try to find by scrolling and looking for the storage class section
+                try:
+                    # Scroll to find storage class sections
+                    storage_class_labels = {
+                        'standard': 'S3 Standard',
+                        'int': 'S3 INT',
+                        'standard_ia': 'S3 Standard-IA',
+                        'one_zone_ia': 'S3 One Zone-IA',
+                        'glacier_flexible': 'S3 Glacier Flexible Retrieval',
+                        'glacier_deep': 'S3 Glacier Deep Archive',
+                        'glacier_instant': 'S3 Glacier Instant Retrieval',
+                        'express_one_zone': 'S3 Express One Zone'
+                    }
+                    
+                    label_text = storage_class_labels[storage_class]
+                    
+                    # Find the label and then find nearby checkbox
+                    label = self.page.locator(f"text='{label_text}'").first
+                    if label.count() > 0:
+                        # Scroll to label
+                        label.scroll_into_view_if_needed()
+                        self.page.wait_for_timeout(500)
+                        
+                        # Find checkbox near this label using XPath (look for checkbox in parent container)
+                        # Try to find checkbox that's in the same section/container as the label
+                        checkbox_xpath = f"//text()[contains(., '{label_text}')]/ancestor::*[contains(@class, 'service') or contains(@class, 'section') or contains(@class, 'card')][1]//input[@type='checkbox']"
+                        checkbox = self.page.locator(f"xpath={checkbox_xpath}").first
+                        if checkbox.count() > 0:
+                            checkbox.scroll_into_view_if_needed()
+                            self.page.wait_for_timeout(300)
+                            if not checkbox.is_checked():
+                                checkbox.check()
+                                print(f"[OK] Enabled {storage_class_name} (found near label)")
+                            else:
+                                print(f"[INFO] {storage_class_name} already enabled")
+                            checkbox_found = True
+                        else:
+                            # Fallback: find first unchecked checkbox after the label
+                            all_checkboxes = self.page.locator("input[type='checkbox']").all()
+                            for cb in all_checkboxes:
+                                try:
+                                    cb.scroll_into_view_if_needed()
+                                    # Simple heuristic: if checkbox is visible and not checked, try it
+                                    if cb.is_visible():
+                                        if not cb.is_checked():
+                                            cb.check()
+                                            print(f"[OK] Enabled {storage_class_name} (fallback)")
+                                            checkbox_found = True
+                                            break
+                                except:
+                                    continue
+                except Exception as e:
+                    print(f"[WARNING] Could not find checkbox near label: {e}")
+            
+            if checkbox_found:
+                # Wait a bit for UI to update
+                self.page.wait_for_timeout(500)
                 return True
             else:
-                print(f"[ERROR] Unknown storage class: {storage_class}")
+                print(f"[ERROR] Could not find checkbox for {storage_class_name} using any strategy")
                 return False
                 
         except Exception as e:
             print(f"[ERROR] Failed to enable {storage_class}: {e}")
+            import traceback
+            traceback.print_exc()
             return False
     
     def disable_storage_class(self, storage_class: str) -> bool:
@@ -125,13 +264,19 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
             if not self.enable_storage_class(storage_class):
                 return False
             
+            # Wait for fields to appear after enabling storage class
+            self.page.wait_for_timeout(1000)
+            
             settings_applied = 0
             
             # Storage amount
             if 'storage_gb' in config:
                 try:
                     selector = f"input[aria-label*='{self.storage_classes[storage_class]} storage Value']"
+                    self.page.wait_for_selector(selector, timeout=5000)
                     self.page.fill(selector, str(config['storage_gb']))
+                    # Small delay to ensure value is set
+                    self.page.wait_for_timeout(500)
                     print(f"[OK] Set {storage_class} storage to {config['storage_gb']} GB")
                     settings_applied += 1
                 except Exception as e:
@@ -151,7 +296,9 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
             if 'put_requests' in config:
                 try:
                     selector = f"input[aria-label*='PUT, COPY, POST, LIST requests to {self.storage_classes[storage_class]} Enter amount of requests']"
+                    self.page.wait_for_selector(selector, timeout=5000)
                     self.page.fill(selector, str(config['put_requests']))
+                    self.page.wait_for_timeout(500)
                     print(f"[OK] Set {storage_class} PUT requests to {config['put_requests']}")
                     settings_applied += 1
                 except Exception as e:
@@ -161,7 +308,9 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
             if 'get_requests' in config:
                 try:
                     selector = f"input[aria-label*='GET, SELECT, and all other requests from {self.storage_classes[storage_class]} Enter amount of requests']"
+                    self.page.wait_for_selector(selector, timeout=5000)
                     self.page.fill(selector, str(config['get_requests']))
+                    self.page.wait_for_timeout(500)
                     print(f"[OK] Set {storage_class} GET requests to {config['get_requests']}")
                     settings_applied += 1
                 except Exception as e:
@@ -191,7 +340,9 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
             if 's3_select_returned_gb' in config:
                 try:
                     selector = f"input[aria-label*='Data returned by S3 Select Value']"
+                    self.page.wait_for_selector(selector, timeout=5000)
                     self.page.fill(selector, str(config['s3_select_returned_gb']))
+                    self.page.wait_for_timeout(500)
                     print(f"[OK] Set {storage_class} S3 Select returned to {config['s3_select_returned_gb']} GB")
                     settings_applied += 1
                 except Exception as e:
@@ -201,7 +352,9 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
             if 's3_select_scanned_gb' in config:
                 try:
                     selector = f"input[aria-label*='Data scanned by S3 Select Value']"
+                    self.page.wait_for_selector(selector, timeout=5000)
                     self.page.fill(selector, str(config['s3_select_scanned_gb']))
+                    self.page.wait_for_timeout(500)
                     print(f"[OK] Set {storage_class} S3 Select scanned to {config['s3_select_scanned_gb']} GB")
                     settings_applied += 1
                 except Exception as e:
@@ -491,29 +644,60 @@ class ComprehensiveS3Configurator(BaseAWSConfigurator):
             
             # Simple configuration format - map to comprehensive format
             storage_gb = config.get('storage_gb', 0)
-            storage_class = config.get('storage_class', 'standard')
+            storage_class = config.get('storage_class', 'standard').lower()  # Normalize to lowercase
             put_requests = config.get('put_requests', 0)
             get_requests = config.get('get_requests', 0)
             data_transfer_out_gb = config.get('data_transfer_out_gb', 0)
+            data_returned_gb = config.get('data_returned_gb', 0)
+            s3_select_scanned_gb = config.get('s3_select_scanned_gb', 0)
             
             # Build simple config format
             simple_config = {
                 'description': config.get('description', 'S3 Storage')
             }
             
-            # Map to storage class structure
-            if storage_class.lower() == 'standard' and storage_gb > 0:
-                simple_config['standard'] = {
-                    'storage_gb': storage_gb,
-                    'put_requests': put_requests,
-                    'get_requests': get_requests
+            # Map storage class names (handle variations)
+            storage_class_map = {
+                'standard': 'standard',
+                's3 standard': 'standard',
+                'int': 'int',
+                's3 int': 'int',
+                'standard-ia': 'standard_ia',
+                'standard_ia': 'standard_ia',
+                'one-zone-ia': 'one_zone_ia',
+                'one_zone_ia': 'one_zone_ia',
+                'glacier': 'glacier_flexible',
+                'glacier_flexible': 'glacier_flexible',
+                'glacier_deep': 'glacier_deep',
+                'glacier_instant': 'glacier_instant',
+                'express_one_zone': 'express_one_zone'
+            }
+            
+            # Normalize storage class
+            mapped_class = storage_class_map.get(storage_class, 'standard')
+            
+            # Map to storage class structure if we have storage configured
+            if storage_gb > 0:
+                class_config = {
+                    'storage_gb': storage_gb
                 }
+                
+                if put_requests > 0:
+                    class_config['put_requests'] = put_requests
+                if get_requests > 0:
+                    class_config['get_requests'] = get_requests
+                if data_returned_gb > 0:
+                    class_config['s3_select_returned_gb'] = data_returned_gb
+                if s3_select_scanned_gb > 0:
+                    class_config['s3_select_scanned_gb'] = s3_select_scanned_gb
+                
+                simple_config[mapped_class] = class_config
             
             # Use comprehensive configuration method
-            if simple_config:
+            if 'standard' in simple_config or 'int' in simple_config or any(k in simple_config for k in self.storage_classes.keys()):
                 return self.apply_comprehensive_configuration(simple_config)
             else:
-                print("[WARNING] No valid S3 configuration provided")
+                print("[WARNING] No valid S3 configuration provided - no storage configured")
                 return True
             
         except Exception as e:

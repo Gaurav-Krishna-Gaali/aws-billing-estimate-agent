@@ -75,20 +75,24 @@ class ComprehensiveALBConfigurator(BaseAWSConfigurator):
                 except Exception as e:
                     print(f"[WARNING] Could not set ALB count: {e}")
             
-            # ALB processed bytes (Lambda targets)
-            if 'alb_lambda_processed_bytes' in config:
+            # ALB processed bytes (Lambda targets) - convert GB to bytes
+            if 'alb_lambda_processed_gb' in config:
                 try:
-                    self.page.fill("input[aria-label*='Processed bytes (Lambda functions as targets) Value']", str(config['alb_lambda_processed_bytes']))
-                    print(f"[OK] Set ALB Lambda processed bytes to {config['alb_lambda_processed_bytes']:,}")
+                    # Convert GB to bytes (1 GB = 1,073,741,824 bytes)
+                    bytes_value = int(config['alb_lambda_processed_gb'] * 1073741824)
+                    self.page.fill("input[aria-label*='Processed bytes (Lambda functions as targets) Value']", str(bytes_value))
+                    print(f"[OK] Set ALB Lambda processed bytes to {config['alb_lambda_processed_gb']} GB ({bytes_value:,} bytes)")
                     settings_applied += 1
                 except Exception as e:
                     print(f"[WARNING] Could not set ALB Lambda processed bytes: {e}")
             
-            # ALB processed bytes (EC2 targets)
-            if 'alb_ec2_processed_bytes' in config:
+            # ALB processed bytes (EC2 targets) - convert GB to bytes
+            if 'alb_ec2_processed_gb' in config:
                 try:
-                    self.page.fill("input[aria-label*='Processed bytes (EC2 Instances and IP addresses as targets) Value']", str(config['alb_ec2_processed_bytes']))
-                    print(f"[OK] Set ALB EC2 processed bytes to {config['alb_ec2_processed_bytes']:,}")
+                    # Convert GB to bytes (1 GB = 1,073,741,824 bytes)
+                    bytes_value = int(config['alb_ec2_processed_gb'] * 1073741824)
+                    self.page.fill("input[aria-label*='Processed bytes (EC2 Instances and IP addresses as targets) Value']", str(bytes_value))
+                    print(f"[OK] Set ALB EC2 processed bytes to {config['alb_ec2_processed_gb']} GB ({bytes_value:,} bytes)")
                     settings_applied += 1
                 except Exception as e:
                     print(f"[WARNING] Could not set ALB EC2 processed bytes: {e}")

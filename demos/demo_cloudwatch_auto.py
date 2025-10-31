@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-AWS S3 Service Auto Demo (Full Config)
-Demonstrates AWS S3 configuration flow using all mapped fields
+AWS CloudWatch Service Auto Demo
+Demonstrates AWS CloudWatch configuration flow
 """
 
 import sys
@@ -13,21 +13,20 @@ from aws_services.estimate_builder import AWSEstimateBuilder
 
 def main():
     print("=" * 80)
-    print("🚀 AWS S3 SERVICE AUTO DEMO (FULL CONFIG)")
+    print("🚀 AWS CLOUDWATCH SERVICE AUTO DEMO")
     print("=" * 80)
     
-    s3_config = {
-        "description": "Demo S3 Bucket (full config)",
+    cloudwatch_config = {
+        "description": "CloudWatch monitoring for production",
         "region": "us-east-1",
-        "storage_gb": 500,
-        "storage_class": "STANDARD",
-        "put_requests": 20000,
-        "get_requests": 80000,
-        "data_transfer_out_gb": 20,
-        "data_returned_gb": 5
+        # Use plausible fields; actual mapping will depend on real UI
+        "custom_metrics": 100,
+        "logs_ingested_gb": 50,
+        "alarms": 10,
+        "api_requests": 10000
     }
     print("\n📋 Configuration:")
-    for key, value in s3_config.items():
+    for key, value in cloudwatch_config.items():
         print(f"   • {key}: {value}")
     print("\n" + "=" * 80)
     print("Running automation...")
@@ -39,15 +38,15 @@ def main():
             print("❌ Failed to start estimate session")
             return
         print("✅ Estimate created ✓")
-        print("\n[Step 2/4] Searching for Amazon S3 service...")
-        print("\n[Step 3/4] Adding Amazon S3 service...")
-        s3_services = {"s3": [s3_config]}
-        results = builder.add_multiple_services(s3_services)
-        r = results.get('s3', {'successful': 0, 'total': 0})
+        print("\n[Step 2/4] Searching for AWS CloudWatch service...")
+        print("\n[Step 3/4] Adding AWS CloudWatch service...")
+        cloudwatch_services = {"cloudwatch": [cloudwatch_config]}
+        results = builder.add_multiple_services(cloudwatch_services)
+        r = results.get('cloudwatch', {'successful': 0, 'total': 0})
         if r['successful'] > 0:
-            print("✅ Amazon S3 service added successfully!")
+            print("✅ AWS CloudWatch service added successfully!")
         else:
-            print("❌ Failed to add Amazon S3 service")
+            print("❌ Failed to add AWS CloudWatch service")
             return
         print("\n[Step 4/4] Finalizing estimate...")
         estimate_url = builder.finalize_estimate()
@@ -56,9 +55,9 @@ def main():
             print("✅ DEMO COMPLETE!")
             print("=" * 80)
             print(f"\n🔗 Estimate URL: {estimate_url}")
-            with open("s3_estimate_url.txt", "w") as f:
+            with open("cloudwatch_estimate_url.txt", "w") as f:
                 f.write(estimate_url)
-            print("\n💾 URL saved to: s3_estimate_url.txt")
+            print("\n💾 URL saved to: cloudwatch_estimate_url.txt")
         else:
             print("❌ Failed to get estimate URL")
     except Exception as e:
@@ -74,4 +73,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

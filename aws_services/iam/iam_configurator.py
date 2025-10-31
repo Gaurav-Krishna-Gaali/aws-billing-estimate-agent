@@ -127,6 +127,25 @@ class ComprehensiveIAMConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to apply IAM configuration: {e}")
             return False
 
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to AWS IAM configuration page for multi-service flow."""
+        try:
+            print("[INFO] Navigating to IAM configuration for multi-service flow...")
+            for term in ["IAM", "AWS IAM", "Identity"]:
+                if self.search_and_select_service(term):
+                    return True
+            print("[ERROR] Could not find IAM in calculator search")
+            return False
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to IAM service config: {e}")
+            return False
+
+    def _get_service_search_terms(self) -> list:
+        return ["IAM", "AWS IAM", "Identity"]
+
+    def _apply_service_specific_config(self, config: dict) -> bool:
+        return self.apply_iam_configuration(config)
+
 def main():
     """Test the comprehensive IAM configurator"""
     from playwright.sync_api import sync_playwright

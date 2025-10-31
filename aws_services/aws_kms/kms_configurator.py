@@ -54,6 +54,37 @@ class ComprehensiveAWSKMSConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to AWS KMS config: {e}")
             return False
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to AWS KMS service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to AWS KMS service configuration...")
+            
+            # Search for KMS using the correct service name
+            search_terms = ["AWS Key Management Service", "KMS", "Key Management"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find AWS KMS service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to AWS KMS configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding AWS KMS service in AWS Calculator"""
+        return ["AWS Key Management Service", "KMS", "Key Management"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply AWS KMS-specific configuration logic"""
+        try:
+            print("[INFO] Applying AWS KMS-specific configuration...")
+            return self.apply_aws_kms_configuration(config)
+        except Exception as e:
+            print(f"[ERROR] Failed to apply AWS KMS configuration: {e}")
+            return False
+    
     def apply_aws_kms_configuration(self, config: Dict[str, Any]) -> bool:
         """Apply AWS KMS configuration with provided settings"""
         try:

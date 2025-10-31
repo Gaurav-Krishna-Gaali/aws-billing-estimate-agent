@@ -54,6 +54,37 @@ class ComprehensiveAWSLambdaConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to AWS Lambda config: {e}")
             return False
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to AWS Lambda service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to AWS Lambda service configuration...")
+            
+            # Search for Lambda using the correct service name
+            search_terms = ["AWS Lambda", "Lambda", "Serverless"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find AWS Lambda service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to AWS Lambda configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding AWS Lambda service in AWS Calculator"""
+        return ["AWS Lambda", "Lambda", "Serverless"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply AWS Lambda-specific configuration logic"""
+        try:
+            print("[INFO] Applying AWS Lambda-specific configuration...")
+            return self.apply_aws_lambda_configuration(config)
+        except Exception as e:
+            print(f"[ERROR] Failed to apply AWS Lambda configuration: {e}")
+            return False
+    
     def apply_aws_lambda_configuration(self, config: Dict[str, Any]) -> bool:
         """Apply AWS Lambda configuration with provided settings"""
         try:

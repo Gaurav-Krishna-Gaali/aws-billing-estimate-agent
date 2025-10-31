@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-AWS S3 Service Auto Demo (Full Config)
-Demonstrates AWS S3 configuration flow using all mapped fields
+AWS SQS Service Auto Demo
+Demonstrates AWS Simple Queue Service (SQS) configuration flow using all mapped fields
 """
 
 import sys
@@ -13,25 +13,30 @@ from aws_services.estimate_builder import AWSEstimateBuilder
 
 def main():
     print("=" * 80)
-    print("🚀 AWS S3 SERVICE AUTO DEMO (FULL CONFIG)")
+    print("🚀 AWS SQS SERVICE AUTO DEMO")
     print("=" * 80)
     
-    s3_config = {
-        "description": "Demo S3 Bucket (full config)",
+    sqs_config = {
+        "description": "Demo SQS Queues for microservices messaging",
         "region": "us-east-1",
-        "storage_gb": 500,
-        "storage_class": "STANDARD",
-        "put_requests": 20000,
-        "get_requests": 80000,
-        "data_transfer_out_gb": 20,
-        "data_returned_gb": 5
+        "standard_queue_requests": 1000000,
+        "fifo_queue_requests": 500000,
+        "fair_queue_requests": 200000,
+        "inbound_data_transfer_tb": 10,
+        "outbound_data_transfer_tb": 5
     }
+    
     print("\n📋 Configuration:")
-    for key, value in s3_config.items():
-        print(f"   • {key}: {value}")
+    for key, value in sqs_config.items():
+        if isinstance(value, int) and value >= 1000:
+            print(f"   • {key}: {value:,}")
+        else:
+            print(f"   • {key}: {value}")
+    
     print("\n" + "=" * 80)
     print("Running automation...")
     print("=" * 80)
+    
     builder = AWSEstimateBuilder(headless=False)
     try:
         print("\n[Step 1/4] Creating estimate...")
@@ -39,16 +44,19 @@ def main():
             print("❌ Failed to start estimate session")
             return
         print("✅ Estimate created ✓")
-        print("\n[Step 2/4] Searching for Amazon S3 service...")
-        print("\n[Step 3/4] Adding Amazon S3 service...")
-        s3_services = {"s3": [s3_config]}
-        results = builder.add_multiple_services(s3_services)
-        r = results.get('s3', {'successful': 0, 'total': 0})
+        
+        print("\n[Step 2/4] Searching for Amazon SQS service...")
+        print("\n[Step 3/4] Adding Amazon SQS service...")
+        
+        sqs_services = {"sqs": [sqs_config]}
+        results = builder.add_multiple_services(sqs_services)
+        r = results.get('sqs', {'successful': 0, 'total': 0})
         if r['successful'] > 0:
-            print("✅ Amazon S3 service added successfully!")
+            print("✅ Amazon SQS service added successfully!")
         else:
-            print("❌ Failed to add Amazon S3 service")
+            print("❌ Failed to add Amazon SQS service")
             return
+        
         print("\n[Step 4/4] Finalizing estimate...")
         estimate_url = builder.finalize_estimate()
         if estimate_url:
@@ -56,14 +64,15 @@ def main():
             print("✅ DEMO COMPLETE!")
             print("=" * 80)
             print(f"\n🔗 Estimate URL: {estimate_url}")
-            with open("s3_estimate_url.txt", "w") as f:
+            with open("sqs_estimate_url.txt", "w") as f:
                 f.write(estimate_url)
-            print("\n💾 URL saved to: s3_estimate_url.txt")
+            print("\n💾 URL saved to: sqs_estimate_url.txt")
         else:
             print("❌ Failed to get estimate URL")
     except Exception as e:
         print(f"❌ Demo failed: {e}")
-        import traceback; traceback.print_exc()
+        import traceback
+        traceback.print_exc()
     finally:
         print("\n🔒 Keeping browser open for inspection...")
         try:

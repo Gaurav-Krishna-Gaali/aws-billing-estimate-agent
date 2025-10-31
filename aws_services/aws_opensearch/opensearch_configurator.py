@@ -54,6 +54,37 @@ class ComprehensiveAWSOpenSearchConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to AWS OpenSearch config: {e}")
             return False
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to AWS OpenSearch service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to AWS OpenSearch service configuration...")
+            
+            # Search for OpenSearch using the correct service name
+            search_terms = ["Amazon OpenSearch Service", "OpenSearch", "Elasticsearch"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find AWS OpenSearch service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to AWS OpenSearch configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding AWS OpenSearch service in AWS Calculator"""
+        return ["Amazon OpenSearch Service", "OpenSearch", "Elasticsearch"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply AWS OpenSearch-specific configuration logic"""
+        try:
+            print("[INFO] Applying AWS OpenSearch-specific configuration...")
+            return self.apply_aws_opensearch_configuration(config)
+        except Exception as e:
+            print(f"[ERROR] Failed to apply AWS OpenSearch configuration: {e}")
+            return False
+    
     def apply_aws_opensearch_configuration(self, config: Dict[str, Any]) -> bool:
         """Apply AWS OpenSearch configuration with provided settings"""
         try:
@@ -74,6 +105,18 @@ class ComprehensiveAWSOpenSearchConfigurator(BaseAWSConfigurator):
                 except Exception as e:
                     print(f"[WARNING] Could not set description: {e}")
             
+            # Explicit: Provisioning IOPS per volume (gp3)
+            try:
+                iops_input = self.page.locator("input[aria-label*='Provisioning IOPS per volume (gp3)']")
+                if iops_input.count() == 0:
+                    iops_input = self.page.locator("input[aria-label*='Provisioning IOPS per volume']")
+                if iops_input.count() > 0:
+                    iops_input.first.fill("3000")
+                    print("[OK] Set gp3 Provisioning IOPS to 3000")
+                    settings_applied += 1
+            except Exception:
+                pass
+
             # Since OpenSearch has limited configuration options, let's try to find common fields
             # that might be present but not captured by the element mapper
             
@@ -94,8 +137,24 @@ class ComprehensiveAWSOpenSearchConfigurator(BaseAWSConfigurator):
                     field = self.page.locator(field_selector)
                     if field.count() > 0:
                         print(f"[INFO] Found OpenSearch field: {field_selector}")
-                        # Try to fill with a default value if the field exists
-                        field.first.fill("1")
+                        # Use appropriate default values based on field type
+                        # IMPORTANT: Handle UltraWarm storage BEFORE generic storage to avoid overwrites
+                        if "ultrawarm" in field_selector.lower() and "storage" in field_selector.lower():
+                            # UltraWarm storage unit is TB by default; keep TB and use a safe value (<= 20TB)
+                            field.first.fill("10")  # 10 TB
+                            print("[OK] Set UltraWarm storage to 10 TB (kept TB unit)")
+                        elif "storage" in field_selector.lower() or "gb" in field_selector.lower():
+                            field.first.fill("100")  # 100GB (within 20480 GB limit)
+                        elif "iops" in field_selector.lower():
+                            field.first.fill("3000")  # Minimum IOPS for gp3
+                        elif "throughput" in field_selector.lower():
+                            field.first.fill("125")  # Default throughput MBps
+                        elif "nodes" in field_selector.lower() or "instances" in field_selector.lower():
+                            field.first.fill("3")  # 3 nodes/instances
+                        elif "requests" in field_selector.lower():
+                            field.first.fill("1000")  # 1000 requests
+                        else:
+                            field.first.fill("10")  # Default minimum value
                         settings_applied += 1
                 except Exception as e:
                     pass  # Field not found, continue
@@ -110,7 +169,23 @@ class ComprehensiveAWSOpenSearchConfigurator(BaseAWSConfigurator):
                     if aria_label and any(keyword in aria_label.lower() for keyword in 
                                         ['node', 'instance', 'storage', 'data', 'request', 'search', 'index']):
                         print(f"[INFO] Found OpenSearch input: {aria_label}")
-                        input_field.fill("1")
+                        # Use appropriate values based on field type
+                        # UltraWarm first to avoid being overwritten by generic storage rule
+                        if "ultrawarm" in aria_label.lower() and "storage" in aria_label.lower():
+                            input_field.fill("10")  # 10 TB
+                            print("[OK] Set UltraWarm storage to 10 TB (kept TB unit)")
+                        elif "storage" in aria_label.lower() or "gb" in aria_label.lower():
+                            input_field.fill("100")  # 100GB (within 20480 GB limit)
+                        elif "iops" in aria_label.lower():
+                            input_field.fill("3000")  # Minimum IOPS for gp3
+                        elif "throughput" in aria_label.lower():
+                            input_field.fill("125")  # Default throughput MBps
+                        elif "nodes" in aria_label.lower() or "instances" in aria_label.lower():
+                            input_field.fill("3")  # 3 nodes/instances
+                        elif "requests" in aria_label.lower():
+                            input_field.fill("1000")  # 1000 requests
+                        else:
+                            input_field.fill("10")  # Default minimum value
                         settings_applied += 1
                 except Exception as e:
                     pass  # Skip if can't interact with field

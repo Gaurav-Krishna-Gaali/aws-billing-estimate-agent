@@ -37,6 +37,37 @@ class ComprehensiveAPIGatewayConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to API Gateway config: {e}")
             return False
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to API Gateway service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to API Gateway service configuration...")
+            
+            # Search for API Gateway using the correct service name
+            search_terms = ["Amazon API Gateway", "API Gateway", "API"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find API Gateway service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to API Gateway configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding API Gateway service in AWS Calculator"""
+        return ["Amazon API Gateway", "API Gateway", "API"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply API Gateway-specific configuration logic"""
+        try:
+            print("[INFO] Applying API Gateway-specific configuration...")
+            return self.apply_api_gateway_configuration(config)
+        except Exception as e:
+            print(f"[ERROR] Failed to apply API Gateway configuration: {e}")
+            return False
+    
     def apply_api_gateway_configuration(self, config: Dict[str, Any]) -> bool:
         """Apply API Gateway configuration with provided settings"""
         try:

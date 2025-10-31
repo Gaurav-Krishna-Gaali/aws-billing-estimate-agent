@@ -229,6 +229,10 @@ class ComprehensiveVPCConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to apply VPC configuration: {e}")
             return False
 
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply VPC-specific configuration for multi-service flow"""
+        return self.apply_vpc_configuration(config)
+
 def main():
     """Test the comprehensive VPC configurator"""
     from playwright.sync_api import sync_playwright

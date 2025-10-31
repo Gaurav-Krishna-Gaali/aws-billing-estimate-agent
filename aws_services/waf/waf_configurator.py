@@ -117,6 +117,37 @@ class ComprehensiveWAFConfigurator(BaseAWSConfigurator):
         except Exception as e:
             print(f"[ERROR] Failed to apply WAF configuration: {e}")
             return False
+    
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to WAF service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to WAF service configuration...")
+            search_terms = ["AWS Web Application Firewall (WAF)", "WAF", "Web Application Firewall"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find WAF service")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to WAF configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding WAF service in AWS Calculator"""
+        return ["AWS Web Application Firewall (WAF)", "WAF", "Web Application Firewall"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply WAF-specific configuration logic"""
+        try:
+            print("[INFO] Applying WAF-specific configuration...")
+            return self.apply_waf_configuration(config)
+        except Exception as e:
+            print(f"[ERROR] Failed to apply WAF configuration: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
 
 def main():
     """Test the comprehensive WAF configurator"""

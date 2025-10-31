@@ -146,6 +146,38 @@ class ComprehensiveSecurityGroupsConfigurator(BaseAWSConfigurator):
         except Exception as e:
             print(f"[ERROR] Failed to apply Security Groups configuration: {e}")
             return False
+    
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to Security Groups service configuration page (for multi-service estimates)"""
+        try:
+            print("[INFO] Navigating to Security Groups service configuration...")
+            # Security Groups are part of EC2, so search for EC2
+            search_terms = ["EC2", "Amazon EC2", "Elastic Compute Cloud"]
+            for term in search_terms:
+                if self.search_and_select_service(term):
+                    return True
+            
+            print("[ERROR] Could not find EC2 service (Security Groups are part of EC2)")
+            return False
+            
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to Security Groups configuration: {e}")
+            return False
+    
+    def _get_service_search_terms(self) -> List[str]:
+        """Get search terms for finding Security Groups service in AWS Calculator"""
+        return ["EC2", "Amazon EC2", "Elastic Compute Cloud"]
+    
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        """Apply Security Groups-specific configuration logic"""
+        try:
+            print("[INFO] Applying Security Groups-specific configuration...")
+            return self.apply_security_groups_configuration(config)
+        except Exception as e:
+            print(f"[ERROR] Failed to apply Security Groups configuration: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
 
 def main():
     """Test the comprehensive Security Groups configurator"""

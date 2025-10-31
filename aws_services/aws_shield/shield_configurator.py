@@ -100,6 +100,26 @@ class ComprehensiveAWSShieldConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to apply AWS Shield configuration: {e}")
             return False
 
+    # --- Multi-service integration hooks ---
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to AWS Shield configuration page for multi-service estimates"""
+        try:
+            print("[INFO] Navigating to AWS Shield service configuration...")
+            for term in ["AWS Shield", "Shield", "DDoS"]:
+                if self.search_and_select_service(term):
+                    return True
+            print("[ERROR] Could not find AWS Shield in calculator search")
+            return False
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to AWS Shield service config: {e}")
+            return False
+
+    def _get_service_search_terms(self) -> List[str]:
+        return ["AWS Shield", "Shield", "DDoS"]
+
+    def _apply_service_specific_config(self, config: Dict[str, Any]) -> bool:
+        return self.apply_aws_shield_configuration(config)
+
 def main():
     """Test the comprehensive AWS Shield configurator"""
     from playwright.sync_api import sync_playwright

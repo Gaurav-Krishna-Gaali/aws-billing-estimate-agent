@@ -37,6 +37,25 @@ class ComprehensiveCloudWatchConfigurator(BaseAWSConfigurator):
             print(f"[ERROR] Failed to navigate to CloudWatch config: {e}")
             return False
     
+    def navigate_to_service_config(self) -> bool:
+        """Navigate to AWS CloudWatch configuration page for multi-service flow."""
+        try:
+            print("[INFO] Navigating to CloudWatch configuration for multi-service flow...")
+            for term in ["Amazon CloudWatch", "CloudWatch", "Monitoring"]:
+                if self.search_and_select_service(term):
+                    return True
+            print("[ERROR] Could not find CloudWatch in calculator search")
+            return False
+        except Exception as e:
+            print(f"[ERROR] Failed to navigate to CloudWatch service config: {e}")
+            return False
+
+    def _get_service_search_terms(self) -> list:
+        return ["Amazon CloudWatch", "CloudWatch", "Monitoring"]
+
+    def _apply_service_specific_config(self, config: dict) -> bool:
+        return self.apply_cloudwatch_configuration(config)
+    
     def apply_cloudwatch_configuration(self, config: Dict[str, Any]) -> bool:
         """Apply CloudWatch configuration with provided settings"""
         try:

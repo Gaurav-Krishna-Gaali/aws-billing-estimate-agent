@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-AWS S3 Service Auto Demo (Full Config)
-Demonstrates AWS S3 configuration flow using all mapped fields
+AWS IAM Service Auto Demo (Full Config)
+Demonstrates AWS IAM configuration flow, covering all mappable fields
 """
 
 import sys
@@ -13,21 +13,22 @@ from aws_services.estimate_builder import AWSEstimateBuilder
 
 def main():
     print("=" * 80)
-    print("🚀 AWS S3 SERVICE AUTO DEMO (FULL CONFIG)")
+    print("🚀 AWS IAM SERVICE AUTO DEMO (FULL CONFIG)")
     print("=" * 80)
     
-    s3_config = {
-        "description": "Demo S3 Bucket (full config)",
+    iam_config = {
+        "description": "IAM Access Analyzer for production",
         "region": "us-east-1",
-        "storage_gb": 500,
-        "storage_class": "STANDARD",
-        "put_requests": 20000,
-        "get_requests": 80000,
-        "data_transfer_out_gb": 20,
-        "data_returned_gb": 5
+        "accounts_to_monitor": 10,
+        "average_roles_per_account": 25,
+        "average_users_per_account": 100,
+        "analyzers_per_account": 3,
+        "check_no_new_access_requests": 2000,
+        "check_access_not_granted_requests": 1200,
+        "resources_to_monitor": 500
     }
     print("\n📋 Configuration:")
-    for key, value in s3_config.items():
+    for key, value in iam_config.items():
         print(f"   • {key}: {value}")
     print("\n" + "=" * 80)
     print("Running automation...")
@@ -39,15 +40,15 @@ def main():
             print("❌ Failed to start estimate session")
             return
         print("✅ Estimate created ✓")
-        print("\n[Step 2/4] Searching for Amazon S3 service...")
-        print("\n[Step 3/4] Adding Amazon S3 service...")
-        s3_services = {"s3": [s3_config]}
-        results = builder.add_multiple_services(s3_services)
-        r = results.get('s3', {'successful': 0, 'total': 0})
+        print("\n[Step 2/4] Searching for AWS IAM service...")
+        print("\n[Step 3/4] Adding AWS IAM service...")
+        iam_services = {"iam": [iam_config]}
+        results = builder.add_multiple_services(iam_services)
+        r = results.get('iam', {'successful': 0, 'total': 0})
         if r['successful'] > 0:
-            print("✅ Amazon S3 service added successfully!")
+            print("✅ AWS IAM service added successfully!")
         else:
-            print("❌ Failed to add Amazon S3 service")
+            print("❌ Failed to add AWS IAM service")
             return
         print("\n[Step 4/4] Finalizing estimate...")
         estimate_url = builder.finalize_estimate()
@@ -56,9 +57,9 @@ def main():
             print("✅ DEMO COMPLETE!")
             print("=" * 80)
             print(f"\n🔗 Estimate URL: {estimate_url}")
-            with open("s3_estimate_url.txt", "w") as f:
+            with open("iam_estimate_url.txt", "w") as f:
                 f.write(estimate_url)
-            print("\n💾 URL saved to: s3_estimate_url.txt")
+            print("\n💾 URL saved to: iam_estimate_url.txt")
         else:
             print("❌ Failed to get estimate URL")
     except Exception as e:
@@ -74,4 +75,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
