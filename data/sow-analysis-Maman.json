@@ -1,0 +1,189 @@
+{
+  "result": {
+    "eraser_url": "https://app.eraser.io/new?requestId=q2WsEtsvvc7aHjbQuExW",
+    "imageUrl": "https://storage.googleapis.com/second-petal-295822.appspot.com/elements/autoDiagram%3A645c624149bce2bb7485eae657ba5ab9a6acc26c76b4fedb0782e27fdfa65f59.png",
+    "estimate": [
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "AWS IAM",
+        "configurations": {
+          "monthly_active_users": "50",
+          "multi_factor_authentication": "enabled",
+          "usage": "standard IAM roles and policies"
+        },
+        "description": "Identity and access management for users, roles and policies"
+      },
+      {
+        "estimated_yearly_price": 6000,
+        "service_name": "AWS CloudWatch",
+        "configurations": {
+          "alarms": "50",
+          "log_storage_gb": "500",
+          "region": "us-east-1",
+          "log_ingestion_gb_month": "1000",
+          "dashboards": "10",
+          "metrics_per_month": "500000"
+        },
+        "description": "Monitoring, metrics, logs and dashboards for apps and infra"
+      },
+      {
+        "estimated_yearly_price": 4000,
+        "service_name": "AWS WAF",
+        "configurations": {
+          "web_acls": "1",
+          "rules_count": "10",
+          "region": "us-east-1",
+          "managed_rules": "enabled",
+          "requests_per_month": "100000000"
+        },
+        "description": "Web application firewall protecting ALB endpoints"
+      },
+      {
+        "estimated_yearly_price": 3000,
+        "service_name": "AWS Shield",
+        "configurations": {
+          "billing_period": "yearly",
+          "shield_type": "Advanced",
+          "monthly_fee_estimate": "250",
+          "protected_resources": "1"
+        },
+        "description": "DDoS protection (Shield Advanced) for web endpoints"
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "VPC",
+        "configurations": {
+          "vpc_count": "1",
+          "private_subnets": "1",
+          "availability_zones": "3",
+          "public_subnets": "1",
+          "nat_gateways": "0"
+        },
+        "description": "Virtual Private Cloud with multi-AZ subnets"
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "Security Groups",
+        "configurations": {
+          "rules_per_group_average": "8",
+          "security_groups_count": "10"
+        },
+        "description": "Network security groups controlling inbound/outbound traffic"
+      },
+      {
+        "estimated_yearly_price": 1200,
+        "service_name": "Bastion Host (EC2)",
+        "configurations": {
+          "ebs_gb": "30",
+          "memory_gb": "4",
+          "vCPU": "2",
+          "pricing_model": "On-Demand",
+          "hours_per_month": "730",
+          "region": "us-east-1",
+          "instance_type": "t3.medium",
+          "instance_count": "1"
+        },
+        "description": "EC2 bastion host in public subnet for admin access"
+      },
+      {
+        "estimated_yearly_price": 2500,
+        "service_name": "ALB (Application Load Balancer)",
+        "configurations": {
+          "listeners": "1",
+          "load_balancer_type": "application",
+          "estimated_lcus_per_month": "100",
+          "hours_per_month": "730",
+          "region": "us-east-1",
+          "data_processed_gb_month": "5000"
+        },
+        "description": "ALB in public subnet routing traffic to ECS services"
+      },
+      {
+        "estimated_yearly_price": 40000,
+        "service_name": "ECS Fargate - Streamlit App",
+        "configurations": {
+          "estimated_data_transfer_gb_month": "20000",
+          "cpu_per_task": "1 vCPU",
+          "memory_per_task": "2 GB",
+          "hours_per_month": "730",
+          "region": "us-east-1",
+          "ephemeral_storage_gb": "20",
+          "tasks": "2",
+          "launch_type": "Fargate"
+        },
+        "description": "Fargate task running the Streamlit frontend application"
+      },
+      {
+        "estimated_yearly_price": 60000,
+        "service_name": "ECS Fargate - API Service",
+        "configurations": {
+          "estimated_data_transfer_gb_month": "40000",
+          "cpu_per_task": "2 vCPU",
+          "memory_per_task": "4 GB",
+          "hours_per_month": "730",
+          "region": "us-east-1",
+          "ephemeral_storage_gb": "50",
+          "tasks": "4",
+          "launch_type": "Fargate"
+        },
+        "description": "Fargate tasks running backend API service returning structured responses"
+      },
+      {
+        "estimated_yearly_price": 1200,
+        "service_name": "AWS Lambda (Preprocessing)",
+        "configurations": {
+          "timeout_s": "300",
+          "avg_duration_ms": "500",
+          "memory_mb": "512",
+          "region": "us-east-1",
+          "monthly_invocations": "5000000",
+          "concurrency_reserved": "5"
+        },
+        "description": "Serverless preprocessing function to normalize biosensor data"
+      },
+      {
+        "estimated_yearly_price": 20000,
+        "service_name": "Amazon S3 (Biosensor Data, KB)",
+        "configurations": {
+          "storage_class": "Standard & Standard-IA",
+          "storage_gb": "5000",
+          "data_transfer_out_gb_month": "20000",
+          "region": "us-east-1",
+          "requests_get_month": "10000000",
+          "requests_put_month": "1000000",
+          "lifecycle_transitions": "enabled"
+        },
+        "description": "Object storage for biosensor exports and knowledge base"
+      },
+      {
+        "estimated_yearly_price": 70000,
+        "service_name": "Amazon OpenSearch (Vector DB)",
+        "configurations": {
+          "snapshot_storage_gb_month": "500",
+          "estimated_data_transfer_gb_month": "20000",
+          "storage_gb": "2000",
+          "replicas": "2",
+          "region": "us-east-1",
+          "domain_instance_type": "r6g.4xlarge.search",
+          "instance_count": "4"
+        },
+        "description": "Managed OpenSearch cluster storing vectors and guidelines for retrieval"
+      },
+      {
+        "estimated_yearly_price": 50000,
+        "service_name": "AWS Bedrock (Claude 3 Sonnet)",
+        "configurations": {
+          "estimated_requests_month": "200000",
+          "usage_pricing_model": "on-demand",
+          "tokens_per_month": "5000000",
+          "model": "Claude 3 Sonnet",
+          "region": "us-east-1",
+          "inference_hours_estimated": "2000"
+        },
+        "description": "LLM inference (Claude 3 Sonnet) used for advanced reasoning and responses"
+      }
+    ],
+    "projectName": "Maman",
+    "maxAnnualBudgetUSD": 250000
+  }
+}

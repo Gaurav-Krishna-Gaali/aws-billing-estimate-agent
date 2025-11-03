@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aws-billing-api
+    ports:
+      - "8000:8000"
+    environment:
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      - BEDROCK_MODEL_ID=${BEDROCK_MODEL_ID:-anthropic.claude-3-sonnet-20240229-v1:0}
+      - HEADLESS=${HEADLESS:-true}
+      - PORT=8000
+      - DEBUG=${DEBUG:-false}
+    volumes:
+      # Mount AWS credentials (optional - if not using IAM roles)
+      # - ~/.aws:/root/.aws:ro
+      # Mount for local development/testing
+      - ./estimate_url.txt:/app/estimate_url.txt
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    # For headless mode (production)
+    # For development with visible browser, set HEADLESS=false
+    # Note: Display server won't work in Docker unless using X11 forwarding
+    # For testing, keep HEADLESS=true
+

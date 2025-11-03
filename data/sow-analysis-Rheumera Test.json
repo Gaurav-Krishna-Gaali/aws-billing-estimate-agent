@@ -1,0 +1,211 @@
+{
+  "result": {
+    "eraser_url": "https://app.eraser.io/new?requestId=M3tsTww9iVELh0BqyjVl",
+    "imageUrl": "https://storage.googleapis.com/second-petal-295822.appspot.com/elements/autoDiagram%3Ae410401d17256e29d10368c8e627425516bc8956fce0d9c133cda740f112422f.png",
+    "estimate": [
+      {
+        "estimated_yearly_price": 180000,
+        "service_name": "AWS Bedrock (Dual-LLM)",
+        "configurations": {
+          "monthly_inference_requests": "2,000,000",
+          "avg_request_tokens": "2,000",
+          "notes": "Estimate based on heavy model usage and throughput for production dual-LLM evaluation",
+          "expected_avg_latency_ms": "500",
+          "model_type": "dual-LLM (large)",
+          "region": "us-east-1"
+        },
+        "description": "Managed Bedrock inference usage for dual-LLM evaluations writing NDJSON verdicts to S3. High throughput model usage."
+      },
+      {
+        "estimated_yearly_price": 30000,
+        "service_name": "ECS Fargate Service (AZ1)",
+        "configurations": {
+          "desired_task_count": "10",
+          "task_vCPU": "2 vCPU",
+          "data_transfer_out_GB_per_month": "5,000",
+          "task_memory": "4 GB",
+          "region": "us-east-1",
+          "container_image": "custom-inference-orchestrator:latest",
+          "launch_type": "Fargate",
+          "hours_per_month_per_task": "730"
+        },
+        "description": "ECS Fargate tasks running inference orchestration, S3 event handling, and calling Bedrock. Private subnet AZ1."
+      },
+      {
+        "estimated_yearly_price": 30000,
+        "service_name": "ECS Fargate Service (AZ2)",
+        "configurations": {
+          "desired_task_count": "10",
+          "task_vCPU": "2 vCPU",
+          "data_transfer_out_GB_per_month": "5,000",
+          "task_memory": "4 GB",
+          "region": "us-east-1",
+          "container_image": "custom-inference-orchestrator:latest",
+          "launch_type": "Fargate",
+          "hours_per_month_per_task": "730"
+        },
+        "description": "ECS Fargate tasks running inference orchestration, S3 event handling, and calling Bedrock. Private subnet AZ2 (HA)."
+      },
+      {
+        "estimated_yearly_price": 2500,
+        "service_name": "S3 Input Bucket",
+        "configurations": {
+          "storage_class": "S3 Standard",
+          "monthly_put_requests": "200,000",
+          "data_out_GB_per_month": "500",
+          "monthly_get_requests": "20,000",
+          "region": "us-east-1",
+          "avg_storage_GB": "2,000"
+        },
+        "description": "Input bucket for uploaded files which trigger processing via S3 events."
+      },
+      {
+        "estimated_yearly_price": 5000,
+        "service_name": "S3 Output Bucket",
+        "configurations": {
+          "storage_class": "S3 Standard",
+          "monthly_put_requests": "400,000",
+          "data_out_GB_per_month": "1,000",
+          "monthly_get_requests": "100,000",
+          "region": "us-east-1",
+          "avg_storage_GB": "5,000"
+        },
+        "description": "Output bucket for NDJSON verdicts and Bedrock outputs; receives writes from ECS and Bedrock."
+      },
+      {
+        "estimated_yearly_price": 3000,
+        "service_name": "Application Load Balancer",
+        "configurations": {
+          "avg_LCU_per_hour": "2",
+          "listeners": "1 (HTTP/HTTPS)",
+          "hours_per_month": "730",
+          "monthly_processed_GB": "2,000",
+          "region": "us-east-1"
+        },
+        "description": "Public ALB in public subnet distributing incoming traffic to ECS services (ingress to orchestrator)."
+      },
+      {
+        "estimated_yearly_price": 100,
+        "service_name": "SQS (AZ1) (optional)",
+        "configurations": {
+          "avg_message_size_KB": "10",
+          "retention_days": "4",
+          "region": "us-east-1",
+          "monthly_requests": "200,000"
+        },
+        "description": "Optional SQS queue in AZ1 used for buffering S3 events / work items for ECS."
+      },
+      {
+        "estimated_yearly_price": 100,
+        "service_name": "SQS (AZ2) (optional)",
+        "configurations": {
+          "avg_message_size_KB": "10",
+          "retention_days": "4",
+          "region": "us-east-1",
+          "monthly_requests": "200,000"
+        },
+        "description": "Optional SQS queue in AZ2 used for buffering S3 events / work items for ECS (HA)."
+      },
+      {
+        "estimated_yearly_price": 3000,
+        "service_name": "CloudWatch",
+        "configurations": {
+          "log_ingestion_GB_per_month": "10",
+          "num_alarms": "50",
+          "dashboard_count": "5",
+          "log_storage_GB": "500",
+          "region": "us-east-1",
+          "custom_metrics": "200 metrics"
+        },
+        "description": "Logging and metrics for ECS tasks, ALB, and other AWS services (logs ingestion and retention)."
+      },
+      {
+        "estimated_yearly_price": 1200,
+        "service_name": "AWS WAF",
+        "configurations": {
+          "region": "global (ALB)",
+          "web_acl_count": "1",
+          "monthly_requests_protected": "2,000,000",
+          "ruleset_count": "5 managed rules"
+        },
+        "description": "Web ACL protecting ALB (basic rules and managed rule groups)."
+      },
+      {
+        "estimated_yearly_price": 3000,
+        "service_name": "AWS Shield Advanced",
+        "configurations": {
+          "annual_flat_fee_included": "true",
+          "notes": "Shield Advanced annual subscription estimate",
+          "protected_resources": "1 (ALB)",
+          "region": "global"
+        },
+        "description": "DDoS protection for ALB and endpoints."
+      },
+      {
+        "estimated_yearly_price": 500,
+        "service_name": "AWS KMS",
+        "configurations": {
+          "key_rotation_enabled": "true",
+          "number_of_keys": "1",
+          "monthly_encrypt_decrypt_requests": "100,000",
+          "region": "us-east-1"
+        },
+        "description": "Customer-managed CMK for encrypting S3 objects and application secrets."
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "VPC (2 AZ, HA)",
+        "configurations": {
+          "private_subnets": "2 (AZ1, AZ2)",
+          "availability_zones": "2",
+          "public_subnets": "1 (AZ1+AZ2 aggregated)",
+          "region": "us-east-1"
+        },
+        "description": "VPC spanning 2 AZs with public and private subnets - networking construct (no direct cost)."
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "Public Subnet (AZ1+AZ2)",
+        "configurations": {
+          "subnet_type": "public",
+          "azs_covered": "AZ1, AZ2",
+          "region": "us-east-1"
+        },
+        "description": "Public subnet for ALB (logical construct, no direct cost)."
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "Private Subnet (AZ1)",
+        "configurations": {
+          "availability_zone": "AZ1",
+          "subnet_type": "private",
+          "region": "us-east-1"
+        },
+        "description": "Private subnet for ECS tasks (AZ1) - logical construct, no direct cost."
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "Private Subnet (AZ2)",
+        "configurations": {
+          "availability_zone": "AZ2",
+          "subnet_type": "private",
+          "region": "us-east-1"
+        },
+        "description": "Private subnet for ECS tasks (AZ2) - logical construct, no direct cost."
+      },
+      {
+        "estimated_yearly_price": 0,
+        "service_name": "IAM",
+        "configurations": {
+          "notes": "IAM has no direct charge",
+          "num_policies": "30",
+          "num_roles": "20",
+          "region": "global"
+        },
+        "description": "Identity and Access Management for roles and policies used by ECS, Bedrock, S3, and other services (no direct cost)."
+      }
+    ],
+    "projectName": "Rheumera Test",
+    "maxAnnualBudgetUSD": 250000
+  }
+}

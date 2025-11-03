@@ -5,8 +5,10 @@ SOW to Schema Mapper - LLM-powered transformation of SOW JSON to standardized se
 import json
 import os
 import sys
+import time
 from typing import Dict, Any, List, Optional
 from pathlib import Path
+from botocore.exceptions import ClientError
 
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -79,12 +81,18 @@ class SOWToSchemaMapper:
             
             # Map each service group to standardized format
             standardized_services = {}
+            service_types_list = list(grouped_services.keys())
             
-            for service_type, service_instances in grouped_services.items():
+            for idx, (service_type, service_instances) in enumerate(grouped_services.items()):
                 print(f"[INFO] Processing {len(service_instances)} {service_type} service(s)...")
                 
                 mapped_instances = []
-                for service_instance in service_instances:
+                for instance_idx, service_instance in enumerate(service_instances):
+                    # Add delay between LLM calls to prevent throttling
+                    if instance_idx > 0:
+                        delay = 0.5  # 500ms delay between calls
+                        time.sleep(delay)
+                    
                     mapped_instance = self._map_service(service_instance, service_type)
                     if mapped_instance:
                         mapped_instances.append(mapped_instance)
@@ -92,6 +100,10 @@ class SOWToSchemaMapper:
                 if mapped_instances:
                     standardized_services[service_type] = mapped_instances
                     print(f"[SUCCESS] Mapped {len(mapped_instances)} {service_type} service(s)")
+                
+                # Add delay between different service types
+                if idx < len(service_types_list) - 1:  # Not the last service type
+                    time.sleep(0.5)
             
             print(f"[SUCCESS] Mapping completed. {len(standardized_services)} service types processed")
             return standardized_services
@@ -251,37 +263,81 @@ Return the mapped configuration as JSON:
 """
         return prompt
     
-    def _call_llm(self, prompt: str) -> str:
-        """Call AWS Bedrock with the prompt"""
-        try:
-            # Prepare the request body for Claude model
-            body = {
-                "anthropic_version": "bedrock-2023-05-31",
-                "max_tokens": 2000,
-                "temperature": 0.1,
-                "system": "You are an expert at mapping AWS service configurations. Always return valid JSON.",
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ]
-            }
+    def _call_llm(self, prompt: str, max_retries: int = 5, base_delay: float = 1.0) -> str:
+        """
+        Call AWS Bedrock with the prompt using exponential backoff retry logic
+        
+        Args:
+            prompt: The prompt to send to the LLM
+            max_retries: Maximum number of retry attempts
+            base_delay: Base delay in seconds for exponential backoff
             
-            # Call Bedrock
-            response = self.bedrock_client.invoke_model(
-                modelId=self.model_id,
-                body=json.dumps(body),
-                contentType="application/json"
-            )
-            
-            # Parse response
-            response_body = json.loads(response['body'].read())
-            return response_body['content'][0]['text']
+        Returns:
+            LLM response text, or empty string if all retries fail
+        """
+        # Prepare the request body for Claude model
+        body = {
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": 2000,
+            "temperature": 0.1,
+            "system": "You are an expert at mapping AWS service configurations. Always return valid JSON.",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        }
+        
+        last_exception = None
+        
+        for attempt in range(max_retries):
+            try:
+                # Call Bedrock
+                response = self.bedrock_client.invoke_model(
+                    modelId=self.model_id,
+                    body=json.dumps(body),
+                    contentType="application/json"
+                )
                 
-        except Exception as e:
-            print(f"[ERROR] Bedrock call failed: {e}")
-            return ""
+                # Parse response
+                response_body = json.loads(response['body'].read())
+                return response_body['content'][0]['text']
+                
+            except ClientError as e:
+                error_code = e.response.get('Error', {}).get('Code', '')
+                
+                # Check if it's a throttling error
+                if error_code in ['ThrottlingException', 'TooManyRequestsException', 'Throttling']:
+                    if attempt < max_retries - 1:
+                        # Calculate exponential backoff delay: base_delay * 2^attempt
+                        delay = base_delay * (2 ** attempt)
+                        # Add jitter (random factor between 0.5 and 1.5)
+                        import random
+                        jitter = random.uniform(0.5, 1.5)
+                        delay = delay * jitter
+                        
+                        print(f"[WARNING] Bedrock throttling detected. Retrying in {delay:.2f} seconds... (attempt {attempt + 1}/{max_retries})")
+                        time.sleep(delay)
+                        last_exception = e
+                        continue
+                    else:
+                        print(f"[ERROR] Bedrock call failed after {max_retries} retries: {e}")
+                        return ""
+                else:
+                    # Non-throttling error - don't retry
+                    print(f"[ERROR] Bedrock call failed with non-throttling error: {e}")
+                    return ""
+                    
+            except Exception as e:
+                # Unexpected error - don't retry
+                print(f"[ERROR] Unexpected error in Bedrock call: {e}")
+                return ""
+        
+        # All retries exhausted
+        if last_exception:
+            print(f"[ERROR] Bedrock call failed after {max_retries} retries: {last_exception}")
+        return ""
     
     def _parse_llm_response(self, response: str, service_type: str, schema: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Parse and validate LLM response"""
